@@ -1,14 +1,13 @@
-CC=gcc
-CFLAGS=-Iinclude -Wall -Wextra
-LDFLAGS=-lraylib -lm
-SRC=$(wildcard src/*.c)
-OBJ=$(SRC:.c=.o)
-OUT=pokemon
+CC = gcc
+SRC = src/main.c lib/cJSON.c
+INCLUDES = -Iinclude -I/opt/homebrew/opt/raylib/include
+LIBS = -L/opt/homebrew/opt/raylib/lib -lraylib \
+       -framework OpenGL -framework Cocoa -framework IOKit -framework CoreAudio -framework CoreVideo
 
-all: $(OUT)
+OUT = pixelmon_quest
 
-$(OUT): $(OBJ)
-	$(CC) -o $@ $^ $(LDFLAGS)
+all:
+\t$(CC) $(SRC) $(INCLUDES) $(LIBS) -o $(OUT)
 
 clean:
-	rm -f src/*.o $(OUT)
+\trm -f $(OUT)

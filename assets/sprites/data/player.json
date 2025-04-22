@@ -1,0 +1,26 @@
+{
+    "sprite": "Player",
+    "animation": {
+        "down": [
+            "player_walk_down1.png",
+            "player_walk_down2.png",
+            "player_walk_down3.png"
+        ],
+        "up": [
+            "player_walk_up1.png",
+            "player_walk_up2.png",
+            "player_walk_up3.png"
+        ],
+        "right": [
+            "player_walk_right1.png",
+            "player_walk_right2.png",
+            "player_walk_right3.png"
+        ],
+        "left": [
+            "player_walk_left1.png",
+            "player_walk_left2.png",
+            "player_walk_left3.png"
+        ]
+    },
+    "frame_duration": 0.15
+}
