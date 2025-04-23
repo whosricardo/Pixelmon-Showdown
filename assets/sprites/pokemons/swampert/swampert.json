@@ -1,0 +1,32 @@
+{
+    "id": 260,
+    "name": "Swampert",
+    "type": ["Water", "Ground"],
+    "sprites": {
+      "front": "swampert_front.png",
+      "back": "swampert_back.png"
+    },
+    "base_stats": {
+      "hp": 100,
+      "attack": 110,
+      "defense": 90,
+      "sp_attack": 85,
+      "sp_defense": 90,
+      "speed": 60
+    },
+    "abilities": ["Torrent", "Damp"],
+    "evolves_to": null,
+    "exp_yield": 241,
+    "catch_rate": 45,
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Tackle" },
+      { "level": 1, "move": "Growl" },
+      { "level": 4, "move": "Water Gun" },
+      { "level": 9, "move": "Mud-Slap" },
+      { "level": 16, "move": "Mud Shot" },
+      { "level": 36, "move": "Earthquake" },
+      { "level": 42, "move": "Hammer Arm" }
+    ]
+  }
+  

@@ -1,0 +1,35 @@
+{
+    "id": 259,
+    "name": "Marshtomp",
+    "type": ["Water", "Ground"],
+    "sprites": {
+      "front": "marshtomp_front.png",
+      "back": "marshtomp_back.png"
+    },
+    "base_stats": {
+      "hp": 70,
+      "attack": 85,
+      "defense": 70,
+      "sp_attack": 60,
+      "sp_defense": 70,
+      "speed": 50
+    },
+    "abilities": ["Torrent", "Damp"],
+    "evolves_to": {
+      "name": "Swampert",
+      "level": 36,
+      "json_path": "swampert/swampert.json"
+    },
+    "exp_yield": 142,
+    "catch_rate": 45,
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Tackle" },
+      { "level": 1, "move": "Growl" },
+      { "level": 4, "move": "Water Gun" },
+      { "level": 9, "move": "Mud-Slap" },
+      { "level": 16, "move": "Mud Shot" },
+      { "level": 20, "move": "Rock Slide" }
+    ]
+  }
+  
