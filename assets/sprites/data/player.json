@@ -1,6 +1,6 @@
 {
     "sprite": "Player",
-    "animation": {
+    "walk_animation": {
         "down": [
             "player_walk_down1.png",
             "player_walk_down2.png",
@@ -22,5 +22,78 @@
             "player_walk_left3.png"
         ]
     },
+    "run_animation": {
+        "down": [
+            "player_run_down1.png",
+            "player_run_down2.png",
+            "player_run_down3.png"
+        ],
+        "up": [
+            "player_run_up1.png",
+            "player_run_up2.png",
+            "player_run_up3.png"
+        ],
+        "right": [
+            "player_run_right1.png",
+            "player_run_right2.png",
+            "player_run_right3.png"
+        ],
+        "left": [
+            "player_run_right1.png",
+            "player_run_right2.png",
+            "player_run_right3.png"
+        ]
+    },
+    "bike_animation": {
+        "down": [
+            "player_bike_down1.png",
+            "player_bike_down2.png",
+            "player_bike_down3.png"
+        ],
+        "up": [
+            "player_bike_up1.png",
+            "player_bike_up2.png",
+            "player_bike_up3.png"
+        ],
+        "right": [
+            "player_bike_right1.png",
+            "player_bike_right2.png",
+            "player_bike_right3.png"
+        ],
+        "left": [
+            "player_bike_right1.png",
+            "player_bike_right2.png",
+            "player_bike_right3.png"
+        ]
+    },
+    "bike_acro_animation": {
+        "down": [
+            "player_bike_acro_down1.png",
+            "player_bike_acro_down2.png",
+            "player_bike_acro_down3.png"
+        ],
+        "up": [
+            "player_bike_acro_up1.png",
+            "player_bike_acro_up2.png",
+            "player_bike_acro_up3.png"
+        ],
+        "right": [
+            "player_bike_acro_right1.png",
+            "player_bike_acro_right2.png",
+            "player_bike_acro_right3.png"
+        ],
+        "left": [
+            "player_bike_acro_left1.png",
+            "player_bike_acro_left2.png",
+            "player_bike_acro_left3.png"
+        ]
+    },
+    "battle_animation": [
+        "player_battle1.png",
+        "player_battle2.png",
+        "player_battle3.png",
+        "player_battle4.png",
+        "player_battle5.png"
+    ],
     "frame_duration": 0.15
 }
