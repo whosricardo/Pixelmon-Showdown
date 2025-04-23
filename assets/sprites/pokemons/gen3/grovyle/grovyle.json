@@ -1,0 +1,34 @@
+{
+    "id": 253,
+    "name": "Grovyle",
+    "type": ["Grass"],
+    "sprites": {
+      "front": "grovyle_front.png",
+      "back": "grovyle_back.png"
+    },
+    "base_stats": {
+      "hp": 50,
+      "attack": 65,
+      "defense": 45,
+      "sp_attack": 85,
+      "sp_defense": 65,
+      "speed": 95
+    },
+    "abilities": ["Overgrow", "Unburden"],
+    "evolves_to": {
+      "name": "Sceptile",
+      "level": 36,
+      "json_path": "gen3/sceptile/sceptile.json"
+    },
+    "exp_yield": 142,
+    "catch_rate": 45,
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Pound" },
+      { "level": 1, "move": "Leer" },
+      { "level": 5, "move": "Absorb" },
+      { "level": 13, "move": "Quick Attack" },
+      { "level": 18, "move": "Leaf Blade" }
+    ]
+  }
+  

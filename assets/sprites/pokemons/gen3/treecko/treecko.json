@@ -1,0 +1,33 @@
+{
+    "id": 252,
+    "name": "Treecko",
+    "type": ["Grass"],
+    "sprites": {
+      "front": "treecko_front.png",
+      "back": "treecko_back.png"
+    },
+    "base_stats": {
+      "hp": 40,
+      "attack": 45,
+      "defense": 35,
+      "sp_attack": 65,
+      "sp_defense": 55,
+      "speed": 70
+    },
+    "abilities": ["Overgrow", "Unburden"],
+    "evolves_to": {
+      "name": "Grovyle",
+      "level": 16,
+      "json_path": "gen3/grovyle/grovyle.json"
+    },
+    "exp_yield": 62,
+    "catch_rate": 45,
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Pound" },
+      { "level": 1, "move": "Leer" },
+      { "level": 5, "move": "Absorb" },
+      { "level": 9, "move": "Quick Attack" }
+    ]
+  }
+  

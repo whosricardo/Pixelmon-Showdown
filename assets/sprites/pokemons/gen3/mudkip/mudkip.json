@@ -18,7 +18,7 @@
     "evolves_to": {
       "name": "Marshtomp",
       "level": 16,
-      "json_path": "marshtomp/marshtomp.json"
+      "json_path": "gen3/marshtomp/marshtomp.json"
     },
     "exp_yield": 62,
     "catch_rate": 45,

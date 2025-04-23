@@ -1,0 +1,30 @@
+{
+    "id": 254,
+    "name": "Sceptile",
+    "type": ["Grass"],
+    "sprites": {
+      "front": "sceptile_front.png",
+      "back": "sceptile_back.png"
+    },
+    "base_stats": {
+      "hp": 70,
+      "attack": 85,
+      "defense": 65,
+      "sp_attack": 105,
+      "sp_defense": 85,
+      "speed": 120
+    },
+    "abilities": ["Overgrow", "Unburden"],
+    "evolves_to": null,
+    "exp_yield": 239,
+    "catch_rate": 45,
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Pound" },
+      { "level": 1, "move": "Quick Attack" },
+      { "level": 18, "move": "Leaf Blade" },
+      { "level": 36, "move": "Agility" },
+      { "level": 45, "move": "Leaf Storm" }
+    ]
+  }
+  
