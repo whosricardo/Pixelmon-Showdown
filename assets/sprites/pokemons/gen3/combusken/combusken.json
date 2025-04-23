@@ -1,0 +1,36 @@
+{
+    "id": 256,
+    "name": "Combusken",
+    "type": ["Fire", "Fighting"],
+    "sprites": {
+      "front": "combusken_front.png",
+      "back": "combusken_back.png"
+    },
+    "base_stats": {
+      "hp": 60,
+      "attack": 85,
+      "defense": 60,
+      "sp_attack": 85,
+      "sp_defense": 60,
+      "speed": 55
+    },
+    "abilities": ["Blaze", "Speed Boost"],
+    "evolves_to": {
+      "name": "Blaziken",
+      "level": 36,
+      "json_path": "gen3/blaziken/blaziken.json"
+    },
+    "exp_yield": 142,
+    "catch_rate": 45,
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Scratch" },
+      { "level": 1, "move": "Growl" },
+      { "level": 7, "move": "Focus Energy" },
+      { "level": 10, "move": "Ember" },
+      { "level": 16, "move": "Peck" },
+      { "level": 20, "move": "Double Kick" },
+      { "level": 25, "move": "Flamethrower" }
+    ]
+  }
+  

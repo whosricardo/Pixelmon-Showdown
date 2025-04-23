@@ -1,0 +1,34 @@
+{
+    "id": 255,
+    "name": "Torchic",
+    "type": ["Fire"],
+    "sprites": {
+      "front": "torchic_front.png",
+      "back": "torchic_back.png"
+    },
+    "base_stats": {
+      "hp": 45,
+      "attack": 60,
+      "defense": 40,
+      "sp_attack": 70,
+      "sp_defense": 50,
+      "speed": 45
+    },
+    "abilities": ["Blaze", "Speed Boost"],
+    "evolves_to": {
+      "name": "Combusken",
+      "level": 16,
+      "json_path": "gen3/combusken/combusken.json"
+    },
+    "exp_yield": 62,
+    "catch_rate": 45,
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Scratch" },
+      { "level": 1, "move": "Growl" },
+      { "level": 7, "move": "Focus Energy" },
+      { "level": 10, "move": "Ember" },
+      { "level": 16, "move": "Peck" }
+    ]
+  }
+  
