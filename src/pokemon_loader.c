@@ -19,7 +19,7 @@ PokemonInfo *load_pokemon_info(const char *path)
 
     //informacoes basicas pokemon
     pointer->id = cJSON_GetObjectItem(root, "id")->valueint;
-    pointer->name = strdup(cJSON_GetObjectItem(root, "hp")->valuestring);
+    pointer->name = strdup(cJSON_GetObjectItem(root, "name")->valuestring);
     cJSON *types = cJSON_GetObjectItem(root, "type");
     for (int i = 0; i < 2; i++) 
     {
@@ -29,8 +29,8 @@ PokemonInfo *load_pokemon_info(const char *path)
 
     //pokemon sprites
     cJSON *sprites = cJSON_GetObjectItem(root, "sprites");
-    pointer->sprites.front = cJSON_GetObjectItem(sprites, "front")->valuestring;
-    pointer->sprites.back = cJSON_GetObjectItem(sprites, "back")->valuestring;
+    pointer->sprites.front = strdup(cJSON_GetObjectItem(sprites, "front")->valuestring);
+    pointer->sprites.back = strdup(cJSON_GetObjectItem(sprites, "back")->valuestring);
 
     //pokemon stats
     cJSON *stats = cJSON_GetObjectItem(root, "base_stats");
@@ -38,14 +38,14 @@ PokemonInfo *load_pokemon_info(const char *path)
     pointer->base_stats.attack = cJSON_GetObjectItem(stats, "attack")->valueint;
     pointer->base_stats.defense = cJSON_GetObjectItem(stats, "defense")->valueint;
     pointer->base_stats.sp_attack = cJSON_GetObjectItem(stats, "sp_attack")->valueint;
-    pointer->base_stats.sp_defense = cJSON_GetObjectItem(stats, "defense")->valueint;
+    pointer->base_stats.sp_defense = cJSON_GetObjectItem(stats, "sp_defense")->valueint;
     pointer->base_stats.speed = cJSON_GetObjectItem(stats, "speed")->valueint;
 
     //pokemon habilidades
     cJSON *abilities = cJSON_GetObjectItem(root, "abilities");
     for (int i = 0; i < MAX_ABILITIES; i++)
     {
-        cJSON* ab = cJSON_GetArrayItem(ab, i);
+        cJSON* ab = cJSON_GetArrayItem(abilities, i);
         pointer->abilities[i] = ab ? strdup(ab->valuestring) : NULL;
     }
 
@@ -59,19 +59,22 @@ PokemonInfo *load_pokemon_info(const char *path)
     pointer->is_legendary = cJSON_GetObjectItem(root, "is_legendary")->valueint;
 
     //pokemon learnset
-    cJSON *learnset = cJSON_GetObjectItem(root, "learnset");
-    for (int i = 0; i < MAX_LEARNSET; i++)
-    {
-        cJSON *move = cJSON_GetArrayItem(learnset, i);
+    cJSON* learnset = cJSON_GetObjectItem(root, "learnset");
+    int moves_count = cJSON_GetArraySize(learnset);
+    pointer->learnset_size = moves_count;
+
+    for (int i = 0; i < moves_count && i < MAX_LEARNSET; i++) {
+        cJSON* move = cJSON_GetArrayItem(learnset, i);
         pointer->learnset[i].level = cJSON_GetObjectItem(move, "level")->valueint;
-        pointer->learnset[i].move = cJSON_GetObjectItem(move, "move")->valuestring;
+        pointer->learnset[i].move = strdup(cJSON_GetObjectItem(move, "move")->valuestring);
     }
 
-    cJSON_free(root);
+    cJSON_Delete(root);
+
     return pointer;
 }
 
-void free_pokemon_info(PokemonInfo* pointer) {
+void free_pokemon(PokemonInfo* pointer) {
     if (!pointer) return; //caso seja nulo, sair
 
     free(pointer->name);

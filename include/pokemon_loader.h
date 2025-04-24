@@ -46,6 +46,6 @@ typedef struct
 } PokemonInfo;
 
 PokemonInfo* load_pokemon_info(const char *path);
-void free_pokemon_info(PokemonInfo *info);
+void free_pokemon(PokemonInfo *info);
 
 #endif

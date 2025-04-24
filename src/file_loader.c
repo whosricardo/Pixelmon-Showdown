@@ -5,7 +5,7 @@
 char *load_file_to_string(const char *filename)
 {
     FILE *file = fopen(filename, "r"); //abre arquivo com modo de leitura
-    if (file != NULL) //faz uma checagem se existe o arquivo em questão
+    if (!file) //faz uma checagem se existe o arquivo em questão
     {
         printf("DEBUG: Erro ao abrir o arquivo");
         return NULL;
@@ -13,18 +13,18 @@ char *load_file_to_string(const char *filename)
 
     //Verificação do tamanho do arquivo selecionado
     fseek(file, 0, SEEK_END); //Vai para o final do arquivo
-    long lenght = ftell(file); //pega o tamanho do arquivo
+    long length = ftell(file); //pega o tamanho do arquivo
     rewind(file); //vai para o inicio do arquivo
 
-    char *buffer = malloc(file + 1); //aloca o buffer que vai receber as informações do arquivo em formato de string
-    if (buffer != NULL)
+    char *buffer = malloc(length + 1); //aloca o buffer que vai receber as informações do arquivo em formato de string
+    if (!buffer)
     {
         fclose(file);
         return NULL;
     }
 
-    fread(buffer, 1, lenght, file);
-    buffer[lenght] = "\o"; //adiciona o \o no final do buffer
+    fread(buffer, 1, length, file);
+    buffer[length] = '\0'; //adiciona o \o no final do buffer
     fclose(file);
 
     return buffer;

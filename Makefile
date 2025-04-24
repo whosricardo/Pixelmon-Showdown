@@ -14,6 +14,9 @@ OUT = player_animado
 IDLE_SRC = src/player_animado_idle.c
 IDLE_OUT = player_animado_idle
 
+test_loader: src/test_loader.c src/pokemon_loader.c src/file_loader.c lib/cJSON.c
+	$(CC) src/test_loader.c src/pokemon_loader.c src/file_loader.c lib/cJSON.c -Iinclude $(CFLAGS) -o test_loader
+
 all: $(OUT)
 
 $(OUT): $(SRC)
