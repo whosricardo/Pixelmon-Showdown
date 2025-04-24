@@ -18,7 +18,6 @@
     "evolves_to": null,
     "exp_yield": 239,
     "catch_rate": 45,
-    "egg_groups": ["Field"],
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Scratch" },
