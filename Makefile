@@ -10,14 +10,10 @@ LDFLAGS = -L/opt/homebrew/opt/raylib/lib -lraylib \
 SRC = src/player_animado.c lib/cJSON.c
 OUT = player_animado
 
-# Alternative: build idle version
 IDLE_SRC = src/player_animado_idle.c
 IDLE_OUT = player_animado_idle
 
-test_loader: src/test_loader.c src/pokemon_loader.c src/file_loader.c lib/cJSON.c
-	$(CC) src/test_loader.c src/pokemon_loader.c src/file_loader.c lib/cJSON.c -Iinclude $(CFLAGS) -o test_loader
-
-all: $(OUT)
+all: $(OUT) map_test
 
 $(OUT): $(SRC)
 	$(CC) $(SRC) $(CFLAGS) $(LDFLAGS) -o $(OUT)
@@ -25,5 +21,11 @@ $(OUT): $(SRC)
 idle:
 	$(CC) $(IDLE_SRC) lib/cJSON.c $(CFLAGS) $(LDFLAGS) -o $(IDLE_OUT)
 
+test_loader: src/test_loader.c src/pokemon_loader.c src/file_loader.c lib/cJSON.c
+	$(CC) src/test_loader.c src/pokemon_loader.c src/file_loader.c lib/cJSON.c -Iinclude $(CFLAGS) -o test_loader
+
+map_test: src/map_test.c src/tile.c src/map.c
+	$(CC) src/map_test.c src/tile.c src/map.c $(CFLAGS) $(LDFLAGS) -o map_test
+
 clean:
-	rm -f $(OUT) $(IDLE_OUT)
+	rm -f $(OUT) $(IDLE_OUT) test_loader map_test

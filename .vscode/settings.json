@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "file_loader.h": "c",
+        "string.h": "c",
+        "stdlib.h": "c",
+        "map.h": "c"
+    }
+}
