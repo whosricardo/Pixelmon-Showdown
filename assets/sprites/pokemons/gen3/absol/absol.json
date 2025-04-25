@@ -3,8 +3,8 @@
     "name": "Absol",
     "type": ["Dark"],
     "sprites": {
-      "front": "Absol_front.png",
-      "back": "Absol_back.png"
+      "front": "absol_front.png",
+      "back": "absol_back.png"
     },
     "base_stats": {
       "hp": 65,
@@ -15,6 +15,7 @@
       "speed": 75
     },
     "abilities": ["Pressure", "Super Luck", "Justfied"],
+    "evolves_to": null,
     "exp_yield": 163,
     "catch_rate": 30,
     "is_legendary": false,
@@ -25,7 +26,6 @@
         { "level": 13, "move": "Quick Attack" },
         { "level": 17, "move": "Razor Wind" },
         { "level": 21, "move": "Bite" },
-        { "level": 26, "move": "Swords Dance" },
         { "level": 31, "move": "Double Team" },
         { "level": 36, "move": "Slash"},
         { "level": 41, "move": "Future Sight" },

@@ -1,32 +1,32 @@
 {
-    "id": 257,
-    "name": "Blaziken",
-    "type": ["Fire", "Fighting"],
-    "sprites": {
-      "front": "blaziken_front.png",
-      "back": "blaziken_back.png"
-    },
-    "base_stats": {
-      "hp": 80,
-      "attack": 120,
-      "defense": 70,
-      "sp_attack": 110,
-      "sp_defense": 70,
-      "speed": 80
-    },
-    "abilities": ["Blaze", "Speed Boost"],
-    "evolves_to": null,
-    "exp_yield": 239,
-    "catch_rate": 45,
-    "is_legendary": false,
-    "learnset": [
-      { "level": 1, "move": "Scratch" },
-      { "level": 1, "move": "Growl" },
-      { "level": 7, "move": "Focus Energy" },
-      { "level": 16, "move": "Peck" },
-      { "level": 25, "move": "Flamethrower" },
-      { "level": 36, "move": "Blaze Kick" },
-      { "level": 44, "move": "Sky Uppercut" }
-    ]
-  }
+  "id": 257,
+  "name": "Blaziken",
+  "type": ["Fire", "Fighting"],
+  "sprites": {
+    "front": "blaziken_front.png",
+    "back": "blaziken_back.png"
+  },
+  "base_stats": {
+    "hp": 80,
+    "attack": 120,
+    "defense": 70,
+    "sp_attack": 110,
+    "sp_defense": 70,
+    "speed": 80
+  },
+  "abilities": ["Blaze", "Speed Boost"],
+  "evolves_to": null,
+  "exp_yield": 239,
+  "catch_rate": 45,
+  "is_legendary": false,
+  "learnset": [
+    { "level": 1, "move": "Scratch" },
+    { "level": 1, "move": "Growl" },
+    { "level": 7, "move": "Focus Energy" },
+    { "level": 16, "move": "Peck" },
+    { "level": 25, "move": "Flamethrower" },
+    { "level": 36, "move": "Blaze Kick" },
+    { "level": 44, "move": "Sky Uppercut" }
+  ]
+}
   

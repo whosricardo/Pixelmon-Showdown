@@ -3,8 +3,8 @@
     "name": "Squirtle",
     "type": ["Water"],
     "sprites": {
-      "front": "Squirtle_front.png",
-      "back": "Squirtle_back.png"
+      "front": "squirtle_front.png",
+      "back": "squirtle_back.png"
     },
     "base_stats": {
       "hp": 44,

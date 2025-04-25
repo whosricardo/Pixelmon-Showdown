@@ -3,8 +3,8 @@
     "name": "Gastly",
     "type": ["Ghost", "Poison"],
     "sprites": {
-      "front": "Gastly_front.png",
-      "back": "Gastly_back.png"
+      "front": "gastly_front.png",
+      "back": "gastly_back.png"
     },
     "base_stats": {
       "hp": 30,

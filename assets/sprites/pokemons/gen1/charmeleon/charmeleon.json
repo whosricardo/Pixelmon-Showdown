@@ -3,8 +3,8 @@
     "name": "Charmeleon",
     "type": ["Fire"],
     "sprites": {
-      "front": "Charmeleon_front.png",
-      "back": "Charmeleon_back.png"
+      "front": "charmeleon_front.png",
+      "back": "charmeleon_back.png"
     },
     "base_stats": {
       "hp": 58,

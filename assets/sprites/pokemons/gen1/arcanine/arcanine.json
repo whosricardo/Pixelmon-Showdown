@@ -3,8 +3,8 @@
     "name": "Arcanine",
     "type": ["Fire"],
     "sprites": {
-      "front": "Arcanine_front.png",
-      "back": "Arcanine_back.png"
+      "front": "arcanine_front.png",
+      "back": "arcanine_back.png"
     },
     "base_stats": {
       "hp": 90,
@@ -14,7 +14,8 @@
       "sp_defense": 80,
       "speed": 95
     },
-"abilities": ["Intimidate", "Flash Fire", "Justified"],
+    "abilities": ["Intimidate", "Flash Fire", "Justified"],
+    "evolves_to": null,
     "exp_yield": 194,
     "catch_rate": 75,
     "is_legendary": false,

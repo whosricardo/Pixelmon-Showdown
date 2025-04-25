@@ -3,8 +3,8 @@
     "name": "Alakazam",
     "type": ["Psychic"],
     "sprites": {
-      "front": "Alakazam_front.png",
-      "back": "Alakazam_back.png"
+      "front": "alakazam_front.png",
+      "back": "alakazam_back.png"
     },
     "base_stats": {
       "hp": 55,
@@ -15,6 +15,7 @@
       "speed": 120
     },
     "abilities": ["Synchronize", "Inner Focus", "Magic Guard"],
+    "evolves_to": null,
     "exp_yield": 225,
     "catch_rate": 50,
     "is_legendary": false,
@@ -23,12 +24,9 @@
       { "level": 1, "move": "Kinesis" },
       { "level": 1, "move": "Teleport" },
       { "level": 16, "move": "Confusion" },
-      { "level": 18, "move": "Disable" },
       { "level": 21, "move": "Psybeam" },
       { "level": 23, "move": "Reflect"},
-      { "level": 25, "move": "Recover"},
       { "level": 30, "move": "Future Sight"},
-      { "level": 33, "move": "Calm Mind"},
       {"level": 36, "move": "Psychic"},
       {"level": 40, "move": "Trick"}
     ]

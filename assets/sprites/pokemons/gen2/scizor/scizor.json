@@ -23,16 +23,12 @@
         { "level": 1, "move": "Leer" },
         { "level": 1, "move": "Quick Attack" },
         { "level": 6, "move": "Focus Energy" },
-        { "level": 11, "move": "Pursuit" },
         { "level": 16, "move": "False Swipe" },
         { "level": 21, "move": "Agility" },
         { "level": 26, "move": "Metal Claw" },
         { "level": 31, "move": "Slash" },
         { "level": 36, "move": "Swords Dance" },
-        { "level": 41, "move": "Double Team" },
         { "level": 46, "move": "Fury Cutter" }
-        
-        
     ]
   }
   

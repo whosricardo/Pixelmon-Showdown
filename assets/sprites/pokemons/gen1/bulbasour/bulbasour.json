@@ -3,8 +3,8 @@
     "name": "Bulbasour",
     "type": ["Grass", "Poison"],
     "sprites": {
-      "front": "Bulbasour_front.png",
-      "back": "Bulbasour_back.png"
+      "front": "bulbasour_front.png",
+      "back": "bulbasour_back.png"
     },
     "base_stats": {
       "hp": 45,

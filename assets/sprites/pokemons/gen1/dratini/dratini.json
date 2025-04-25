@@ -3,8 +3,8 @@
     "name": "Dratini",
     "type": ["Dragon"],
     "sprites": {
-      "front": "Dratini_front.png",
-      "back": "Dratini_back.png"
+      "front": "dratini_front.png",
+      "back": "dratini_back.png"
     },
     "base_stats": {
       "hp": 41,

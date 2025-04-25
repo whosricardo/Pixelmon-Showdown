@@ -3,8 +3,8 @@
     "name": "Abra",
     "type": ["Psychic"],
     "sprites": {
-      "front": "Abra_front.png",
-      "back": "Abra_back.png"
+      "front": "abra_front.png",
+      "back": "abra_back.png"
     },
     "base_stats": {
       "hp": 25,

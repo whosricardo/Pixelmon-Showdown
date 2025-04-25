@@ -3,8 +3,8 @@
     "name": "Charizard",
     "type": ["Fire", "Flying"],
     "sprites": {
-      "front": "Charizard_front.png",
-      "back": "Charizard_back.png"
+      "front": "charizard_front.png",
+      "back": "charizard_back.png"
     },
     "base_stats": {
       "hp": 78,
@@ -15,6 +15,7 @@
       "speed": 100
     },
     "abilities": ["Blaze", "Solar Power"],
+    "evolves_to": null,
     "exp_yield": 267,
     "catch_rate": 45,
     "is_legendary": false,
@@ -24,9 +25,6 @@
       { "level": 1, "move": "Scratch" },
       { "level": 1, "move": "SmokeScreen" },
       { "level": 7, "move": "Ember" },
-      { "level": 13, "move": "SmokeScreen" },
-      { "level": 20, "move": "Rage" },
-      { "level": 27, "move": "Scary Face" },
       { "level": 34, "move": "Flamethrower" },
       { "level": 36, "move": "Wing Attack" },
       { "level": 44, "move": "Slash" },

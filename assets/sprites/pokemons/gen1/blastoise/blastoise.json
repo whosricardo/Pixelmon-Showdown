@@ -3,8 +3,8 @@
     "name": "Blastoise",
     "type": ["Water"],
     "sprites": {
-      "front": "Blastoise_front.png",
-      "back": "Blastoise_back.png"
+      "front": "blastoise_front.png",
+      "back": "blastoise_back.png"
     },
     "base_stats": {
       "hp": 79,
@@ -15,6 +15,7 @@
       "speed": 78
     },
     "abilities": ["Torrent", "Rain Dish"],
+    "evolves_to": null,
     "exp_yield": 239,
     "catch_rate": 45,
     "is_legendary": false,
@@ -23,15 +24,10 @@
       { "level": 1, "move": "Tackle" },
       { "level": 1, "move": "Tail Whip" },
       { "level": 1, "move": "Withdraw" },
-      { "level": 4, "move": "Tail Whip" },
       { "level": 7, "move": "Bubble" },
-      { "level": 10, "move": "Withdraw" },
       { "level": 13, "move": "Water Gun" },
       { "level": 19, "move": "Bite" },
-      { "level": 25, "move": "Rapid Spin" },
       { "level": 31, "move": "Protect" },
-      { "level": 42, "move": "Rain Dance" },
-      { "level": 55, "move": "Skull Bash" },
       { "level": 68, "move": "Hydro Pump" }
     ]
   }

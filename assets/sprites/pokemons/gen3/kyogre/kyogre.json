@@ -3,8 +3,8 @@
     "name": "Kyogre",
     "type": ["Water"],
     "sprites": {
-      "front": "Kyogre_front.png",
-      "back": "Kyogre_back.png"
+      "front": "kyogre_front.png",
+      "back": "kyogre_back.png"
     },
     "base_stats": {
       "hp": 100,
@@ -15,18 +15,17 @@
       "speed": 90
     },
     "abilities": ["Drizzle"],
+    "evolves_to": null,
     "exp_yield": 335,
     "catch_rate": 3,
     "is_legendary": true,
     "learnset": [
         { "level": 1, "move": "Water Pulse" },
         { "level": 5, "move": "Scary Face" },
-        { "level": 15, "move": "AncientPower" },
         { "level": 20, "move": "Body Slam" },
         { "level": 30, "move": "Calm Mind" },
         { "level": 35, "move": "Ice Beam" },
         { "level": 45, "move": "Hydro Pump" },
-        { "level": 50, "move": "Rest" },
         { "level": 60, "move": "Sheer Cold"},
         { "level": 65, "move": "Double-Edge" },
         { "level": 75, "move": "Water Spout" }

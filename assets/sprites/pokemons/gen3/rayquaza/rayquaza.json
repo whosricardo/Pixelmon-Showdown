@@ -3,8 +3,8 @@
     "name": "Rayquaza",
     "type": ["Dragon", "Flying"],
     "sprites": {
-      "front": "Rayquaza_front.png",
-      "back": "Rayquaza_back.png"
+      "front": "rayquaza_front.png",
+      "back": "rayquaza_back.png"
     },
     "base_stats": {
       "hp": 105,
@@ -15,20 +15,19 @@
       "speed": 95
     },
     "abilities": ["Air Lock"],
+    "evolves_to": null,
     "exp_yield": 340,
     "catch_rate": 45,
     "is_legendary": true,
     "learnset": [
         { "level": 1, "move": "Twister" },
         { "level": 5, "move": "Scary Face" },
-        { "level": 15, "move": "AncientPower" },
         { "level": 20, "move": "Dragon Claw" },
         { "level": 30, "move": "Dragon Dance" },
         { "level": 35, "move": "Crunch" },
         { "level": 45, "move": "Fly" },
         { "level": 50, "move": "Rest" },
         { "level": 60, "move": "ExtremeSpeed"},
-        { "level": 65, "move": "Outrage" },
         { "level": 75, "move": "Hyper Beam" }
     ] 
   }

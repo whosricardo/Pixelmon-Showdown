@@ -3,8 +3,8 @@
     "name": "Ivysour",
     "type": ["Grass", "Poison"],
     "sprites": {
-      "front": "Ivysour_front.png",
-      "back": "Ivysour_back.png"
+      "front": "ivysour_front.png",
+      "back": "ivysour_back.png"
     },
     "base_stats": {
       "hp": 60,

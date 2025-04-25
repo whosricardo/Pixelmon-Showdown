@@ -3,8 +3,8 @@
     "name": "Latios",
     "type": ["Dragon", "Psychic"],
     "sprites": {
-      "front": "Latios_front.png",
-      "back": "Latios_back.png"
+      "front": "latios_front.png",
+      "back": "latios_back.png"
     },
     "base_stats": {
       "hp": 80,
@@ -15,17 +15,16 @@
       "speed": 110
     },
     "abilities": ["Levitate"],
+    "evolves_to": null,
     "exp_yield": 270,
     "catch_rate": 3,
     "is_legendary": true,
     "learnset": [
         { "level": 1, "move": "Psywave" },
         { "level": 5, "move": "Memento" },
-        { "level": 10, "move": "Helping Hand" },
         { "level": 15, "move": "Safeguard" },
         { "level": 20, "move": "DragonBreath" },
         { "level": 25, "move": "Protect" },
-        { "level": 30, "move": "Refresh" },
         { "level": 35, "move": "Luster Purge" },
         { "level": 40, "move": "Psychic"},
         { "level": 45, "move": "Recover" },

@@ -3,8 +3,8 @@
     "name": "Dragonair",
     "type": ["Dragon"],
     "sprites": {
-      "front": "Dragonair_front.png",
-      "back": "Dragonair_back.png"
+      "front": "dragonair_front.png",
+      "back": "dragonair_back.png"
     },
     "base_stats": {
       "hp": 61,

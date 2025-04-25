@@ -3,8 +3,8 @@
     "name": "Charmander",
     "type": ["Fire"],
     "sprites": {
-      "front": "Charmander_front.png",
-      "back": "Charmander_back.png"
+      "front": "charmander_front.png",
+      "back": "charmander_back.png"
     },
     "base_stats": {
       "hp": 39,

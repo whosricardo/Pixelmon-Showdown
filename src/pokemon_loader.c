@@ -63,7 +63,8 @@ PokemonInfo *load_pokemon_info(const char *path)
     int moves_count = cJSON_GetArraySize(learnset);
     pointer->learnset_size = moves_count;
 
-    for (int i = 0; i < moves_count && i < MAX_LEARNSET; i++) {
+    for (int i = 0; i < moves_count && i < MAX_LEARNSET; i++) 
+    {
         cJSON* move = cJSON_GetArrayItem(learnset, i);
         pointer->learnset[i].level = cJSON_GetObjectItem(move, "level")->valueint;
         pointer->learnset[i].move = strdup(cJSON_GetObjectItem(move, "move")->valuestring);
@@ -74,7 +75,8 @@ PokemonInfo *load_pokemon_info(const char *path)
     return pointer;
 }
 
-void free_pokemon(PokemonInfo* pointer) {
+void free_pokemon(PokemonInfo* pointer) 
+{
     if (!pointer) return; //caso seja nulo, sair
 
     free(pointer->name);

@@ -3,8 +3,8 @@
     "name": "Kadabra",
     "type": ["Psychic"],
     "sprites": {
-      "front": "Kadabra_front.png",
-      "back": "Kadabra_back.png"
+      "front": "kadabra_front.png",
+      "back": "kadabra_back.png"
     },
     "base_stats": {
       "hp": 40,

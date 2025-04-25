@@ -3,8 +3,8 @@
     "name": "Scyter",
     "type": ["Bug", "Flying"],
     "sprites": {
-      "front": "Scyter_front.png",
-      "back": "Scyter_back.png"
+      "front": "scyter_front.png",
+      "back": "scyter_back.png"
     },
     "base_stats": {
       "hp": 70,
@@ -30,7 +30,6 @@
         { "level": 11, "move": "Pursuit" },
         { "level": 16, "move": "False Swipe" },
         { "level": 21, "move": "Agility" },
-        { "level": 26, "move": "Wing Attack" },
         { "level": 31, "move": "Slash" },
         { "level": 36, "move": "Swords Dance" },
         { "level": 41, "move": "Double Team" },

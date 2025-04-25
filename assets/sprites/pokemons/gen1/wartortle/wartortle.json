@@ -3,8 +3,8 @@
     "name": "Wartortle",
     "type": ["Water"],
     "sprites": {
-      "front": "Wartortle_front.png",
-      "back": "Wartortle_back.png"
+      "front": "wartortle_front.png",
+      "back": "wartortle_back.png"
     },
     "base_stats": {
       "hp": 59,

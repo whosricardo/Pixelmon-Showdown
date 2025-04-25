@@ -3,8 +3,8 @@
     "name": "Haunter",
     "type": ["Ghost", "Poison"],
     "sprites": {
-      "front": "Haunter_front.png",
-      "back": "Haunter_back.png"
+      "front": "haunter_front.png",
+      "back": "haunter_back.png"
     },
     "base_stats": {
       "hp": 45,
