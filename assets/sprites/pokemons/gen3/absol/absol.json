@@ -1,0 +1,35 @@
+{
+    "id": 359,
+    "name": "Absol",
+    "type": ["Dark"],
+    "sprites": {
+      "front": "Absol_front.png",
+      "back": "Absol_back.png"
+    },
+    "base_stats": {
+      "hp": 65,
+      "attack": 130,
+      "defense": 60,
+      "sp_attack": 75,
+      "sp_defense": 60,
+      "speed": 75
+    },
+    "abilities": ["Pressure", "Super Luck", "Justfied"],
+    "exp_yield": 163,
+    "catch_rate": 30,
+    "is_legendary": false,
+    "learnset": [
+        { "level": 1, "move": "Scratch" },
+        { "level": 5, "move": "Leer" },
+        { "level": 9, "move": "Taunt" },
+        { "level": 13, "move": "Quick Attack" },
+        { "level": 17, "move": "Razor Wind" },
+        { "level": 21, "move": "Bite" },
+        { "level": 26, "move": "Swords Dance" },
+        { "level": 31, "move": "Double Team" },
+        { "level": 36, "move": "Slash"},
+        { "level": 41, "move": "Future Sight" },
+        { "level": 46, "move": "Perish Song" }
+    ] 
+  }
+  

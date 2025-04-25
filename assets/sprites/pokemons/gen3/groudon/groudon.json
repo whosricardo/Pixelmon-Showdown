@@ -1,0 +1,35 @@
+{
+    "id": 383,
+    "name": "Groudon",
+    "type": ["Ground"],
+    "sprites": {
+      "front": "Groudon_front.png",
+      "back": "Groudon_back.png"
+    },
+    "base_stats": {
+      "hp": 100,
+      "attack": 150,
+      "defense": 140,
+      "sp_attack": 100,
+      "sp_defense": 90,
+      "speed": 90
+    },
+    "abilities": ["Drought"],
+    "exp_yield": 335,
+    "catch_rate": 3,
+    "is_legendary": true,
+    "learnset": [
+        { "level": 1, "move": "Mud Shot" },
+        { "level": 5, "move": "Scary Face" },
+        { "level": 15, "move": "AncientPower" },
+        { "level": 20, "move": "Slash" },
+        { "level": 30, "move": "Bulk Up" },
+        { "level": 35, "move": "Earthquake" },
+        { "level": 45, "move": "Fire Blast" },
+        { "level": 50, "move": "Rest" },
+        { "level": 60, "move": "Fissure"},
+        { "level": 65, "move": "Solar Beam" },
+        { "level": 75, "move": "Eruption" }
+    ] 
+  }
+  
