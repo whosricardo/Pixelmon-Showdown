@@ -1,0 +1,35 @@
+{
+    "id": 150,
+    "name": "",
+    "type": ["Psychic"],
+    "sprites": {
+      "front": "Mewtwo_front.png",
+      "back": "Mewtwo_back.png"
+    },
+    "base_stats": {
+      "hp": 106,
+      "attack": 110,
+      "defense": 90,
+      "sp_attack": 154,
+      "sp_defense": 90,
+      "speed": 130
+    },
+    "abilities": ["Pressure", "Unnerve"],
+    "exp_yield": 340,
+    "catch_rate": 3,
+    "is_legendary": true,
+    "learnset": [
+        { "level": 1, "move": "Confusion" },
+        { "level": 1, "move": "Disable" },
+        { "level": 11, "move": "Barrier" },
+        { "level": 22, "move": "Swift" },
+        { "level": 33, "move": "Psych Up" },
+        { "level": 44, "move": "Future Sight" },
+        { "level": 55, "move": "Mist" },
+        { "level": 66, "move": "Psychic" },
+        { "level": 77, "move": "Amnesia" },
+        { "level": 88, "move": "Recover" },
+        { "level": 99, "move": "Safeguard" }
+    ]
+  }
+  

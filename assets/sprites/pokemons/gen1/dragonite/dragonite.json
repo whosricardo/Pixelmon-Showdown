@@ -1,0 +1,37 @@
+{
+    "id": 149,
+    "name": "Dragonite",
+    "type": ["Dragon", "Flying"],
+    "sprites": {
+      "front": "Dragonite_front.png",
+      "back": "Dragonite_back.png"
+    },
+    "base_stats": {
+      "hp": 91,
+      "attack": 134,
+      "defense": 95,
+      "sp_attack": 100,
+      "sp_defense": 100,
+      "speed": 80
+    },
+    "abilities": ["Inner Focus", "Multiscale"],
+    "exp_yield": 300,
+    "catch_rate": 45,
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Leer" },
+      { "level": 1, "move": "Thunder Wave" },
+      { "level": 1, "move": "Twister" },
+      { "level": 1, "move": "Wrap" },
+      { "level": 8, "move": "Thunder Wave" },
+      { "level": 15, "move": "Twister" },
+      { "level": 22, "move": "Dragon Rage" },
+      { "level": 29, "move": "Slam" },
+      { "level": 38, "move": "Agility" },
+      { "level": 47, "move": "Safeguard" },
+      { "level": 55, "move": "Wing Attack" },
+      { "level": 61, "move": "Outrage" },
+      { "level": 75, "move": "Hyper Beam" }
+    ]
+  }
+  

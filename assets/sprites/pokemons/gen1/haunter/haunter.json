@@ -1,0 +1,39 @@
+{
+    "id": 93,
+    "name": "Haunter",
+    "type": ["Ghost", "Poison"],
+    "sprites": {
+      "front": "Haunter_front.png",
+      "back": "Haunter_back.png"
+    },
+    "base_stats": {
+      "hp": 45,
+      "attack": 50,
+      "defense": 45,
+      "sp_attack": 115,
+      "sp_defense": 55,
+      "speed": 95
+    },
+    "abilities": ["Levitate"],
+    "evolves_to": {
+      "name": "Gengar",
+      "level": 45,
+      "json_path": "gen1/gengar/gengar.json"
+    },
+    "exp_yield": 142,
+    "catch_rate": 90,
+    "is_legendary": false,
+    "learnset": [
+        { "level": 1, "move": "Hypnosis" },
+        { "level": 1, "move": "Lick" },
+        { "level": 1, "move": "Spite" },
+        { "level": 8, "move": "Spite" },
+        { "level": 13, "move": "Mean Lock" },
+        { "level": 16, "move": "Curse" },
+        { "level": 21, "move": "Night Shade" },
+        { "level": 25, "move": "Shadow Punch" },
+        { "level": 31, "move": "Confuse Ray" },
+        { "level": 39, "move": "Dream Eater" }
+    ]
+  }
+  

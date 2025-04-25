@@ -1,0 +1,30 @@
+{
+    "id": 63,
+    "name": "Abra",
+    "type": ["Psychic"],
+    "sprites": {
+      "front": "Abra_front.png",
+      "back": "Abra_back.png"
+    },
+    "base_stats": {
+      "hp": 25,
+      "attack": 20,
+      "defense": 15,
+      "sp_attack": 105,
+      "sp_defense": 55,
+      "speed": 90
+    },
+    "abilities": ["Synchronize", "Inner Focus", "Magic Guard"],
+    "evolves_to": {
+      "name": "Kadabra",
+      "level": 16,
+      "json_path": "gen1/kadabra/kadabra.json"
+    },
+    "exp_yield": 62,
+    "catch_rate": 200,
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Teleport" }
+    ]
+  }
+  

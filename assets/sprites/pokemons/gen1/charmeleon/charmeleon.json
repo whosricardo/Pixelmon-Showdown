@@ -1,0 +1,37 @@
+{
+    "id": 5,
+    "name": "Charmeleon",
+    "type": ["Fire"],
+    "sprites": {
+      "front": "Charmeleon_front.png",
+      "back": "Charmeleon_back.png"
+    },
+    "base_stats": {
+      "hp": 58,
+      "attack": 64,
+      "defense": 58,
+      "sp_attack": 80,
+      "sp_defense": 65,
+      "speed": 80
+    },
+    "abilities": ["Blaze", "Solar Power"],
+    "evolves_to": {
+      "name": "Charizard",
+      "level": 36,
+      "json_path": "gen1/charizard/charizard.json"
+    },
+    "exp_yield": 142,
+    "catch_rate": 45,
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Ember" },
+      { "level": 1, "move": "Growl" },
+      { "level": 1, "move": "Scratch" },
+      { "level": 7, "move": "Ember" },
+      { "level": 13, "move": "SmokeScreen" },
+      { "level": 20, "move": "Rage" },
+      { "level": 27, "move": "Scary Face" },
+      { "level": 34, "move": "Flamethrower" }
+    ]
+  }
+  

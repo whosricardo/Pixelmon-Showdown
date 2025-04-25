@@ -1,0 +1,39 @@
+{
+    "id": 58,
+    "name": "Growlithe",
+    "type": ["Fire"],
+    "sprites": {
+      "front": "Growlithe_front.png",
+      "back": "Growlithe_back.png"
+    },
+    "base_stats": {
+      "hp": 55,
+      "attack": 70,
+      "defense": 45,
+      "sp_attack": 70,
+      "sp_defense": 50,
+      "speed": 60
+    },
+    "abilities": ["Intimidate", "Flash Fire", "Justified"],
+    "evolves_to": {
+      "name": "Arcanine",
+      "level": "Fire Stone",
+      "json_path": "gen1/arcanine/arcanine.json"
+    },
+    "exp_yield": 70,
+    "catch_rate": 50,
+    "is_legendary": false,
+    "learnset": [
+        { "level": 1, "move": "Bite" },
+        { "level": 1, "move": "Roar" },
+        { "level": 7, "move": "Ember" },
+        { "level": 13, "move": "Leer" },
+        { "level": 19, "move": "Odor Sleuth" },
+        { "level": 25, "move": "Take Down" },
+        { "level": 31, "move": "Flame Wheel" },
+        { "level": 37, "move": "Helping Hand" },
+        { "level": 43, "move": "Agility" },
+        { "level": 49, "move": "Flamethrower" }
+    ]
+  }
+  

@@ -1,0 +1,39 @@
+{
+    "id": 8,
+    "name": "Wartortle",
+    "type": ["Water"],
+    "sprites": {
+      "front": "Wartortle_front.png",
+      "back": "Wartortle_back.png"
+    },
+    "base_stats": {
+      "hp": 59,
+      "attack": 63,
+      "defense": 80,
+      "sp_attack": 65,
+      "sp_defense": 80,
+      "speed": 58
+    },
+    "abilities": ["Torrent", "Rain Dish"],
+    "evolves_to": {
+      "name": "Blastoise",
+      "level": 36,
+      "json_path": "gen1/blastoise/blastoise.json"
+    },
+    "exp_yield": 142,
+    "catch_rate": 45,
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Bubble" },
+      { "level": 1, "move": "Tackle" },
+      { "level": 1, "move": "Tail Whip" },
+      { "level": 4, "move": "Tail Whip" },
+      { "level": 7, "move": "Bubble" },
+      { "level": 10, "move": "Withdraw" },
+      { "level": 13, "move": "Water Gun" },
+      { "level": 19, "move": "Bite" },
+      { "level": 25, "move": "Rapid Spin" },
+      { "level": 31, "move": "Protect" }
+    ]
+  }
+  

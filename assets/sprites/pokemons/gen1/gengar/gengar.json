@@ -1,0 +1,35 @@
+{
+    "id": 94,
+    "name": "Gengar",
+    "type": ["Ghost", "Poison"],
+    "sprites": {
+      "front": "Gengar_front.png",
+      "back": "Gengar_back.png"
+    },
+    "base_stats": {
+      "hp": 60,
+      "attack": 65,
+      "defense": 60,
+      "sp_attack": 130,
+      "sp_defense": 75,
+      "speed": 110
+    },
+    "abilities": ["Cursed Body"],
+    "exp_yield": 250,
+    "catch_rate": 45,
+    "is_legendary": false,
+    "learnset": [
+        { "level": 1, "move": "Hypnosis" },
+        { "level": 1, "move": "Lick" },
+        { "level": 1, "move": "Spite" },
+        { "level": 8, "move": "Spite" },
+        { "level": 13, "move": "Mean Look" },
+        { "level": 16, "move": "Curse" },
+        { "level": 21, "move": "Night Shade" },
+        { "level": 25, "move": "Shadow Punch" },
+        { "level": 31, "move": "Confuse Ray" },
+        { "level": 39, "move": "Dream Eater" },
+        { "level": 48, "move": "Destiny Bond" }
+    ]
+  }
+  

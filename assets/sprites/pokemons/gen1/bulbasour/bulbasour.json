@@ -1,0 +1,35 @@
+{
+    "id": 1,
+    "name": "Bulbasour",
+    "type": ["Grass", "Poison"],
+    "sprites": {
+      "front": "Bulbasour_front.png",
+      "back": "Bulbasour_back.png"
+    },
+    "base_stats": {
+      "hp": 45,
+      "attack": 49,
+      "defense": 49,
+      "sp_attack": 65,
+      "sp_defense": 65,
+      "speed": 45
+    },
+    "abilities": ["Overgrow", "Chlorophyll"],
+    "evolves_to": {
+      "name": "Ivysour",
+      "level": 16,
+      "json_path": "gen1/ivysour/ivysour.json"
+    },
+    "exp_yield": 64,
+    "catch_rate": 45,
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Tackle" },
+      { "level": 4, "move": "Growl" },
+      { "level": 7, "move": "Leech Seed" },
+      { "level": 10, "move": "Vine Whip" },
+      { "level": 15, "move": "PoisonPowder" },
+      { "level": 15, "move": "Sleep Powder" }
+    ]
+  }
+  

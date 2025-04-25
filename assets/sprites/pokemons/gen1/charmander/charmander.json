@@ -1,0 +1,33 @@
+{
+    "id": 4,
+    "name": "Charmander",
+    "type": ["Fire"],
+    "sprites": {
+      "front": "Charmander_front.png",
+      "back": "Charmander_back.png"
+    },
+    "base_stats": {
+      "hp": 39,
+      "attack": 52,
+      "defense": 43,
+      "sp_attack": 60,
+      "sp_defense": 50,
+      "speed": 65
+    },
+    "abilities": ["Blaze", "Solar Power"],
+    "evolves_to": {
+      "name": "Charmeleon",
+      "level": 16,
+      "json_path": "gen1/charmeleon/charmeleon.json"
+    },
+    "exp_yield": 62,
+    "catch_rate": 45,
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Growl" },
+      { "level": 1, "move": "Scratch" },
+      { "level": 7, "move": "Ember" },
+      { "level": 13, "move": "Smoke Screen" }
+    ]
+  }
+  

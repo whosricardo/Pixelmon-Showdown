@@ -28,8 +28,7 @@
       { "level": 1, "move": "Growl" },
       { "level": 4, "move": "Water Gun" },
       { "level": 9, "move": "Mud-Slap" },
-      { "level": 16, "move": "Mud Shot" },
-      { "level": 20, "move": "Rock Slide" }
+      { "level": 16, "move": "Mud Shot" }
     ]
   }
   

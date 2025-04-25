@@ -1,0 +1,38 @@
+{
+    "id": 64,
+    "name": "Kadabra",
+    "type": ["Psychic"],
+    "sprites": {
+      "front": "Kadabra_front.png",
+      "back": "Kadabra_back.png"
+    },
+    "base_stats": {
+      "hp": 40,
+      "attack": 35,
+      "defense": 30,
+      "sp_attack": 120,
+      "sp_defense": 70,
+      "speed": 105
+    },
+    "abilities": ["Synchronize", "Inner Focus", "Magic Guard"],
+    "evolves_to": {
+      "name": "Alakazam",
+      "level": 32,
+      "json_path": "gen1/alakazam/alakazam.json"
+    },
+    "exp_yield": 140,
+    "catch_rate": 100,
+    "is_legendary": false,
+    "learnset": [
+        { "level": 1, "move": "Confusion" },
+        { "level": 1, "move": "Kinesis" },
+        { "level": 1, "move": "Teleport" },
+        { "level": 16, "move": "Confusion" },
+        { "level": 18, "move": "Disable" },
+        { "level": 21, "move": "Psybeam" },
+        { "level": 23, "move": "Reflect" },
+        { "level": 25, "move": "Recover" },
+        { "level": 30, "move": "Future Sight" }
+    ]
+  }
+  

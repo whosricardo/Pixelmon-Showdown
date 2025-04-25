@@ -1,0 +1,38 @@
+{
+    "id": 3,
+    "name": "Venosour",
+    "type": ["Grass", "Poison"],
+    "sprites": {
+      "front": "Venosour_front.png",
+      "back": "Venosour_back.png"
+    },
+    "base_stats": {
+      "hp": 80,
+      "attack": 82,
+      "defense": 83,
+      "sp_attack": 100,
+      "sp_defense": 100,
+      "speed": 80
+    },
+    "abilities": ["Overgrow", "Chlorophyll"],
+    "exp_yield": 236,
+    "catch_rate": 45,
+    "is_legendary": false,
+    "learnset": [
+        { "level": 1, "move": "Growl" },
+        { "level": 1, "move": "Leach Seed" },
+        { "level": 1, "move": "Tackle" },
+        { "level": 1, "move": "Vine Whip" },
+        { "level": 4, "move": "Growl" },
+        { "level": 7, "move": "Leach Seed" },
+        { "level": 10, "move": "Vine Whip" },
+        { "level": 15, "move": "PoisonPowder" },
+        { "level": 15, "move": "Sleep Powder" },
+        { "level": 22, "move": "Razor Leaf" },
+        { "level": 29, "move": "Sweet Scent" },
+        { "level": 41, "move": "Growth" },
+        { "level": 53, "move": "Synthesis" },
+        { "level": 65, "move": "Solar Beam" }
+    ]
+  }
+  
