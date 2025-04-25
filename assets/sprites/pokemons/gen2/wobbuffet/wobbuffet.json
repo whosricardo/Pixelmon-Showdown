@@ -1,0 +1,30 @@
+{
+    "id": 202,
+    "name": "Wobbuffet",
+    "type": ["Psychic"],
+    "sprites": {
+      "front": "wobbufet_front.png",
+      "back": "wobbufet_front.png"
+    },
+    "base_stats": {
+      "hp": 190,
+      "attack": 33,
+      "defense": 58,
+      "sp_attack": 33,
+      "sp_defense": 58,
+      "speed": 33
+    },
+    "abilities": ["Shadow Tag", "Telepathy"],
+    "evolves_to": null,
+    "exp_yield": 142,
+    "catch_rate": 45,
+    "is_legendary": false,
+    "learnset": [
+        { "level": 1, "move": "Counter" },
+        { "level": 1, "move": "Destiny Bond" },
+        { "level": 1, "move": "Mirror Coat" },
+        { "level": 1, "move": "Safeguard" }
+        
+    ]
+  }
+  

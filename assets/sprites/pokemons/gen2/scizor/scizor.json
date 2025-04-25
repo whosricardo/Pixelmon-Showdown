@@ -1,0 +1,38 @@
+{
+    "id": 212,
+    "name": "Scizor",
+    "type": ["Bug", "Steel"],
+    "sprites": {
+      "front": "scizor.png",
+      "back": "scizor.png"
+    },
+    "base_stats": {
+      "hp": 70,
+      "attack": 130,
+      "defense": 100,
+      "sp_attack": 55,
+      "sp_defense": 80,
+      "speed": 65
+    },
+    "abilities": ["Swarm","Technician","Light Metal"],
+    "evolves_to": null,
+    "exp_yield": 175,
+    "catch_rate": 25,
+    "is_legendary": false,
+    "learnset": [
+        { "level": 1, "move": "Leer" },
+        { "level": 1, "move": "Quick Attack" },
+        { "level": 6, "move": "Focus Energy" },
+        { "level": 11, "move": "Pursuit" },
+        { "level": 16, "move": "False Swipe" },
+        { "level": 21, "move": "Agility" },
+        { "level": 26, "move": "Metal Claw" },
+        { "level": 31, "move": "Slash" },
+        { "level": 36, "move": "Swords Dance" },
+        { "level": 41, "move": "Double Team" },
+        { "level": 46, "move": "Fury Cutter" }
+        
+        
+    ]
+  }
+  
