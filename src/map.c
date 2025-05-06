@@ -20,25 +20,37 @@ void colocar_arvore(int x, int y) {
 }
 
 void init_mapa() {
-    // Preenche todo o mapa com grama
+    // Preenche com grama padrão (id = 0)
     for (int y = 0; y < MAP_HEIGHT; y++) {
         for (int x = 0; x < MAP_WIDTH; x++) {
-            mapa[y][x] = 0; // 0 = grama
+            mapa[y][x] = 0;
         }
     }
 
-    // Cerca com árvores nas bordas (esquerda e direita)
-    for (int y = 0; y < MAP_HEIGHT - 4; y += 5) {
-        colocar_arvore(0, y);
-        colocar_arvore(MAP_WIDTH - 3, y);
-    }
+    // Grama alta (usaremos 200 = planta, só para representar)
+    for (int y = 3; y <= 4; y++) for (int x = 5; x <= 10; x++) mapa[y][x] = 200;
+    for (int y = 7; y <= 8; y++) for (int x = 13; x <= 18; x++) mapa[y][x] = 200;
+    for (int y = 13; y <= 14; y++) for (int x = 8; x <= 14; x++) mapa[y][x] = 200;
+    for (int y = 20; y <= 21; y++) for (int x = 15; x <= 20; x++) mapa[y][x] = 200;
 
-    // Algumas árvores espalhadas
-    colocar_arvore(10, 5);
-    colocar_arvore(20, 12);
-    colocar_arvore(35, 8);
-    colocar_arvore(15, 20);
-    colocar_arvore(5, 25);
-    colocar_arvore(25, 30);
-    colocar_arvore(40, 18);
+    // Caminho de terra (fill = 80)
+    for (int x = 7; x <= 16; x++) mapa[1][x] = 80;
+    for (int x = 7; x <= 14; x++) mapa[5][x] = 80;
+    for (int x = 10; x <= 18; x++) mapa[10][x] = 80;
+    for (int x = 8; x <= 12; x++) mapa[15][x] = 80;
+    for (int x = 5; x <= 22; x++) mapa[22][x] = 80;
+
+    // Cercas (topo inferior da rota)
+    for (int x = 3; x <= 21; x++) mapa[23][x] = 50;
+
+    // Árvores laterais (esquerda/direita)
+    for (int y = 0; y < MAP_HEIGHT; y += 5) colocar_arvore(0, y);
+    for (int y = 0; y < MAP_HEIGHT; y += 5) colocar_arvore(MAP_WIDTH - 3, y);
+
+    // Árvores internas (para dar estilo à Route 1)
+    colocar_arvore(7, 2);
+    colocar_arvore(12, 6);
+    colocar_arvore(18, 10);
+    colocar_arvore(22, 15);
+    colocar_arvore(28, 20);
 }

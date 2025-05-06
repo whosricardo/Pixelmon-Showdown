@@ -8,6 +8,7 @@
 typedef struct {
     int id;
     Texture2D texture;
+    int is_blocking; // 1 = bloqueia o player, 0 = livre
 } TileDefinition;
 
 extern TileDefinition *tile_defs;
