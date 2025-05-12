@@ -1,10 +1,10 @@
 {
     "id": 123,
-    "name": "Scyter",
+    "name": "Scyther",
     "type": ["Bug", "Flying"],
     "sprites": {
-      "front": "scyter_front.png",
-      "back": "scyter_back.png"
+      "front": "scyther_front.png",
+      "back": "scyther_back.png"
     },
     "base_stats": {
       "hp": 70,
