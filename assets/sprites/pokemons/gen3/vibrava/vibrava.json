@@ -1,0 +1,30 @@
+{
+    "id": 329,
+    "name": "Vibrava",
+    "type": ["Ground", "Dragon"],
+    "sprites": {
+      "front": "vibrava_front.png",
+      "back": "vibrava_back.png"
+    },
+    "base_stats": {
+      "hp": 50,
+      "attack": 70,
+      "defense": 50,
+      "sp_attack": 50,
+      "sp_defense": 50,
+      "speed": 70
+    },
+    "abilities": ["Torrent", "Damp"],
+    "evolves_to": {
+      "name": "Flygon",
+      "json_path": "gen3/flygon/flygon.json"
+    },
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Bite" },
+      { "level": 1, "move": "Faint Attack" },
+      { "level": 9, "move": "Sand Attack" },
+      { "level": 25, "move": "Sand Tomb" },
+      { "level": 33, "move": "Crunch" }
+    ]
+  }

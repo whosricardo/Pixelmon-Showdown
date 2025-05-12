@@ -1,0 +1,30 @@
+{
+    "id": 328,
+    "name": "Trapinch",
+    "type": ["Ground"],
+    "sprites": {
+      "front": "trapinch_front.png",
+      "back": "trapinch_back.png"
+    },
+    "base_stats": {
+      "hp": 45,
+      "attack": 100,
+      "defense": 45,
+      "sp_attack": 45,
+      "sp_defense": 45,
+      "speed": 10
+    },
+    "abilities": ["Hyper Cutter", "Arena Trap", "Sheer Force"],
+    "evolves_to": {
+      "name": "Vibrava",
+      "json_path": "gen3/vibraca/vibrava.json"
+    },
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Bite" },
+      { "level": 9, "move": "Sand Attack" },
+      { "level": 17, "move": "Faint attack" },
+      { "level": 25, "move": "Sand Tomb" },
+      { "level": 33, "move": "Crunch" }
+    ]
+  }

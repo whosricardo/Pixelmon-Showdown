@@ -1,0 +1,29 @@
+{
+    "id": 330,
+    "name": "Flygon",
+    "type": ["Ground", "Dragon"],
+    "sprites": {
+      "front": "flygon_front.png",
+      "back": "flygon_back.png"
+    },
+    "base_stats": {
+      "hp": 80,
+      "attack": 100,
+      "defense": 80,
+      "sp_attack": 80,
+      "sp_defense": 80,
+      "speed": 100
+    },
+    "abilities": ["Levitate"],
+    "evolves_to": null,
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Bite" },
+      { "level": 1, "move": "Faint Attack" },
+      { "level": 1, "move": "Sand Attack" },
+      { "level": 25, "move": "Sand Tomb" },
+      { "level": 33, "move": "Crunch" },
+      { "level": 35, "move": "Dragon Breath" },
+      { "level": 41, "move": "Screech" }
+    ]
+  }
