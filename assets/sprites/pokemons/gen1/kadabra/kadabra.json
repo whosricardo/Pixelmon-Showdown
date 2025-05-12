@@ -4,7 +4,8 @@
     "type": ["Psychic"],
     "sprites": {
       "front": "kadabra_front.png",
-      "back": "kadabra_back.png"
+      "back": "kadabra_back.png",
+      "icon": "kadabra_icon.png"
     },
     "base_stats": {
       "hp": 40,

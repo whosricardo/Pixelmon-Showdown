@@ -4,7 +4,8 @@
     "type": ["Ground", "Dragon"],
     "sprites": {
       "front": "vibrava_front.png",
-      "back": "vibrava_back.png"
+      "back": "vibrava_back.png",
+      "icon": "vibrava_icon.png"
     },
     "base_stats": {
       "hp": 50,

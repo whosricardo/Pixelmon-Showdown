@@ -4,7 +4,8 @@
     "type": ["Dragon"],
     "sprites": {
       "front": "dragonair_front.png",
-      "back": "dragonair_back.png"
+      "back": "dragonair_back.png",
+      "icon": "dragonair_icon.png"
     },
     "base_stats": {
       "hp": 61,

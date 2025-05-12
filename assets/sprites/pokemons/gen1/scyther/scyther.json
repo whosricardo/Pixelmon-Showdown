@@ -4,7 +4,8 @@
     "type": ["Bug", "Flying"],
     "sprites": {
       "front": "scyther_front.png",
-      "back": "scyther_back.png"
+      "back": "scyther_back.png",
+      "icon": "scyther_icon.png"
     },
     "base_stats": {
       "hp": 70,

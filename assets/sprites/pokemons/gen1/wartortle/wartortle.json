@@ -4,7 +4,8 @@
     "type": ["Water"],
     "sprites": {
       "front": "wartortle_front.png",
-      "back": "wartortle_back.png"
+      "back": "wartortle_back.png",
+      "icon": "wartortle_icon.png"
     },
     "base_stats": {
       "hp": 59,

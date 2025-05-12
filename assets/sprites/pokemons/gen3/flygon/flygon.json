@@ -4,7 +4,8 @@
     "type": ["Ground", "Dragon"],
     "sprites": {
       "front": "flygon_front.png",
-      "back": "flygon_back.png"
+      "back": "flygon_back.png",
+      "icon": "flygon_icon.png"
     },
     "base_stats": {
       "hp": 80,

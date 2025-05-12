@@ -4,7 +4,8 @@
     "type": ["Grass", "Poison"],
     "sprites": {
       "front": "venosour_front.png",
-      "back": "venosour_back.png"
+      "back": "venosour_back.png",
+      "icon": "venosour_icon.png"
     },
     "base_stats": {
       "hp": 80,

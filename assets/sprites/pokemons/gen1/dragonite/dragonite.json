@@ -4,7 +4,8 @@
     "type": ["Dragon", "Flying"],
     "sprites": {
       "front": "dragonite_front.png",
-      "back": "dragonite_back.png"
+      "back": "dragonite_back.png",
+      "icon": "dragonite_icon.png"
     },
     "base_stats": {
       "hp": 91,

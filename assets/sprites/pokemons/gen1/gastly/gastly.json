@@ -4,7 +4,8 @@
     "type": ["Ghost", "Poison"],
     "sprites": {
       "front": "gastly_front.png",
-      "back": "gastly_back.png"
+      "back": "gastly_back.png",
+      "icon": "gastly_icon.png"
     },
     "base_stats": {
       "hp": 30,

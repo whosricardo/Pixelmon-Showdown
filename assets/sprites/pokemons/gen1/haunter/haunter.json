@@ -4,7 +4,8 @@
     "type": ["Ghost", "Poison"],
     "sprites": {
       "front": "haunter_front.png",
-      "back": "haunter_back.png"
+      "back": "haunter_back.png",
+      "icon": "haunter_icon.ong"
     },
     "base_stats": {
       "hp": 45,

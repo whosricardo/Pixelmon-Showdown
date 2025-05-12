@@ -4,7 +4,8 @@
     "type": ["Fire"],
     "sprites": {
       "front": "charmeleon_front.png",
-      "back": "charmeleon_back.png"
+      "back": "charmeleon_back.png",
+      "icon": "charmeleon_icon.png"
     },
     "base_stats": {
       "hp": 58,

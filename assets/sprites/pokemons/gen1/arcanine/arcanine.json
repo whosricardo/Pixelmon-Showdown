@@ -4,7 +4,8 @@
     "type": ["Fire"],
     "sprites": {
       "front": "arcanine_front.png",
-      "back": "arcanine_back.png"
+      "back": "arcanine_back.png",
+      "icon": "arcanine_icon.png"
     },
     "base_stats": {
       "hp": 90,

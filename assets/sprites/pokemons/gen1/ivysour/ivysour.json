@@ -4,7 +4,8 @@
     "type": ["Grass", "Poison"],
     "sprites": {
       "front": "ivysour_front.png",
-      "back": "ivysour_back.png"
+      "back": "ivysour_back.png",
+      "icon": "ivysour_icon.png"
     },
     "base_stats": {
       "hp": 60,

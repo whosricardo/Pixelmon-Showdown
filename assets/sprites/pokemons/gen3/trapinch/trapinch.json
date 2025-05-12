@@ -4,7 +4,8 @@
     "type": ["Ground"],
     "sprites": {
       "front": "trapinch_front.png",
-      "back": "trapinch_back.png"
+      "back": "trapinch_back.png",
+      "icon": "trapinch_icon.png"
     },
     "base_stats": {
       "hp": 45,

@@ -4,7 +4,8 @@
     "type": ["Fire"],
     "sprites": {
       "front": "charmander_front.png",
-      "back": "charmander_back.png"
+      "back": "charmander_back.png",
+      "icon": "charmander_icon.png"
     },
     "base_stats": {
       "hp": 39,

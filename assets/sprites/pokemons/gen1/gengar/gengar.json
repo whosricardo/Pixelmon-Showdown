@@ -4,7 +4,8 @@
     "type": ["Ghost", "Poison"],
     "sprites": {
       "front": "gengar_front.png",
-      "back": "gengar_back.png"
+      "back": "gengar_back.png",
+      "icon": "gengar_icon.png"
     },
     "base_stats": {
       "hp": 60,

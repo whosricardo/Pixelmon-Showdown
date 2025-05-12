@@ -4,7 +4,8 @@
     "type": ["Psychic"],
     "sprites": {
       "front": "abra_front.png",
-      "back": "abra_back.png"
+      "back": "abra_back.png",
+      "icon": "abra_icon.png"
     },
     "base_stats": {
       "hp": 25,

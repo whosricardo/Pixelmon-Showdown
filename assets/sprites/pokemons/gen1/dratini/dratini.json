@@ -4,7 +4,8 @@
     "type": ["Dragon"],
     "sprites": {
       "front": "dratini_front.png",
-      "back": "dratini_back.png"
+      "back": "dratini_back.png",
+      "icon": "dratini_icon.png"
     },
     "base_stats": {
       "hp": 41,

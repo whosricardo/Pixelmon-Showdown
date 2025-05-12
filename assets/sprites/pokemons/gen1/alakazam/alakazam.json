@@ -4,7 +4,8 @@
     "type": ["Psychic"],
     "sprites": {
       "front": "alakazam_front.png",
-      "back": "alakazam_back.png"
+      "back": "alakazam_back.png",
+      "icon": "alakazam_icon.png"
     },
     "base_stats": {
       "hp": 55,

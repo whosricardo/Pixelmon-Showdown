@@ -4,7 +4,8 @@
     "type": ["Fire"],
     "sprites": {
       "front": "growlithe_front.png",
-      "back": "growlithe_back.png"
+      "back": "growlithe_back.png",
+      "icon": "growlithe_icon.png"
     },
     "base_stats": {
       "hp": 55,

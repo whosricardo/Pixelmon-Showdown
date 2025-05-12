@@ -4,7 +4,8 @@
     "type": ["Grass", "Poison"],
     "sprites": {
       "front": "bulbasour_front.png",
-      "back": "bulbasour_back.png"
+      "back": "bulbasour_back.png",
+      "icon": "bulbasour_icon.png"
     },
     "base_stats": {
       "hp": 45,

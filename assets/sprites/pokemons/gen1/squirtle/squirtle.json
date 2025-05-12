@@ -4,7 +4,8 @@
     "type": ["Water"],
     "sprites": {
       "front": "squirtle_front.png",
-      "back": "squirtle_back.png"
+      "back": "squirtle_back.png",
+      "icon": "squirtle_icon.png"
     },
     "base_stats": {
       "hp": 44,
