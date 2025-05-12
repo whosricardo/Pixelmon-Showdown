@@ -1,7 +1,6 @@
 #ifndef POKEMON_LOADER_H
 #define POKEMON_LOADER_H
 #define MAX_ABILITIES 2
-#define MAX_LEARNSET 10
 
 typedef struct 
 {
@@ -37,11 +36,9 @@ typedef struct
     char *abilities[MAX_ABILITIES];
     char *evolves_to;
 
-    int exp_yield;
-    int catch_rate;
-    int is_legendary; //0 = false, 1 = true
+    int is_legendary; // 0 = false, 1 = true
 
-    LearnMove learnset[MAX_LEARNSET];
+    LearnMove *learnset;
     int learnset_size;
 } PokemonInfo;
 

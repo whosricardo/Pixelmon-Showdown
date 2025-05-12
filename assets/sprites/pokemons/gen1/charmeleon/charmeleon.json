@@ -17,11 +17,8 @@
     "abilities": ["Blaze", "Solar Power"],
     "evolves_to": {
       "name": "Charizard",
-      "level": 36,
       "json_path": "gen1/charizard/charizard.json"
     },
-    "exp_yield": 142,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Ember" },

@@ -17,11 +17,8 @@
     "abilities": ["Blaze", "Speed Boost"],
     "evolves_to": {
       "name": "Combusken",
-      "level": 16,
       "json_path": "gen3/combusken/combusken.json"
     },
-    "exp_yield": 62,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Scratch" },

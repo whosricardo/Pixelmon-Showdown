@@ -16,8 +16,6 @@
     },
     "abilities": ["Levitate"],
     "evolves_to": null,
-    "exp_yield": 270,
-    "catch_rate": 3,
     "is_legendary": true,
     "learnset": [
         { "level": 1, "move": "Psywave" },

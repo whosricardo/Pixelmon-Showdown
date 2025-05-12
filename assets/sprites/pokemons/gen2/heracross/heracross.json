@@ -3,8 +3,9 @@
     "name": "Heracross",
     "type": ["Bug", "Fighting"],
     "sprites": {
-      "front": "heracross.png",
-      "back": "heracross.png"
+      "front": "heracross_front.png",
+      "back": "heracross_back.png",
+      "icon": "heracross_icon.png"
     },
     "base_stats": {
       "hp": 80,
@@ -16,8 +17,6 @@
     },
     "abilities": ["Swarm","Guts","Moxie"],
     "evolves_to": null,
-    "exp_yield": 175,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Leer" },

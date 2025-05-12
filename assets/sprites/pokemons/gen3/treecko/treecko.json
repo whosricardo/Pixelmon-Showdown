@@ -17,11 +17,8 @@
     "abilities": ["Overgrow", "Unburden"],
     "evolves_to": {
       "name": "Grovyle",
-      "level": 16,
       "json_path": "gen3/grovyle/grovyle.json"
     },
-    "exp_yield": 62,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Pound" },

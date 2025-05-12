@@ -17,11 +17,8 @@
     "abilities": ["Overgrow", "Chlorophyll"],
     "evolves_to": {
       "name": "Ivysour",
-      "level": 16,
       "json_path": "gen1/ivysour/ivysour.json"
     },
-    "exp_yield": 64,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Tackle" },

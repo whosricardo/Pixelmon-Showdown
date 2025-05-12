@@ -3,8 +3,9 @@
     "name": "Pupitar",
     "type": ["Rock", "Ground"],
     "sprites": {
-      "front": "pupitar.png",
-      "back": "pupitar_back.png"
+      "front": "pupitar_front.png",
+      "back": "pupitar_back.png",
+      "icon": "pupitar_icon.png"
     },
     "base_stats": {
       "hp": 70,
@@ -17,11 +18,8 @@
     "abilities": ["Shed Skin"],
     "evolves_to": {
       "name": "tyranitar",
-      "level": 55,
       "json_path": "gen3/tyranitar/tyranitar.json"
     },
-    "exp_yield": 144,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Bite" },

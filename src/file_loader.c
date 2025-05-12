@@ -1,30 +1,54 @@
+// file_loader.c
 #include "file_loader.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 char *load_file_to_string(const char *filename)
 {
-    FILE *file = fopen(filename, "r"); //abre arquivo com modo de leitura
-    if (!file) //faz uma checagem se existe o arquivo em questão
+    FILE *file = fopen(filename, "r");
+    if (!file)
     {
-        printf("DEBUG: Erro ao abrir o arquivo");
+        perror("ERROR: Failed to open file");
         return NULL;
     }
 
-    //Verificação do tamanho do arquivo selecionado
-    fseek(file, 0, SEEK_END); //Vai para o final do arquivo
-    long length = ftell(file); //pega o tamanho do arquivo
-    rewind(file); //vai para o inicio do arquivo
-
-    char *buffer = malloc(length + 1); //aloca o buffer que vai receber as informações do arquivo em formato de string
-    if (!buffer)
+    // Get file size
+    if (fseek(file, 0, SEEK_END) != 0)
     {
+        perror("ERROR: Failed to seek to end of file");
         fclose(file);
         return NULL;
     }
 
-    fread(buffer, 1, length, file);
-    buffer[length] = '\0'; //adiciona o \o no final do buffer
+    long length = ftell(file);
+    if (length < 0)
+    {
+        perror("ERROR: Failed to get file size");
+        fclose(file);
+        return NULL;
+    }
+    rewind(file);
+
+    // Allocate buffer
+    char *buffer = malloc(length + 1);
+    if (!buffer)
+    {
+        perror("ERROR: Failed to allocate memory for file buffer");
+        fclose(file);
+        return NULL;
+    }
+
+    // Read file contents
+    size_t read_size = fread(buffer, 1, length, file);
+    if (read_size != length)
+    {
+        fprintf(stderr, "ERROR: Failed to read the entire file. Expected %ld bytes, read %zu bytes.\n", length, read_size);
+        free(buffer);
+        fclose(file);
+        return NULL;
+    }
+
+    buffer[length] = '\0';
     fclose(file);
 
     return buffer;

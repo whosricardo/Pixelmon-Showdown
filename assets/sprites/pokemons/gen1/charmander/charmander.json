@@ -17,11 +17,8 @@
     "abilities": ["Blaze", "Solar Power"],
     "evolves_to": {
       "name": "Charmeleon",
-      "level": 16,
       "json_path": "gen1/charmeleon/charmeleon.json"
     },
-    "exp_yield": 62,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Growl" },

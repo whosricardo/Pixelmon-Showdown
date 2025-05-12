@@ -17,11 +17,8 @@
     "abilities": ["Torrent", "Rain Dish"],
     "evolves_to": {
       "name": "Blastoise",
-      "level": 36,
       "json_path": "gen1/blastoise/blastoise.json"
     },
-    "exp_yield": 142,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Bubble" },

@@ -17,11 +17,8 @@
     "abilities": ["Torrent", "Damp"],
     "evolves_to": {
       "name": "Swampert",
-      "level": 36,
       "json_path": "gen3/swampert/swampert.json"
     },
-    "exp_yield": 142,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Tackle" },

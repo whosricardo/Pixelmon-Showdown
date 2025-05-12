@@ -17,11 +17,8 @@
     "abilities": ["Swarm", "Technician", "Steadfast"],
     "evolves_to": {
       "name": "Scizor",
-      "level": "Metal Coat",
       "json_path": "gen2/scizor/scizor.json"
     },
-    "exp_yield": 100,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Leer" },

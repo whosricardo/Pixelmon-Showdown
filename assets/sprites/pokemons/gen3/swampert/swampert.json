@@ -16,8 +16,6 @@
     },
     "abilities": ["Torrent", "Damp"],
     "evolves_to": null,
-    "exp_yield": 241,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Tackle" },

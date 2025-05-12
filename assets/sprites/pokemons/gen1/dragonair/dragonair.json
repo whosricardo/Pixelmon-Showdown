@@ -17,11 +17,8 @@
     "abilities": ["Shed Skin", "Marvel Scale"],
     "evolves_to": {
       "name": "Dragonite",
-      "level": 55,
       "json_path": "gen1/dragonite/dragonite.json"
     },
-    "exp_yield": 147,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Leer" },

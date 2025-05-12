@@ -17,11 +17,8 @@
     "abilities": ["Overgrow", "Chlorophyll"],
     "evolves_to": {
       "name": "Venosour",
-      "level": 32,
       "json_path": "gen1/venosour/venosour.json"
     },
-    "exp_yield": 142,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Growl" },

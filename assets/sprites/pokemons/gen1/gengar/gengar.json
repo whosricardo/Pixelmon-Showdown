@@ -16,8 +16,6 @@
     },
     "abilities": ["Cursed Body"],
     "evolves_to": null,
-    "exp_yield": 250,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Hypnosis" },

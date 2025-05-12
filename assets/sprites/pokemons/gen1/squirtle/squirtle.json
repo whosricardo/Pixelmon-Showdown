@@ -17,7 +17,6 @@
     "abilities": ["Torrent", "Rain Dish"],
     "evolves_to": {
       "name": "Wartortle",
-      "level": 16,
       "json_path": "gen1/wartortle/wartortle.json"
     },
     "exp_yield": 63,

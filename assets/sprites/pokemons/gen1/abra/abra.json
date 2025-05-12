@@ -17,11 +17,8 @@
     "abilities": ["Synchronize", "Inner Focus", "Magic Guard"],
     "evolves_to": {
       "name": "Kadabra",
-      "level": 16,
       "json_path": "gen1/kadabra/kadabra.json"
     },
-    "exp_yield": 62,
-    "catch_rate": 200,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Teleport" }

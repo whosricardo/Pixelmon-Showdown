@@ -16,8 +16,6 @@
     },
     "abilities": ["Drizzle"],
     "evolves_to": null,
-    "exp_yield": 335,
-    "catch_rate": 3,
     "is_legendary": true,
     "learnset": [
         { "level": 1, "move": "Water Pulse" },

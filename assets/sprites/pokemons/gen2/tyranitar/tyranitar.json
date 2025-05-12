@@ -4,7 +4,8 @@
     "type": ["Rock", "Dark"],
     "sprites": {
       "front": "tyranitar_front.png",
-      "back": "tyranitar_front.png"
+      "back": "tyranitar_front.png",
+      "icon": "tyranitar_icon.png"
     },
     "base_stats": {
       "hp": 100,
@@ -16,8 +17,6 @@
     },
     "abilities": ["Sand Stream"],
     "evolves_to": null,
-    "exp_yield": 300,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Bite" },

@@ -16,8 +16,6 @@
     },
     "abilities": ["Air Lock"],
     "evolves_to": null,
-    "exp_yield": 340,
-    "catch_rate": 45,
     "is_legendary": true,
     "learnset": [
         { "level": 1, "move": "Twister" },

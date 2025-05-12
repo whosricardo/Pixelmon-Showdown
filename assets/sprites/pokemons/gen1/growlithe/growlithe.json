@@ -17,11 +17,8 @@
     "abilities": ["Intimidate", "Flash Fire", "Justified"],
     "evolves_to": {
       "name": "Arcanine",
-      "level": "Fire Stone",
       "json_path": "gen1/arcanine/arcanine.json"
     },
-    "exp_yield": 70,
-    "catch_rate": 50,
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Bite" },

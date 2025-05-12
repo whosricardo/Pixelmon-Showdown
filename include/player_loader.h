@@ -1,29 +1,22 @@
 #ifndef PLAYER_LOADER_H
 #define PLAYER_LOADER_H
 
-typedef struct {
-    char **down;
-    char **up;
-    char **left;
-    char **right;
-    int frame_count;
-} DirectionalAnimation;
+#include "raylib.h"
+
+#define MAX_FRAMES 10
 
 typedef struct {
-    char **frames;
-    int frame_count;
-} SimpleAnimation;
+    Texture2D frames[MAX_FRAMES];
+    int frameCount;
+    float frameDuration;
+} Animation;
 
 typedef struct {
-    DirectionalAnimation walk;
-    DirectionalAnimation run;
-    DirectionalAnimation bike;
-    DirectionalAnimation bike_acro;
-    SimpleAnimation battle;
-    float frame_duration;
-} PlayerAnimations;
+    Animation battle;
+    Texture2D rival_show;
+} Player;
 
-PlayerAnimations *load_player_animations(const char *path);
-void free_player_animations(PlayerAnimations *animations);
+void load_player_battle_animation(Player *player, const char *jsonPath);
+void free_player(Player *player);
 
 #endif

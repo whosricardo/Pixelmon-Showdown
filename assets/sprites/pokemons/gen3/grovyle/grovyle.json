@@ -17,11 +17,8 @@
     "abilities": ["Overgrow", "Unburden"],
     "evolves_to": {
       "name": "Sceptile",
-      "level": 36,
       "json_path": "gen3/sceptile/sceptile.json"
     },
-    "exp_yield": 142,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Pound" },

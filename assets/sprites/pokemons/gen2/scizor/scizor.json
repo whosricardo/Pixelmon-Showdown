@@ -3,8 +3,9 @@
     "name": "Scizor",
     "type": ["Bug", "Steel"],
     "sprites": {
-      "front": "scizor.png",
-      "back": "scizor.png"
+      "front": "scizor_front.png",
+      "back": "scizor_back.png",
+      "icon" : "scizor_icon.png"
     },
     "base_stats": {
       "hp": 70,
@@ -16,8 +17,6 @@
     },
     "abilities": ["Swarm","Technician","Light Metal"],
     "evolves_to": null,
-    "exp_yield": 175,
-    "catch_rate": 25,
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Leer" },

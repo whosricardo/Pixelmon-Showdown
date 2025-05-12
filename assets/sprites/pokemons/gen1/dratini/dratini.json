@@ -17,11 +17,8 @@
     "abilities": ["Shed Skin", "Marvel Scale"],
     "evolves_to": {
       "name": "Dragonair",
-      "level": 30,
       "json_path": "gen1/dragonair/dragonair.json"
     },
-    "exp_yield": 60,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Leer" },

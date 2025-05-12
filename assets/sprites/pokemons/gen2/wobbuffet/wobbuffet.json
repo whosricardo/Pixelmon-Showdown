@@ -4,7 +4,8 @@
     "type": ["Psychic"],
     "sprites": {
       "front": "wobbufet_front.png",
-      "back": "wobbufet_front.png"
+      "back": "wobbufet_front.png",
+      "icon": "wobbufet_icon.png"
     },
     "base_stats": {
       "hp": 190,
@@ -16,8 +17,6 @@
     },
     "abilities": ["Shadow Tag", "Telepathy"],
     "evolves_to": null,
-    "exp_yield": 142,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Counter" },

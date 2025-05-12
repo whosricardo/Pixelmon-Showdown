@@ -17,11 +17,8 @@
     "abilities": ["Levitate"],
     "evolves_to": {
       "name": "Gengar",
-      "level": 45,
       "json_path": "gen1/gengar/gengar.json"
     },
-    "exp_yield": 142,
-    "catch_rate": 90,
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Hypnosis" },

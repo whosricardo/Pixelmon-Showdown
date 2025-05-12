@@ -16,8 +16,6 @@
     },
     "abilities": ["Synchronize", "Inner Focus", "Magic Guard"],
     "evolves_to": null,
-    "exp_yield": 225,
-    "catch_rate": 50,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Confusion" },

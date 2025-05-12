@@ -17,11 +17,8 @@
     "abilities": ["Synchronize", "Inner Focus", "Magic Guard"],
     "evolves_to": {
       "name": "Alakazam",
-      "level": 32,
       "json_path": "gen1/alakazam/alakazam.json"
     },
-    "exp_yield": 140,
-    "catch_rate": 100,
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Confusion" },

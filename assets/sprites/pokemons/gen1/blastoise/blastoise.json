@@ -16,8 +16,6 @@
     },
     "abilities": ["Torrent", "Rain Dish"],
     "evolves_to": null,
-    "exp_yield": 239,
-    "catch_rate": 45,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Bubble" },
