@@ -1,0 +1,31 @@
+{
+    "id": 372,
+    "name": "Shelgon",
+    "type": ["Dragon"],
+    "sprites": {
+      "front": "shelgon_front.png",
+      "back": "shelgon_back.png"
+    },
+    "base_stats": {
+      "hp": 65,
+      "attack": 95,
+      "defense": 100,
+      "sp_attack": 60,
+      "sp_defense": 50,
+      "speed": 50
+    },
+    "abilities": ["Rock Head", "Overcoat"],
+    "evolves_to": {
+      "name": "Salamence",
+      "json_path": "gen3/salamence/salamence.json"
+    },
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Bite" },
+      { "level": 5, "move": "Headbutt" },
+      { "level": 9, "move": "Leer" },
+      { "level": 21, "move": "Focus Energy" },
+      { "level": 25, "move": "Ember" }   
+    ]
+  }
+  

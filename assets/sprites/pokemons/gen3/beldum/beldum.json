@@ -1,0 +1,27 @@
+{
+    "id": 374,
+    "name": "Beldum",
+    "type": ["Steel", "Psychic"],
+    "sprites": {
+      "front": "beldum_front.png",
+      "back": "beldum_back.png"
+    },
+    "base_stats": {
+      "hp": 40,
+      "attack": 55,
+      "defense": 80,
+      "sp_attack": 35,
+      "sp_defense": 60,
+      "speed": 30
+    },
+    "abilities": ["Clear Body", "Light Metal"],
+    "evolves_to": {
+      "name": "Metang",
+      "json_path": "gen3/metang/metang.json"
+    },
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Takedown" }   
+    ]
+  }
+  
