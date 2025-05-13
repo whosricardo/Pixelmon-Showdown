@@ -19,6 +19,7 @@
       "name": "Metang",
       "json_path": "gen3/metang/metang.json"
     },
+    "pre_evolution": null,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Takedown" }   

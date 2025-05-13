@@ -1,31 +1,31 @@
 {
-    "id": 280,
-    "name": "Raltz",
-    "type": ["Fairy", "Psychic"],
-    "sprites": {
-      "front": "ralts_front.png",
-      "back": "ralts_back.png"
-    },
-    "base_stats": {
-      "hp": 28,
-      "attack": 25,
-      "defense": 25,
-      "sp_attack": 45,
-      "sp_defense": 35,
-      "speed": 40
-    },
-    "abilities": ["Synchronize", "Trace", "Telephaty"],
-    "evolves_to": {
-      "name": "Kirlia",
-      "json_path": "gen3/kirlia/kirlia.json"
-    },
-    "is_legendary": false,
-    "learnset": [
-      { "level": 1, "move": "Growl" },
-      { "level": 6, "move": "Confusion" },
-      { "level": 11, "move": "Double Team" },
-      { "level": 16, "move": "Teleport" },
-      { "level": 16, "move": "Calm Mind" }
-    ]
-  }
-  
+  "id": 280,
+  "name": "Raltz",
+  "type": ["Fairy", "Psychic"],
+  "sprites": {
+    "front": "ralts_front.png",
+    "back": "ralts_back.png"
+  },
+  "base_stats": {
+    "hp": 28,
+    "attack": 25,
+    "defense": 25,
+    "sp_attack": 45,
+    "sp_defense": 35,
+    "speed": 40
+  },
+  "abilities": ["Synchronize", "Trace", "Telephaty"],
+  "evolves_to": {
+    "name": "Kirlia",
+    "json_path": "gen3/kirlia/kirlia.json"
+  },
+  "pre_evolution": null,
+  "is_legendary": false,
+  "learnset": [
+    { "level": 1, "move": "Growl" },
+    { "level": 6, "move": "Confusion" },
+    { "level": 11, "move": "Double Team" },
+    { "level": 16, "move": "Teleport" },
+    { "level": 16, "move": "Calm Mind" }
+  ]
+}

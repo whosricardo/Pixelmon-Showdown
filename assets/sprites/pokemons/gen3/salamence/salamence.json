@@ -16,6 +16,10 @@
     },
     "abilities": ["Intimate", "Moxie"],
     "evolves_to": null,
+    "pre_evolution": {
+      "name": "",
+      "json_path": "gen3/shelgon/shelgon.json"
+    },
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Bite" },
