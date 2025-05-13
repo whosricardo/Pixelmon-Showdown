@@ -1,0 +1,31 @@
+{
+    "id": 375,
+    "name": "Metang",
+    "type": ["Steel" , "Psychic"],
+    "sprites": {
+      "front": "metang_front.png",
+      "back": "metang_back.png"
+    },
+    "base_stats": {
+      "hp": 60,
+      "attack": 75,
+      "defense": 100,
+      "sp_attack": 55,
+      "sp_defense": 80,
+      "speed": 50
+    },
+    "abilities": ["Clear Body", "Light Metal"],
+    "evolves_to": {
+      "name": "Metagross",
+      "json_path": "gen3/metagross/metagross.json"
+    },
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Takedown" },
+      { "level": 20, "move": "Confusion" },
+      { "level": 20, "move": "Metal Claw" },
+      { "level": 26, "move": "Scary Face" },
+      { "level": 32, "move": "Pursuit" }   
+    ]
+  }
+  

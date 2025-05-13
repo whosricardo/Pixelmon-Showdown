@@ -1,0 +1,31 @@
+{
+    "id": 281,
+    "name": "Kirlia",
+    "type": ["Fairy", "Psychic"],
+    "sprites": {
+      "front": "torchic_front.png",
+      "back": "torchic_back.png"
+    },
+    "base_stats": {
+      "hp": 38,
+      "attack": 35,
+      "defense": 35,
+      "sp_attack": 65,
+      "sp_defense": 55,
+      "speed": 50
+    },
+    "abilities": ["Synchronize", "Trace", "Telephaty"],
+    "evolves_to": {
+      "name": "Gadevoir",
+      "json_path": "gen3/gadevoir/gadevoir.json"
+    },
+    "is_legendary": false,
+    "learnset": [
+      { "level": 1, "move": "Confusion" },
+      { "level": 1, "move": "Double Team" },
+      { "level": 16, "move": "Teleport" },
+      { "level": 21, "move": "Calm Mind" },
+      { "level": 26, "move": "Psychic" }
+    ]
+  }
+  
