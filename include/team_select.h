@@ -8,6 +8,7 @@ typedef struct {
     Texture2D texture;
     char name[64];
     char generation[16];
+    int is_legendary;
 } PokemonIcon;
 
 // Function prototypes

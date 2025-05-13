@@ -34,6 +34,7 @@ PokemonInfo *load_pokemon_info(const char *path)
     // Basic Info
     cJSON *id_item = cJSON_GetObjectItem(root, "id");
     cJSON *name_item = cJSON_GetObjectItem(root, "name");
+    cJSON *legendary_item = cJSON_GetObjectItem(root, "is_legendary");
 
     if (!cJSON_IsNumber(id_item) || !cJSON_IsString(name_item))
     {
@@ -45,6 +46,7 @@ PokemonInfo *load_pokemon_info(const char *path)
 
     pointer->id = id_item->valueint;
     pointer->name = strdup(name_item->valuestring);
+    pointer->is_legendary = cJSON_IsTrue(legendary_item);  // FIXED: Correct legendary parsing
 
     // Types
     cJSON *types = cJSON_GetObjectItem(root, "type");

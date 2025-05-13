@@ -60,6 +60,7 @@ static void LoadPokemonIcons()
                     icons[total_pokemon].texture = LoadTexture(icon_path);
                     strncpy(icons[total_pokemon].name, entry->d_name, sizeof(icons[total_pokemon].name) - 1);
                     strncpy(icons[total_pokemon].generation, generations[g], sizeof(icons[total_pokemon].generation) - 1);
+                    icons[total_pokemon].is_legendary = pokemon->is_legendary;
                     total_pokemon++;
                 }
             }
@@ -131,17 +132,47 @@ void ShowTeamSelection()
             // Prevent adding more than 6 Pokémon
             if (team_size(player_team) < MAX_TEAM_SIZE && !is_pokemon_in_team(player_team, selected_index))
             {
-                // Build the full path to the Pokémon JSON
-                char pokemon_json_path[256];
-                snprintf(pokemon_json_path, sizeof(pokemon_json_path), "assets/sprites/pokemons/%s/%s/%s.json",
-                        icons[selected_index].generation, icons[selected_index].name, icons[selected_index].name);
-
-                // Load the Pokémon info
-                PokemonInfo *selected_pokemon = load_pokemon_info(pokemon_json_path);
-                if (selected_pokemon)
+                // Count current legendaries in the team
+                int legendary_count = 0;
+                TeamNode *current = player_team;
+                while (current != NULL)
                 {
-                    add_to_team(&player_team, selected_index, selected_pokemon);
-                    print_team(player_team);  // For debugging
+                    if (current->pokemon->is_legendary) legendary_count++;
+                    current = current->next;
+                }
+
+                // Prevent selecting more than 1 legendary
+                if (icons[selected_index].is_legendary && legendary_count >= 1)
+                {
+                    printf("You already have a legendary Pokémon in your team!\n");
+                }
+                else
+                {
+                    // Build the full path to the Pokémon JSON
+                    char pokemon_json_path[256];
+                    snprintf(pokemon_json_path, sizeof(pokemon_json_path), "assets/sprites/pokemons/%s/%s/%s.json",
+                            icons[selected_index].generation, icons[selected_index].name, icons[selected_index].name);
+
+                    // Load the Pokémon info
+                    PokemonInfo *selected_pokemon = load_pokemon_info(pokemon_json_path);
+                    if (selected_pokemon)
+                    {
+                        // Set the correct legendary status
+                        selected_pokemon->is_legendary = icons[selected_index].is_legendary;
+                        
+                        // Check the legendary limit again
+                        if (selected_pokemon->is_legendary && legendary_count >= 1)
+                        {
+                            printf("You already have a legendary Pokémon in your team!\n");
+                            free_pokemon(selected_pokemon);
+                        }
+                        else
+                        {
+                            // Add the Pokémon to the team
+                            add_to_team(&player_team, selected_index, selected_pokemon);
+                            print_team(player_team);  // For debugging
+                        }
+                    }
                 }
             }
         }
