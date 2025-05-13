@@ -16,6 +16,10 @@ static Texture2D background;
 static PokemonIcon icons[MAX_POKEMON]; 
 static int total_pokemon = 0;
 static TeamNode *player_team = NULL;
+static Texture2D cursor_texture;
+static float cursor_offset = 0;
+static int cursor_direction = 1;
+static float cursor_speed = 0.3f;
 
 static void LoadPokemonIcons()
 {
@@ -84,6 +88,9 @@ void ShowTeamSelection()
     ImageResize(&bgImage, 1280, 720);
     background = LoadTextureFromImage(bgImage);
     UnloadImage(bgImage);
+
+    // load cursor
+    cursor_texture = LoadTexture("assets/misc/selector.png");
 
     // Load the Pokémon icons
     LoadPokemonIcons();
@@ -205,19 +212,30 @@ void ShowTeamSelection()
                 // Draw the icon
                 DrawTexture(icons[index].texture, icon_x, icon_y, WHITE);
 
-                // Highlight the selected Pokémon
+                // Draw the hand cursor if this is the selected Pokémon
                 if (index == selected_index)
                 {
-                    DrawRectangleLines(cell_x, cell_y, 64, 64, YELLOW);
+                    // Apply the bouncing effect
+                    cursor_offset += cursor_direction * cursor_speed;
+                    if (cursor_offset > 5 || cursor_offset < -5)
+                    {
+                        cursor_direction *= -1;
+                    }
+
+                    int cursor_x = cell_x + 50;  // Adjust for better alignment
+                    int cursor_y = cell_y + (10 - cursor_texture.height) / 2 + (int)cursor_offset;
+                    DrawTexture(cursor_texture, cursor_x, cursor_y, WHITE);
                 }
 
                 index++;
             }
         }
+
         EndDrawing();
     }
 
     UnloadTexture(background);
+    UnloadTexture(cursor_texture);
     for (int i = 0; i < total_pokemon; i++)
     {
         UnloadTexture(icons[i].texture);
