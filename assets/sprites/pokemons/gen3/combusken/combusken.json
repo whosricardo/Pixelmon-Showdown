@@ -19,6 +19,10 @@
       "name": "Blaziken",
       "json_path": "gen3/blaziken/blaziken.json"
     },
+    "pre_evolution": {
+      "name": "Torchic",
+      "json_path": "gen1/torchic/torchic.json"
+    },
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Scratch" },

@@ -39,8 +39,9 @@ char *load_file_to_string(const char *filename)
     }
 
     // Read file contents
+// Read file contents
     size_t read_size = fread(buffer, 1, length, file);
-    if (read_size != length)
+    if (length < 0 || read_size != (size_t)length)
     {
         fprintf(stderr, "ERROR: Failed to read the entire file. Expected %ld bytes, read %zu bytes.\n", length, read_size);
         free(buffer);

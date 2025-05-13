@@ -20,6 +20,10 @@
       "name": "Alakazam",
       "json_path": "gen1/alakazam/alakazam.json"
     },
+    "pre_evolution": {
+      "name": "Abra",
+      "json_path": "gen1/abra/abra.json"
+    },
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Confusion" },

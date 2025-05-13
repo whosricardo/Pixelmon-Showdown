@@ -19,6 +19,7 @@
       "name": "Combusken",
       "json_path": "gen3/combusken/combusken.json"
     },
+    "pre_evolution": null,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Scratch" },

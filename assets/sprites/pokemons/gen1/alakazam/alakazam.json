@@ -17,6 +17,10 @@
     },
     "abilities": ["Synchronize", "Inner Focus", "Magic Guard"],
     "evolves_to": null,
+    "pre_evolution": {
+      "name": "Kadabra",
+      "json_path": "gen1/kadabra/kadabra.json"
+    },
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Confusion" },

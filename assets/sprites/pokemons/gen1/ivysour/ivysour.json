@@ -20,6 +20,10 @@
       "name": "Venosour",
       "json_path": "gen1/venosour/venosour.json"
     },
+    "pre_evolution": {
+      "name": "Bulbasour",
+      "json_path": "gen1/bulbasour/bulbasour.json"
+    },
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Growl" },

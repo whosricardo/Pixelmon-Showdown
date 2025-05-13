@@ -20,6 +20,10 @@
       "name": "Blastoise",
       "json_path": "gen1/blastoise/blastoise.json"
     },
+    "pre_evolution": {
+      "name": "Squirtle",
+      "json_path": "gen1/squirtle/squirtle.json"
+    },
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Bubble" },

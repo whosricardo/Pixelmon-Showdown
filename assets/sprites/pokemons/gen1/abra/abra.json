@@ -20,6 +20,7 @@
       "name": "Kadabra",
       "json_path": "gen1/kadabra/kadabra.json"
     },
+    "pre_evolution": null,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Teleport" }

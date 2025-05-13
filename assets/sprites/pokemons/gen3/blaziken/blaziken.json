@@ -16,6 +16,10 @@
   },
   "abilities": ["Blaze", "Speed Boost"],
   "evolves_to": null,
+  "pre_evolution": {
+    "name": "combusken",
+    "json_path": "gen1/combusken/combusken.json"
+  },
   "is_legendary": false,
   "learnset": [
     { "level": 1, "move": "Scratch" },

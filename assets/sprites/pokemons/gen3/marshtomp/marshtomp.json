@@ -19,6 +19,10 @@
       "name": "Swampert",
       "json_path": "gen3/swampert/swampert.json"
     },
+    "pre_evolution": {
+      "name": "mudkip",
+      "json_path": "gen1/mudkip/mudkip.json"
+    },
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Tackle" },

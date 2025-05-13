@@ -17,6 +17,10 @@
     },
     "abilities": ["Cursed Body"],
     "evolves_to": null,
+    "pre_evolution": {
+      "name": "Haunter",
+      "json_path": "gen1/haunter/haunter.json"
+    },
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Hypnosis" },

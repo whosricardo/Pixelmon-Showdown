@@ -20,6 +20,7 @@
       "name": "Charmeleon",
       "json_path": "gen1/charmeleon/charmeleon.json"
     },
+    "pre_evolution": null,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Growl" },

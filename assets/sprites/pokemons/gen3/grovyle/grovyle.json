@@ -19,6 +19,10 @@
       "name": "Sceptile",
       "json_path": "gen3/sceptile/sceptile.json"
     },
+    "pre_evolution": {
+      "name": "Treecko",
+      "json_path": "gen1/treecko/treecko.json"
+    },
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Pound" },

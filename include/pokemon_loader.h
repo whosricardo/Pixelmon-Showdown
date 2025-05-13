@@ -6,6 +6,7 @@ typedef struct
 {
     char *front;
     char *back;
+    char *icon;  // New field for box icon
 } SpritePaths;
 
 typedef struct 
@@ -35,6 +36,7 @@ typedef struct
 
     char *abilities[MAX_ABILITIES];
     char *evolves_to;
+    char *pre_evolution;
 
     int is_legendary; // 0 = false, 1 = true
 

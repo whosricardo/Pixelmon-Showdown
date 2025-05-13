@@ -18,6 +18,7 @@
     "abilities": ["Pressure", "Unnerve"],
     "evolves_to": null,
     "is_legendary": true,
+    "pre_evolution": null,
     "learnset": [
         { "level": 1, "move": "Confusion" },
         { "level": 1, "move": "Disable" },

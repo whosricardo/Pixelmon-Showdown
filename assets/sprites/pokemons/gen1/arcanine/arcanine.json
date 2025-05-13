@@ -17,6 +17,10 @@
     },
     "abilities": ["Intimidate", "Flash Fire", "Justified"],
     "evolves_to": null,
+    "pre_evolution": {
+      "name": "Growlithe",
+      "json_path": "gen1/growlithe/growlithe.json"
+    },
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Bite" },

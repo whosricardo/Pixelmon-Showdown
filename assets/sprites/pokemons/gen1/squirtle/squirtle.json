@@ -20,8 +20,7 @@
       "name": "Wartortle",
       "json_path": "gen1/wartortle/wartortle.json"
     },
-    "exp_yield": 63,
-    "catch_rate": 45,
+    "pre_evolution": null,
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Tackle" },

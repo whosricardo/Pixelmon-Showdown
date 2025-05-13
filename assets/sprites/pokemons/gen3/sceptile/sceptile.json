@@ -16,6 +16,10 @@
     },
     "abilities": ["Overgrow", "Unburden"],
     "evolves_to": null,
+    "pre_evolution": {
+      "name": "Grovyle",
+      "json_path": "gen1/grovyle/grovyle.json"
+    },
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Pound" },

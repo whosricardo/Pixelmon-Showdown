@@ -16,6 +16,7 @@
     },
     "abilities": ["Pressure", "Super Luck", "Justfied"],
     "evolves_to": null,
+    "pre_evolution": null,
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Scratch" },

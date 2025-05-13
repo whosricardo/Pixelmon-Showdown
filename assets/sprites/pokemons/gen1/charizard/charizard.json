@@ -4,7 +4,8 @@
     "type": ["Fire", "Flying"],
     "sprites": {
       "front": "charizard_front.png",
-      "back": "charizard_back.png"
+      "back": "charizard_back.png",
+      "icon": "charizard_icon.png"
     },
     "base_stats": {
       "hp": 78,
@@ -16,6 +17,10 @@
     },
     "abilities": ["Blaze", "Solar Power"],
     "evolves_to": null,
+    "pre_evolution": {
+      "name": "Charmeleon",
+      "json_path": "gen1/charmeleon/charmeleon.json"
+    },
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Ember" },

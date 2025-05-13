@@ -18,6 +18,10 @@
     "abilities": ["Swarm","Technician","Light Metal"],
     "evolves_to": null,
     "is_legendary": false,
+    "pre_evolution": {
+      "name": "Scyther",
+      "json_path": "gen1/scyther/scyther.json"
+    },
     "learnset": [
         { "level": 1, "move": "Leer" },
         { "level": 1, "move": "Quick Attack" },

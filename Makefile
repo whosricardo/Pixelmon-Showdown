@@ -9,8 +9,14 @@ SRC_DIR = src
 LIB_DIR = lib
 INCLUDE_DIR = include
 
-SRC = $(SRC_DIR)/main.c $(SRC_DIR)/pokemon_loader.c $(SRC_DIR)/file_loader.c \
-      $(SRC_DIR)/player_loader.c $(LIB_DIR)/cJSON.c
+SRC = $(SRC_DIR)/main.c \
+      $(SRC_DIR)/menu.c \
+	  $(SRC_DIR)/team.c \
+      $(SRC_DIR)/team_select.c \
+      $(SRC_DIR)/pokemon_loader.c \
+      $(SRC_DIR)/file_loader.c \
+      $(SRC_DIR)/player_loader.c \
+      $(LIB_DIR)/cJSON.c
 
 OUT = pixelmon_showdown
 
@@ -35,4 +41,3 @@ test_loader: $(TEST_SRC)
 
 clean:
 	rm -f $(OUT) $(IDLE_OUT) $(TEST_OUT)
-

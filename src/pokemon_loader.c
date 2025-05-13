@@ -1,5 +1,5 @@
-#include "file_loader.h"
 #include "pokemon_loader.h"
+#include "file_loader.h"
 #include "cJSON.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,7 +7,6 @@
 
 PokemonInfo *load_pokemon_info(const char *path)
 {
-    // Load JSON file as a string
     char *json_string = load_file_to_string(path);
     if (!json_string) 
     {
@@ -15,7 +14,6 @@ PokemonInfo *load_pokemon_info(const char *path)
         return NULL;
     }
 
-    // Parse JSON
     cJSON *root = cJSON_Parse(json_string);
     free(json_string);
     if (!root) 
@@ -24,7 +22,6 @@ PokemonInfo *load_pokemon_info(const char *path)
         return NULL;
     }
 
-    // Allocate memory for the PokemonInfo struct
     PokemonInfo *pointer = malloc(sizeof(PokemonInfo));
     if (!pointer) 
     {
@@ -35,53 +32,50 @@ PokemonInfo *load_pokemon_info(const char *path)
     memset(pointer, 0, sizeof(PokemonInfo));
 
     // Basic Info
-    pointer->id = cJSON_GetObjectItem(root, "id")->valueint;
-    pointer->name = strdup(cJSON_GetObjectItem(root, "name")->valuestring);
+    cJSON *id_item = cJSON_GetObjectItem(root, "id");
+    cJSON *name_item = cJSON_GetObjectItem(root, "name");
+
+    if (!cJSON_IsNumber(id_item) || !cJSON_IsString(name_item))
+    {
+        fprintf(stderr, "ERROR: Missing or invalid 'id' or 'name' in %s\n", path);
+        free(pointer);
+        cJSON_Delete(root);
+        return NULL;
+    }
+
+    pointer->id = id_item->valueint;
+    pointer->name = strdup(name_item->valuestring);
 
     // Types
     cJSON *types = cJSON_GetObjectItem(root, "type");
-    int type_count = cJSON_GetArraySize(types);
-    for (int i = 0; i < 2; i++) 
+    if (cJSON_IsArray(types))
     {
-        if (i < type_count) 
+        int type_count = cJSON_GetArraySize(types);
+        for (int i = 0; i < 2; i++) 
         {
-            cJSON *t = cJSON_GetArrayItem(types, i);
-            pointer->type[i] = t ? strdup(t->valuestring) : NULL;
-        }
-        else
-        {
-            pointer->type[i] = NULL;
+            if (i < type_count) 
+            {
+                cJSON *t = cJSON_GetArrayItem(types, i);
+                pointer->type[i] = t ? strdup(t->valuestring) : NULL;
+            }
+            else
+            {
+                pointer->type[i] = NULL;
+            }
         }
     }
 
-    // Sprites
+    // Sprites (front, back, icon)
     cJSON *sprites = cJSON_GetObjectItem(root, "sprites");
-    pointer->sprites.front = strdup(cJSON_GetObjectItem(sprites, "front")->valuestring);
-    pointer->sprites.back = strdup(cJSON_GetObjectItem(sprites, "back")->valuestring);
-
-    // Base Stats
-    cJSON *stats = cJSON_GetObjectItem(root, "base_stats");
-    pointer->base_stats.hp = cJSON_GetObjectItem(stats, "hp")->valueint;
-    pointer->base_stats.attack = cJSON_GetObjectItem(stats, "attack")->valueint;
-    pointer->base_stats.defense = cJSON_GetObjectItem(stats, "defense")->valueint;
-    pointer->base_stats.sp_attack = cJSON_GetObjectItem(stats, "sp_attack")->valueint;
-    pointer->base_stats.sp_defense = cJSON_GetObjectItem(stats, "sp_defense")->valueint;
-    pointer->base_stats.speed = cJSON_GetObjectItem(stats, "speed")->valueint;
-
-    // Abilities
-    cJSON *abilities = cJSON_GetObjectItem(root, "abilities");
-    int ability_count = cJSON_GetArraySize(abilities);
-    for (int i = 0; i < MAX_ABILITIES; i++)
+    if (cJSON_IsObject(sprites))
     {
-        if (i < ability_count) 
-        {
-            cJSON *ab = cJSON_GetArrayItem(abilities, i);
-            pointer->abilities[i] = ab ? strdup(ab->valuestring) : NULL;
-        }
-        else
-        {
-            pointer->abilities[i] = NULL;
-        }
+        cJSON *front_item = cJSON_GetObjectItem(sprites, "front");
+        cJSON *back_item = cJSON_GetObjectItem(sprites, "back");
+        cJSON *icon_item = cJSON_GetObjectItem(sprites, "icon");
+
+        pointer->sprites.front = front_item && cJSON_IsString(front_item) ? strdup(front_item->valuestring) : NULL;
+        pointer->sprites.back = back_item && cJSON_IsString(back_item) ? strdup(back_item->valuestring) : NULL;
+        pointer->sprites.icon = icon_item && cJSON_IsString(icon_item) ? strdup(icon_item->valuestring) : NULL;
     }
 
     // Evolution
@@ -89,24 +83,15 @@ PokemonInfo *load_pokemon_info(const char *path)
     if (evo && !cJSON_IsNull(evo)) 
     {
         cJSON *evo_name = cJSON_GetObjectItem(evo, "name");
-        pointer->evolves_to = evo_name ? strdup(evo_name->valuestring) : NULL;
-    }
-    else
-    {
-        pointer->evolves_to = NULL;
+        pointer->evolves_to = evo_name && cJSON_IsString(evo_name) ? strdup(evo_name->valuestring) : NULL;
     }
 
-    // Learnset (Now Dynamic)
-    cJSON *learnset = cJSON_GetObjectItem(root, "learnset");
-    int move_count = cJSON_GetArraySize(learnset);
-    pointer->learnset_size = move_count;
-    pointer->learnset = malloc(move_count * sizeof(LearnMove));
-
-    for (int i = 0; i < move_count; i++) 
+    // Pre-Evolution
+    cJSON *pre_evo = cJSON_GetObjectItem(root, "pre_evolution");
+    if (pre_evo && !cJSON_IsNull(pre_evo))
     {
-        cJSON *move = cJSON_GetArrayItem(learnset, i);
-        pointer->learnset[i].level = cJSON_GetObjectItem(move, "level")->valueint;
-        pointer->learnset[i].move = strdup(cJSON_GetObjectItem(move, "move")->valuestring);
+        cJSON *pre_evo_name = cJSON_GetObjectItem(pre_evo, "name");
+        pointer->pre_evolution = pre_evo_name && cJSON_IsString(pre_evo_name) ? strdup(pre_evo_name->valuestring) : NULL;
     }
 
     cJSON_Delete(root);
@@ -118,21 +103,17 @@ void free_pokemon(PokemonInfo *pointer)
     if (!pointer) return;
 
     free(pointer->name);
+    free(pointer->sprites.front);
+    free(pointer->sprites.back);
+    free(pointer->sprites.icon);
+    free(pointer->evolves_to);
+    free(pointer->pre_evolution);
 
     for (int i = 0; i < 2; i++) 
         free(pointer->type[i]);
 
-    free(pointer->sprites.front);
-    free(pointer->sprites.back);
-
     for (int i = 0; i < MAX_ABILITIES; i++) 
         free(pointer->abilities[i]);
 
-    free(pointer->evolves_to);
-
-    for (int i = 0; i < pointer->learnset_size; i++) 
-        free(pointer->learnset[i].move);
-
-    free(pointer->learnset);
     free(pointer);
 }

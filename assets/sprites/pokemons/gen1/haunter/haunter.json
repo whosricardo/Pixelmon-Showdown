@@ -20,6 +20,10 @@
       "name": "Gengar",
       "json_path": "gen1/gengar/gengar.json"
     },
+    "pre_evolution": {
+      "name": "Gastly",
+      "json_path": "gen1/gastly/gastly.json"
+    },
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Hypnosis" },

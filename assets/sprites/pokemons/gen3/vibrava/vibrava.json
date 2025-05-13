@@ -20,6 +20,10 @@
       "name": "Flygon",
       "json_path": "gen3/flygon/flygon.json"
     },
+    "pre_evolution": {
+      "name": "Trapinch",
+      "json_path": "gen1/trapinch/trapinch.json"
+    },
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Bite" },

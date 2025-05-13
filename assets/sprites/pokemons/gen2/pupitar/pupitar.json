@@ -20,6 +20,10 @@
       "name": "tyranitar",
       "json_path": "gen3/tyranitar/tyranitar.json"
     },
+    "pre_evolution": {
+      "name": "Larvitar",
+      "json_path": "gen1/larvitar/larvitar.json"
+    },
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Bite" },

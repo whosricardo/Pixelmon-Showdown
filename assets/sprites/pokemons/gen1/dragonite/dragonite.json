@@ -18,6 +18,10 @@
     "abilities": ["Inner Focus", "Multiscale"],
     "evolves_to": null,
     "is_legendary": false,
+    "pre_evolution": {
+      "name": "Dragonair",
+      "json_path": "gen1/dragonair/dragonair.json"
+    },
     "learnset": [
       { "level": 1, "move": "Leer" },
       { "level": 1, "move": "Thunder Wave" },

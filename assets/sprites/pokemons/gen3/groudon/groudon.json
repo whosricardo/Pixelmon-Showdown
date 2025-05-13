@@ -16,6 +16,7 @@
     },
     "abilities": ["Drought"],
     "evolves_to": null,
+    "pre_evolution": null,
     "is_legendary": true,
     "learnset": [
         { "level": 1, "move": "Mud Shot" },

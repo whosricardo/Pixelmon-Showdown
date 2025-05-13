@@ -17,6 +17,10 @@
     },
     "abilities": ["Levitate"],
     "evolves_to": null,
+    "pre_evolution": {
+      "name": "Vibrava",
+      "json_path": "gen1/vibrava/vibrava.json"
+    },
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Bite" },

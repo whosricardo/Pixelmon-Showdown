@@ -17,6 +17,10 @@
     },
     "abilities": ["Overgrow", "Chlorophyll"],
     "evolves_to": null,
+    "pre_evolution": {
+      "name": "Ivysour",
+      "json_path": "gen1/ivysour/ivysour.json"
+    },
     "is_legendary": false,
     "learnset": [
         { "level": 1, "move": "Growl" },

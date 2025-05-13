@@ -19,6 +19,7 @@
       "name": "Grovyle",
       "json_path": "gen3/grovyle/grovyle.json"
     },
+    "pre_evolution": null,
     "is_legendary": false,
     "learnset": [
       { "level": 1, "move": "Pound" },
