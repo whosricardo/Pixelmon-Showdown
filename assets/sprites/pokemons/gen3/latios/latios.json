@@ -4,7 +4,8 @@
     "type": ["Dragon", "Psychic"],
     "sprites": {
       "front": "latios_front.png",
-      "back": "latios_back.png"
+      "back": "latios_back.png",
+      "icon": "latios_icon.png"
     },
     "base_stats": {
       "hp": 80,

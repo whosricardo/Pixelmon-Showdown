@@ -4,7 +4,8 @@
   "type": ["Fire", "Fighting"],
   "sprites": {
     "front": "blaziken_front.png",
-    "back": "blaziken_back.png"
+    "back": "blaziken_back.png",
+    "icon": "blaziken_icon.png"
   },
   "base_stats": {
     "hp": 80,

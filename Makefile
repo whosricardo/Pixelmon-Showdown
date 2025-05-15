@@ -11,8 +11,9 @@ INCLUDE_DIR = include
 
 SRC = $(SRC_DIR)/main.c \
       $(SRC_DIR)/menu.c \
-	  $(SRC_DIR)/team.c \
+	    $(SRC_DIR)/team.c \
       $(SRC_DIR)/team_select.c \
+      $(SRC_DIR)/battle.c \
       $(SRC_DIR)/pokemon_loader.c \
       $(SRC_DIR)/file_loader.c \
       $(SRC_DIR)/player_loader.c \

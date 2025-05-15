@@ -4,7 +4,8 @@
     "type": ["Fire", "Fighting"],
     "sprites": {
       "front": "combusken_front.png",
-      "back": "combusken_back.png"
+      "back": "combusken_back.png",
+      "icon": "combusken_icon.png"
     },
     "base_stats": {
       "hp": 60,

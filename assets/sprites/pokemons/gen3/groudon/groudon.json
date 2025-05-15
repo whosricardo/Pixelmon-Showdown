@@ -4,7 +4,8 @@
     "type": ["Ground"],
     "sprites": {
       "front": "groudon_front.png",
-      "back": "groudon_back.png"
+      "back": "groudon_back.png",
+      "icon": "groudon_icon.png"
     },
     "base_stats": {
       "hp": 100,

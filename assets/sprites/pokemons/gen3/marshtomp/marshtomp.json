@@ -4,7 +4,8 @@
     "type": ["Water", "Ground"],
     "sprites": {
       "front": "marshtomp_front.png",
-      "back": "marshtomp_back.png"
+      "back": "marshtomp_back.png",
+      "icon": "marshtom_icon.png"
     },
     "base_stats": {
       "hp": 70,

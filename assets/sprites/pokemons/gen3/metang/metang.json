@@ -4,7 +4,8 @@
   "type": ["Steel" , "Psychic"],
   "sprites": {
     "front": "metang_front.png",
-    "back": "metang_back.png"
+    "back": "metang_back.png",
+    "icon": "metang_icon.png"
   },
   "base_stats": {
     "hp": 60,

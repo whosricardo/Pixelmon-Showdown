@@ -4,7 +4,8 @@
   "type": ["Dragon"],
   "sprites": {
     "front": "shelgon_front.png",
-    "back": "shelgon_back.png"
+    "back": "shelgon_back.png",
+    "icon": "shelgon_icon.png"
   },
   "base_stats": {
     "hp": 65,

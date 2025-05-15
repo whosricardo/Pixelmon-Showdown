@@ -4,7 +4,8 @@
     "type": ["Dragon", "Flying"],
     "sprites": {
       "front": "salamence_front.png",
-      "back": "salamence_back.png"
+      "back": "salamence_back.png",
+      "icon": "salamence_icon.png"
     },
     "base_stats": {
       "hp": 95,

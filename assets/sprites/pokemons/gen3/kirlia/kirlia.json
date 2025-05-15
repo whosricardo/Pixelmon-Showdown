@@ -3,8 +3,9 @@
   "name": "Kirlia",
   "type": ["Fairy", "Psychic"],
   "sprites": {
-    "front": "torchic_front.png",
-    "back": "torchic_back.png"
+    "front": "kirlia_front.png",
+    "back": "kirlia_back.png",
+    "icon": "kirlia_icon.png"
   },
   "base_stats": {
     "hp": 38,

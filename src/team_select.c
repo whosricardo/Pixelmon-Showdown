@@ -2,6 +2,7 @@
 #include "pokemon_loader.h"
 #include "file_loader.h"
 #include "team.h"
+#include "battle.h"
 #include <dirent.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,6 +12,9 @@
 #define GRID_COLS 6
 #define MAX_TEAM_SIZE 6
 #define MAX_POKEMON 300
+#define TEAM_PREVIEW_X 360
+#define TEAM_PREVIEW_Y 620
+#define TEAM_PREVIEW_SPACING 80
 
 static Texture2D background;
 static PokemonIcon icons[MAX_POKEMON]; 
@@ -89,7 +93,7 @@ void ShowTeamSelection()
     background = LoadTextureFromImage(bgImage);
     UnloadImage(bgImage);
 
-    // load cursor
+    // Load cursor
     cursor_texture = LoadTexture("assets/misc/selector.png");
 
     // Load the Pokémon icons
@@ -139,7 +143,7 @@ void ShowTeamSelection()
             // Prevent adding more than 6 Pokémon
             if (team_size(player_team) < MAX_TEAM_SIZE && !is_pokemon_in_team(player_team, selected_index))
             {
-                // Count current legendaries in the team
+                // Prevent more than 1 legendary
                 int legendary_count = 0;
                 TeamNode *current = player_team;
                 while (current != NULL)
@@ -148,37 +152,23 @@ void ShowTeamSelection()
                     current = current->next;
                 }
 
-                // Prevent selecting more than 1 legendary
                 if (icons[selected_index].is_legendary && legendary_count >= 1)
                 {
                     printf("You already have a legendary Pokémon in your team!\n");
                 }
                 else
                 {
-                    // Build the full path to the Pokémon JSON
+                    // Load the Pokémon info
                     char pokemon_json_path[256];
                     snprintf(pokemon_json_path, sizeof(pokemon_json_path), "assets/sprites/pokemons/%s/%s/%s.json",
                             icons[selected_index].generation, icons[selected_index].name, icons[selected_index].name);
 
-                    // Load the Pokémon info
                     PokemonInfo *selected_pokemon = load_pokemon_info(pokemon_json_path);
                     if (selected_pokemon)
                     {
-                        // Set the correct legendary status
                         selected_pokemon->is_legendary = icons[selected_index].is_legendary;
-                        
-                        // Check the legendary limit again
-                        if (selected_pokemon->is_legendary && legendary_count >= 1)
-                        {
-                            printf("You already have a legendary Pokémon in your team!\n");
-                            free_pokemon(selected_pokemon);
-                        }
-                        else
-                        {
-                            // Add the Pokémon to the team
-                            add_to_team(&player_team, selected_index, selected_pokemon);
-                            print_team(player_team);  // For debugging
-                        }
+                        add_to_team(&player_team, selected_index, selected_pokemon);
+                        print_team(player_team);  // For debugging
                     }
                 }
             }
@@ -191,7 +181,7 @@ void ShowTeamSelection()
         // Draw the background
         DrawTexture(background, 0, 0, WHITE);
         
-        // Draw the Pokémon icons for the current page
+        // Draw the Pokémon icons in the matrix
         int index = current_page * (GRID_ROWS * GRID_COLS);
         int matrix_x_offset = (1280 - (GRID_COLS * 120 - 56)) / 2;
         int matrix_y_offset = 100;
@@ -204,30 +194,78 @@ void ShowTeamSelection()
 
                 int cell_x = matrix_x_offset + col * 120;
                 int cell_y = matrix_y_offset + row * 120;
-
-                // Center the icon within the 64x64 highlight box
                 int icon_x = cell_x + (64 - icons[index].texture.width) / 2;
                 int icon_y = cell_y + (64 - icons[index].texture.height) / 2;
                 
-                // Draw the icon
                 DrawTexture(icons[index].texture, icon_x, icon_y, WHITE);
 
-                // Draw the hand cursor if this is the selected Pokémon
                 if (index == selected_index)
                 {
-                    // Apply the bouncing effect
                     cursor_offset += cursor_direction * cursor_speed;
                     if (cursor_offset > 5 || cursor_offset < -5)
                     {
                         cursor_direction *= -1;
                     }
 
-                    int cursor_x = cell_x + 50;  // Adjust for better alignment
+                    int cursor_x = cell_x + 50;
                     int cursor_y = cell_y + (10 - cursor_texture.height) / 2 + (int)cursor_offset;
                     DrawTexture(cursor_texture, cursor_x, cursor_y, WHITE);
                 }
 
                 index++;
+            }
+        }
+
+        // Calculate the total width of the team preview
+        int current_team_size = team_size(player_team);
+        int total_preview_width = (current_team_size * TEAM_PREVIEW_SPACING) - (TEAM_PREVIEW_SPACING - 64);
+        int preview_x = (1280 - total_preview_width) / 2;  // Center the team
+
+        // Test Background for the Preview Area (Optional)
+        DrawRectangle(preview_x - 20, TEAM_PREVIEW_Y - 20, total_preview_width + 40, 80, (Color){30, 30, 30, 180});
+
+        // Draw the team preview
+        TeamNode *current = player_team;
+        while (current != NULL)
+        {
+            for (int i = 0; i < total_pokemon; i++)
+            {
+                if (strcasecmp(current->pokemon->name, icons[i].name) == 0)
+                {
+                    DrawTexture(icons[i].texture, preview_x + 15, TEAM_PREVIEW_Y + 12, WHITE);
+                    preview_x += TEAM_PREVIEW_SPACING;
+                    break;
+                }
+            }
+            current = current->next;
+        }
+
+        // Draw the confirmation button
+        int button_x = 500;
+        int button_y = 50;
+        int button_width = 280;
+        int button_height = 30;
+        Color button_color = (current_team_size == MAX_TEAM_SIZE) ? GREEN : GRAY;
+        DrawRectangle(button_x, button_y, button_width, button_height, button_color);
+        DrawText("CONFIRM TEAM", button_x + 60, button_y + 7, 20, WHITE);
+
+        // Handle the confirmation button click
+        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+        {
+            Vector2 mouse_pos = GetMousePosition();
+            if (mouse_pos.x >= button_x && mouse_pos.x <= button_x + button_width &&
+                mouse_pos.y >= button_y && mouse_pos.y <= button_y + button_height)
+            {
+                if (current_team_size == MAX_TEAM_SIZE)
+                {
+                    printf("Team Confirmed!\n");
+                    StartBattle(player_team);
+                    return;
+                }
+                else
+                {
+                    printf("You must select 6 Pokémon to confirm your team!\n");
+                }
             }
         }
 

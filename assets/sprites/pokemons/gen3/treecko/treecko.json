@@ -4,7 +4,8 @@
     "type": ["Grass"],
     "sprites": {
       "front": "treecko_front.png",
-      "back": "treecko_back.png"
+      "back": "treecko_back.png",
+      "icon": "treecko_icon.png"
     },
     "base_stats": {
       "hp": 40,

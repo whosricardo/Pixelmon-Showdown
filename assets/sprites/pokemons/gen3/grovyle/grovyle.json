@@ -4,7 +4,8 @@
     "type": ["Grass"],
     "sprites": {
       "front": "grovyle_front.png",
-      "back": "grovyle_back.png"
+      "back": "grovyle_back.png",
+      "icon": "grovyle_icon.png"
     },
     "base_stats": {
       "hp": 50,

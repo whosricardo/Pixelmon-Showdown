@@ -1,10 +1,11 @@
 {
   "id": 280,
-  "name": "Raltz",
+  "name": "Ralts",
   "type": ["Fairy", "Psychic"],
   "sprites": {
     "front": "ralts_front.png",
-    "back": "ralts_back.png"
+    "back": "ralts_back.png",
+    "icon": "ralts_icon.png"
   },
   "base_stats": {
     "hp": 28,

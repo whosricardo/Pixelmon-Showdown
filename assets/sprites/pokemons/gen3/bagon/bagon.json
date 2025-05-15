@@ -4,7 +4,8 @@
   "type": ["Dragon"],
   "sprites": {
     "front": "bagon_front.png",
-    "back": "bagon_back.png"
+    "back": "bagon_back.png",
+    "icon": "bagon_icon.png"
   },
   "base_stats": {
     "hp": 45,

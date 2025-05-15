@@ -4,7 +4,8 @@
     "type": ["Water"],
     "sprites": {
       "front": "mudkip_front.png",
-      "back": "mudkip_back.png"
+      "back": "mudkip_back.png",
+      "icon": "mudkip_icon.png"
     },
     "base_stats": {
       "hp": 50,

@@ -4,7 +4,8 @@
     "type": ["Steel", "Psychic"],
     "sprites": {
       "front": "beldum_front.png",
-      "back": "beldum_back.png"
+      "back": "beldum_back.png",
+      "icon": "beldum_icon.png"
     },
     "base_stats": {
       "hp": 40,

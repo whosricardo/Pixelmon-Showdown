@@ -3,16 +3,8 @@
 
 #include "raylib.h"
 
-#define MAX_FRAMES 10
-
 typedef struct {
-    Texture2D frames[MAX_FRAMES];
-    int frameCount;
-    float frameDuration;
-} Animation;
-
-typedef struct {
-    Animation battle;
+    Texture2D battle;
     Texture2D rival_show;
 } Player;
 

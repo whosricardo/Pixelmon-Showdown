@@ -4,7 +4,8 @@
     "type": ["Water", "Ground"],
     "sprites": {
       "front": "swampert_front.png",
-      "back": "swampert_back.png"
+      "back": "swampert_back.png",
+      "icon": "swampert_icon.png"
     },
     "base_stats": {
       "hp": 100,

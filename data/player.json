@@ -1,12 +1,5 @@
 {
     "sprite": "Player",
-    "battle_animation": 
-    [
-        "player_battle1.png",
-        "player_battle2.png",
-        "player_battle3.png",
-        "player_battle4.png"
-    ],
-    "rival_show": "player_battle5.png",
-    "frame_duration": 0.15
+    "battle_animation": "player.png",
+    "rival_show": "rival.png"
 }

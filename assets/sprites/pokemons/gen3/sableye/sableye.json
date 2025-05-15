@@ -4,7 +4,8 @@
     "type": ["Dark", "Ghost"],
     "sprites": {
       "front": "sableye_front.png",
-      "back": "sableye_back.png"
+      "back": "sableye_back.png",
+      "icon": "sableye_icon.png"
     },
     "base_stats": {
       "hp": 50,
