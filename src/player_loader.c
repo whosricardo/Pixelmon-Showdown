@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void load_player_battle_animation(Player *player, const char *jsonPath) {
+void load_player_sprite(Player *player, const char *jsonPath) {
     char *jsonData = load_file_to_string(jsonPath);
     if (!jsonData) {
         fprintf(stderr, "ERROR: Failed to load file: %s\n", jsonPath);
@@ -20,24 +20,18 @@ void load_player_battle_animation(Player *player, const char *jsonPath) {
         return;
     }
 
-    // Load battle sprite
-    cJSON *battleAnimItem = cJSON_GetObjectItem(root, "battle_animation");
-    if (cJSON_IsString(battleAnimItem) && battleAnimItem->valuestring) {
-        char battlePath[256];
-        snprintf(battlePath, sizeof(battlePath), "assets/sprites/player/%s", battleAnimItem->valuestring);
-        player->battle = LoadTexture(battlePath);
-    } else {
-        fprintf(stderr, "ERROR: 'battle_animation' is not a valid string in %s\n", jsonPath);
-    }
+    // Load the player sprite
+    cJSON *playerItem = cJSON_GetObjectItem(root, "player_show");
+    if (cJSON_IsString(playerItem) && playerItem->valuestring) {
+        player->battle = LoadTexture(playerItem->valuestring);
 
-    // Load rival sprite
-    cJSON *rivalItem = cJSON_GetObjectItem(root, "rival_show");
-    if (cJSON_IsString(rivalItem) && rivalItem->valuestring) {
-        char rivalPath[256];
-        snprintf(rivalPath, sizeof(rivalPath), "assets/sprites/player/%s", rivalItem->valuestring);
-        player->rival_show = LoadTexture(rivalPath);
+        if (player->battle.id == 0) {
+            fprintf(stderr, "ERROR: Failed to load player texture from %s\n", playerItem->valuestring);
+        } else {
+            printf("Loaded player texture from %s\n", playerItem->valuestring);
+        }
     } else {
-        fprintf(stderr, "ERROR: 'rival_show' is not a valid string in %s\n", jsonPath);
+        fprintf(stderr, "ERROR: 'player_show' is not a valid string in %s\n", jsonPath);
     }
 
     cJSON_Delete(root);
@@ -45,5 +39,4 @@ void load_player_battle_animation(Player *player, const char *jsonPath) {
 
 void free_player(Player *player) {
     UnloadTexture(player->battle);
-    UnloadTexture(player->rival_show);
 }

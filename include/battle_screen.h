@@ -3,7 +3,6 @@
 
 #include "team.h"
 
-// Function prototypes
 void InitBattleScreen(TeamNode *team);
 void DrawBattleScreen();
 void UpdateBattleScreen();
