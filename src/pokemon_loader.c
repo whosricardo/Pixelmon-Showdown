@@ -75,9 +75,33 @@ PokemonInfo *load_pokemon_info(const char *path)
         cJSON *back_item = cJSON_GetObjectItem(sprites, "back");
         cJSON *icon_item = cJSON_GetObjectItem(sprites, "icon");
 
-        pointer->sprites.front = front_item && cJSON_IsString(front_item) ? strdup(front_item->valuestring) : NULL;
-        pointer->sprites.back = back_item && cJSON_IsString(back_item) ? strdup(back_item->valuestring) : NULL;
-        pointer->sprites.icon = icon_item && cJSON_IsString(icon_item) ? strdup(icon_item->valuestring) : NULL;
+        // Get the directory path from the main JSON file path
+        char base_path[256];
+        strcpy(base_path, path);
+        char *last_slash = strrchr(base_path, '/');
+        if (last_slash) *(last_slash + 1) = '\0'; // Keep the directory part
+
+        // Construct full paths for each sprite
+        if (front_item && cJSON_IsString(front_item))
+        {
+            char full_front_path[512];
+            snprintf(full_front_path, sizeof(full_front_path), "%s%s", base_path, front_item->valuestring);
+            pointer->sprites.front = strdup(full_front_path);
+        }
+
+        if (back_item && cJSON_IsString(back_item))
+        {
+            char full_back_path[512];
+            snprintf(full_back_path, sizeof(full_back_path), "%s%s", base_path, back_item->valuestring);
+            pointer->sprites.back = strdup(full_back_path);
+        }
+
+        if (icon_item && cJSON_IsString(icon_item))
+        {
+            char full_icon_path[512];
+            snprintf(full_icon_path, sizeof(full_icon_path), "%s%s", base_path, icon_item->valuestring);
+            pointer->sprites.icon = strdup(full_icon_path);
+        }
     }
 
     // Evolution

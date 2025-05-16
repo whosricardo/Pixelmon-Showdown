@@ -1,5 +1,6 @@
 #include "raylib.h"
 #include "menu.h"
+#include "battle_screen.h"
 
 int main(void)
 {

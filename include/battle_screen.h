@@ -7,5 +7,6 @@ void InitBattleScreen(TeamNode *team);
 void DrawBattleScreen();
 void UpdateBattleScreen();
 void UnloadBattleScreen();
+TeamNode* GenerateRivalTeam();
 
 #endif

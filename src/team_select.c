@@ -2,7 +2,7 @@
 #include "pokemon_loader.h"
 #include "file_loader.h"
 #include "team.h"
-#include "battle.h"
+#include "battle_screen.h"
 #include <dirent.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -56,21 +56,16 @@ static void LoadPokemonIcons()
             PokemonInfo *pokemon = load_pokemon_info(json_path);
             if (pokemon == NULL) continue;
 
-            // Load only first-stage or single-stage Pokémon
-            if ((pokemon->pre_evolution == NULL && pokemon->evolves_to != NULL) || 
-                (pokemon->pre_evolution == NULL && pokemon->evolves_to == NULL))
+            // Load the icon for every Pokémon, regardless of evolution stage
+            char icon_path[256];
+            snprintf(icon_path, sizeof(icon_path), "%s/%s/%s_icon.png", gen_path, entry->d_name, entry->d_name);
+            if (FileExists(icon_path))
             {
-                // Load the icon
-                char icon_path[256];
-                snprintf(icon_path, sizeof(icon_path), "%s/%s/%s_icon.png", gen_path, entry->d_name, entry->d_name);
-                if (FileExists(icon_path))
-                {
-                    icons[total_pokemon].texture = LoadTexture(icon_path);
-                    strncpy(icons[total_pokemon].name, entry->d_name, sizeof(icons[total_pokemon].name) - 1);
-                    strncpy(icons[total_pokemon].generation, generations[g], sizeof(icons[total_pokemon].generation) - 1);
-                    icons[total_pokemon].is_legendary = pokemon->is_legendary;
-                    total_pokemon++;
-                }
+                icons[total_pokemon].texture = LoadTexture(icon_path);
+                strncpy(icons[total_pokemon].name, entry->d_name, sizeof(icons[total_pokemon].name) - 1);
+                strncpy(icons[total_pokemon].generation, generations[g], sizeof(icons[total_pokemon].generation) - 1);
+                icons[total_pokemon].is_legendary = pokemon->is_legendary;
+                total_pokemon++;
             }
 
             free_pokemon(pokemon);
@@ -82,7 +77,7 @@ static void LoadPokemonIcons()
         closedir(dir);
     }
 
-    printf("Loaded %d first-stage and single-stage Pokémon icons.\n", total_pokemon);
+    printf("Loaded %d Pokémon icons.\n", total_pokemon);
 }
 
 void ShowTeamSelection()
@@ -102,7 +97,6 @@ void ShowTeamSelection()
     int selected_row = 0;
     int selected_col = 0;
     int current_page = 0;
-    
     int total_pages = (total_pokemon + (GRID_ROWS * GRID_COLS) - 1) / (GRID_ROWS * GRID_COLS);
     int selected_index = 0;
 
@@ -115,32 +109,28 @@ void ShowTeamSelection()
         if (IsKeyPressed(KEY_RIGHT)) selected_col = (selected_col + 1) % GRID_COLS;
         if (IsKeyPressed(KEY_LEFT)) selected_col = (selected_col - 1 + GRID_COLS) % GRID_COLS;
 
-        // Calculate the selected index
-        selected_index = current_page * (GRID_ROWS * GRID_COLS) + (selected_row * GRID_COLS) + selected_col;
-
-        // Prevent out-of-bounds selection
-        if (selected_index >= total_pokemon) selected_index = total_pokemon - 1;
-        if (selected_index < 0) selected_index = 0;
-
         // Handle page switching
-        if (IsKeyPressed(KEY_RIGHT) && current_page < total_pages - 1)
+        if (IsKeyPressed(KEY_Q) && current_page > 0)
+        {
+            current_page--;
+            selected_row = 0;
+            selected_col = 0;
+        }
+        else if (IsKeyPressed(KEY_E) && current_page < total_pages - 1)
         {
             current_page++;
             selected_row = 0;
             selected_col = 0;
         }
 
-        if (IsKeyPressed(KEY_LEFT) && current_page > 0)
-        {
-            current_page--;
-            selected_row = 0;
-            selected_col = 0;
-        }
+        // Calculate the selected index
+        selected_index = current_page * (GRID_ROWS * GRID_COLS) + (selected_row * GRID_COLS) + selected_col;
+        if (selected_index >= total_pokemon) selected_index = total_pokemon - 1;
+        if (selected_index < 0) selected_index = 0;
 
-        // Handle Pokémon selection (using E key)
-        if (IsKeyPressed(KEY_E))
+        // Handle Pokémon selection (using Enter or Space)
+        if (IsKeyPressed(KEY_SPACE))
         {
-            // Prevent adding more than 6 Pokémon
             if (team_size(player_team) < MAX_TEAM_SIZE && !is_pokemon_in_team(player_team, selected_index))
             {
                 // Prevent more than 1 legendary
@@ -199,6 +189,7 @@ void ShowTeamSelection()
                 
                 DrawTexture(icons[index].texture, icon_x, icon_y, WHITE);
 
+                // Draw the cursor
                 if (index == selected_index)
                 {
                     cursor_offset += cursor_direction * cursor_speed;
@@ -216,15 +207,16 @@ void ShowTeamSelection()
             }
         }
 
-        // Calculate the total width of the team preview
+        // Draw page indicator
+        char page_text[32];
+        snprintf(page_text, sizeof(page_text), "Page %d / %d", current_page + 1, total_pages);
+        DrawText(page_text, 1100, 680, 20, WHITE);
+
+        // Draw the team preview
         int current_team_size = team_size(player_team);
         int total_preview_width = (current_team_size * TEAM_PREVIEW_SPACING) - (TEAM_PREVIEW_SPACING - 64);
         int preview_x = (1280 - total_preview_width) / 2;  // Center the team
 
-        // Test Background for the Preview Area (Optional)
-        DrawRectangle(preview_x - 20, TEAM_PREVIEW_Y - 20, total_preview_width + 40, 80, (Color){30, 30, 30, 180});
-
-        // Draw the team preview
         TeamNode *current = player_team;
         while (current != NULL)
         {
@@ -244,10 +236,10 @@ void ShowTeamSelection()
         int button_x = 500;
         int button_y = 50;
         int button_width = 280;
-        int button_height = 30;
-        Color button_color = (current_team_size == MAX_TEAM_SIZE) ? GREEN : GRAY;
+        int button_height = 50;
+        Color button_color = (team_size(player_team) == MAX_TEAM_SIZE) ? GREEN : GRAY;
         DrawRectangle(button_x, button_y, button_width, button_height, button_color);
-        DrawText("CONFIRM TEAM", button_x + 60, button_y + 7, 20, WHITE);
+        DrawText("CONFIRM TEAM", button_x + 60, button_y + 15, 20, WHITE);
 
         // Handle the confirmation button click
         if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
@@ -256,11 +248,15 @@ void ShowTeamSelection()
             if (mouse_pos.x >= button_x && mouse_pos.x <= button_x + button_width &&
                 mouse_pos.y >= button_y && mouse_pos.y <= button_y + button_height)
             {
-                if (current_team_size == MAX_TEAM_SIZE)
+                if (team_size(player_team) == MAX_TEAM_SIZE)
                 {
                     printf("Team Confirmed!\n");
-                    StartBattle(player_team);
-                    return;
+                    
+                    // Call the battle screen with the selected team
+                    InitBattleScreen(player_team);
+                    
+                    // Break out of the selection loop
+                    break;
                 }
                 else
                 {

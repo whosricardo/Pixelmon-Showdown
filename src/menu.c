@@ -23,7 +23,7 @@ void ShowMainMenu()
         if (IsKeyPressed(KEY_DOWN)) selected_option = (selected_option + 1) % menu_options;
         if (IsKeyPressed(KEY_UP)) selected_option = (selected_option - 1 + menu_options) % menu_options;
         
-        if (IsKeyPressed(KEY_ENTER) || IsKeyPressed(KEY_SPACE))
+        if (IsKeyPressed(KEY_ENTER))
         {
             if (selected_option == 0) 
             {
