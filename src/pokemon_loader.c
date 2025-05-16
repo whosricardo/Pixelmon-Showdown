@@ -46,7 +46,7 @@ PokemonInfo *load_pokemon_info(const char *path)
 
     pointer->id = id_item->valueint;
     pointer->name = strdup(name_item->valuestring);
-    pointer->is_legendary = cJSON_IsTrue(legendary_item);  // FIXED: Correct legendary parsing
+    pointer->is_legendary = cJSON_IsTrue(legendary_item);
 
     // Types
     cJSON *types = cJSON_GetObjectItem(root, "type");
@@ -104,20 +104,27 @@ PokemonInfo *load_pokemon_info(const char *path)
         }
     }
 
-    // Evolution
-    cJSON *evo = cJSON_GetObjectItem(root, "evolves_to");
-    if (evo && !cJSON_IsNull(evo)) 
+    // Learnset
+    cJSON *learnset = cJSON_GetObjectItem(root, "learnset");
+    if (cJSON_IsArray(learnset))
     {
-        cJSON *evo_name = cJSON_GetObjectItem(evo, "name");
-        pointer->evolves_to = evo_name && cJSON_IsString(evo_name) ? strdup(evo_name->valuestring) : NULL;
-    }
+        int move_count = cJSON_GetArraySize(learnset);
+        pointer->learnset = malloc(move_count * sizeof(LearnMove));
+        pointer->learnset_size = move_count;
 
-    // Pre-Evolution
-    cJSON *pre_evo = cJSON_GetObjectItem(root, "pre_evolution");
-    if (pre_evo && !cJSON_IsNull(pre_evo))
+        for (int i = 0; i < pointer->learnset_size; i++)
+        {
+            cJSON *move_item = cJSON_GetArrayItem(learnset, i);
+            if (cJSON_IsString(move_item))
+            {
+                pointer->learnset[i].move = strdup(move_item->valuestring);
+            }
+        }
+    }
+    else
     {
-        cJSON *pre_evo_name = cJSON_GetObjectItem(pre_evo, "name");
-        pointer->pre_evolution = pre_evo_name && cJSON_IsString(pre_evo_name) ? strdup(pre_evo_name->valuestring) : NULL;
+        pointer->learnset = NULL;
+        pointer->learnset_size = 0;
     }
 
     cJSON_Delete(root);
@@ -140,6 +147,13 @@ void free_pokemon(PokemonInfo *pointer)
 
     for (int i = 0; i < MAX_ABILITIES; i++) 
         free(pointer->abilities[i]);
+
+    if (pointer->learnset)
+    {
+        for (int i = 0; i < pointer->learnset_size; i++)
+            free(pointer->learnset[i].move);
+        free(pointer->learnset);
+    }
 
     free(pointer);
 }

@@ -12,6 +12,11 @@
 #define MAX_POKEMON 6
 #define MAX_AVAILABLE_POKEMON 300
 #define HP_BAR_WIDTH 300
+#define MENU_X 150
+#define MENU_Y 600
+#define MENU_WIDTH 400
+#define MENU_HEIGHT 120
+#define MENU_ITEM_HEIGHT 30
 
 static TeamNode *player_team = NULL;
 static TeamNode *rival_team = NULL;
@@ -24,6 +29,7 @@ static int player_current_hp = 0;
 static int player_max_hp = 0;
 static int rival_current_hp = 0;
 static int rival_max_hp = 0;
+static int selected_move = 0;
 
 // Generate a random rival team
 TeamNode* GenerateRivalTeam()
@@ -109,7 +115,37 @@ int CalculateDamage(PokemonInfo *attacker, PokemonInfo *defender)
     return damage;
 }
 
-// Helper function to get a random move name (for now)
+// Draw the battle menu
+void DrawBattleMenu(PokemonInfo *pokemon)
+{
+    DrawRectangle(MENU_X, MENU_Y, MENU_WIDTH, MENU_HEIGHT, DARKGRAY);
+    
+    // Only draw moves if the Pokémon has a learnset
+    if (pokemon->learnset_size > 0)
+    {
+        for (int i = 0; i < pokemon->learnset_size; i++)
+        {
+            Color text_color = (i == selected_move) ? YELLOW : WHITE;
+            DrawText(pokemon->learnset[i].move, MENU_X + 20, MENU_Y + 10 + i * MENU_ITEM_HEIGHT, 20, text_color);
+        }
+    }
+    else
+    {
+        // Fallback message if no moves are available
+        DrawText("No moves available!", MENU_X + 20, MENU_Y + 20, 20, RED);
+    }
+}
+
+// Helper function to get the selected move name
+const char* GetSelectedMove(PokemonInfo *pokemon, int selected_index)
+{
+    if (selected_index < pokemon->learnset_size)
+    {
+        return pokemon->learnset[selected_index].move;
+    }
+    return "Struggle";
+}
+
 const char* GetRandomMove(PokemonInfo *pokemon)
 {
     if (pokemon->learnset_size > 0)
@@ -117,7 +153,7 @@ const char* GetRandomMove(PokemonInfo *pokemon)
         int random_index = rand() % pokemon->learnset_size;
         return pokemon->learnset[random_index].move;
     }
-    return "Tackle";
+    return "Struggle";
 }
 
 void InitBattleScreen(TeamNode *team)
@@ -145,23 +181,73 @@ void InitBattleScreen(TeamNode *team)
     rival_max_hp = rival_pokemon->base_stats.hp * 2;
     rival_current_hp = rival_max_hp;
 
-    // Temporary: Start the battle loop
+    // Main battle loop
     while (!WindowShouldClose())
     {
-        // Handle simple battle logic
-        if (IsKeyPressed(KEY_SPACE))
+        // Handle move selection
+        if (IsKeyPressed(KEY_DOWN)) selected_move = (selected_move + 1) % player_pokemon->learnset_size;
+        if (IsKeyPressed(KEY_UP)) selected_move = (selected_move - 1 + player_pokemon->learnset_size) % player_pokemon->learnset_size;
+
+        // Handle move execution
+        if (IsKeyPressed(KEY_ENTER))
         {
             // Player attacks
             int player_damage = CalculateDamage(player_pokemon, rival_pokemon);
             rival_current_hp -= player_damage;
             if (rival_current_hp < 0) rival_current_hp = 0;
-            printf("%s used %s! It dealt %d damage.\n", player_pokemon->name, GetRandomMove(player_pokemon), player_damage);
+            printf("%s used %s! It dealt %d damage.\n", player_pokemon->name, GetSelectedMove(player_pokemon, selected_move), player_damage);
+
+            // Check if the rival Pokémon fainted
+            if (rival_current_hp == 0)
+            {
+                printf("%s fainted!\n", rival_pokemon->name);
+                
+                // Move to the next Pokémon in the rival's team
+                if (rival_team->next != NULL)
+                {
+                    rival_team = rival_team->next;
+                    rival_pokemon = rival_team->pokemon;
+                    rival_texture = LoadTexture(rival_pokemon->sprites.front);
+                    rival_max_hp = rival_pokemon->base_stats.hp * 2;
+                    rival_current_hp = rival_max_hp;
+                    printf("Rival sent out %s!\n", rival_pokemon->name);
+                }
+                else
+                {
+                    // Rival is out of Pokémon, player wins
+                    printf("You win!\n");
+                    break;
+                }
+            }
 
             // Rival attacks
             int rival_damage = CalculateDamage(rival_pokemon, player_pokemon);
             player_current_hp -= rival_damage;
             if (player_current_hp < 0) player_current_hp = 0;
             printf("%s used %s! It dealt %d damage.\n", rival_pokemon->name, GetRandomMove(rival_pokemon), rival_damage);
+
+            // Check if the player Pokémon fainted
+            if (player_current_hp == 0)
+            {
+                printf("%s fainted!\n", player_pokemon->name);
+                
+                // Move to the next Pokémon in the player's team
+                if (player_team->next != NULL)
+                {
+                    player_team = player_team->next;
+                    player_pokemon = player_team->pokemon;
+                    player_texture = LoadTexture(player_pokemon->sprites.back);
+                    player_max_hp = player_pokemon->base_stats.hp * 2;
+                    player_current_hp = player_max_hp;
+                    printf("You sent out %s!\n", player_pokemon->name);
+                }
+                else
+                {
+                    // Player is out of Pokémon, rival wins
+                    printf("You lose!\n");
+                    break;
+                }
+            }
         }
 
         BeginDrawing();
@@ -176,19 +262,20 @@ void InitBattleScreen(TeamNode *team)
         // Draw the rival Pokémon (top right)
         DrawTexture(rival_texture, 800, 100, WHITE);
 
-        // Draw the player HP bar
+        // Draw HP bars
         int player_bar_width = (int)CalculateHPBarWidth(player_current_hp, player_max_hp, HP_BAR_WIDTH);
+        int rival_bar_width = (int)CalculateHPBarWidth(rival_current_hp, rival_max_hp, HP_BAR_WIDTH);
         DrawRectangle(150, 550, HP_BAR_WIDTH, 20, DARKGREEN); // Background
         DrawRectangle(150, 550, player_bar_width, 20, GREEN); // Current HP
-
-        // Draw the rival HP bar
-        int rival_bar_width = (int)CalculateHPBarWidth(rival_current_hp, rival_max_hp, HP_BAR_WIDTH);
         DrawRectangle(850, 50, HP_BAR_WIDTH, 20, DARKGREEN); // Background
         DrawRectangle(850, 50, rival_bar_width, 20, GREEN); // Current HP
 
         // Draw player and rival names
         DrawText(player_pokemon->name, 150, 520, 20, WHITE);
         DrawText(rival_pokemon->name, 850, 20, 20, WHITE);
+
+        // Draw the battle menu
+        DrawBattleMenu(player_pokemon);
 
         EndDrawing();
     }

@@ -1,0 +1,162 @@
+{
+    "Meteor Mash": {
+        "power": 90,
+        "type": "Steel"
+    },
+    "Bullet Punch": {
+        "power": 40,
+        "type": "Steel"
+    },
+    "Zen Headbutt": {
+        "power": 80,
+        "type": "Psychic"
+    },
+    "Hammer Arm": {
+        "power": 100,
+        "type": "Fighting"
+    },
+    "Thunderbolt": {
+        "power": 90,
+        "type": "Electric"
+    },
+    "Quick Attack": {
+        "power": 40,
+        "type": "Normal"
+    },
+    "Iron Tail": {
+        "power": 100,
+        "type": "Steel"
+    },
+    "Thunder Wave": {
+        "power": 0,
+        "type": "Electric"
+    },
+    "Flamethrower": {
+        "power": 90,
+        "type": "Fire"
+    },
+    "Dragon Claw": {
+        "power": 80,
+        "type": "Dragon"
+    },
+    "Air Slash": {
+        "power": 75,
+        "type": "Flying"
+    },
+    "Protect": {
+        "power": 0,
+        "type": "Normal"
+    },
+    "Ice Beam": {
+        "power": 90,
+        "type": "Ice"
+    },
+    "Hydro Pump": {
+        "power": 110,
+        "type": "Water"
+    },
+    "Razor Leaf": {
+        "power": 55,
+        "type": "Grass"
+    },
+    "Body Slam": {
+        "power": 85,
+        "type": "Normal"
+    },
+    "Shadow Ball": {
+        "power": 80,
+        "type": "Ghost"
+    },
+    "Earthquake": {
+        "power": 100,
+        "type": "Ground"
+    },
+    "Rock Slide": {
+        "power": 75,
+        "type": "Rock"
+    },
+    "Psychic": {
+        "power": 90,
+        "type": "Psychic"
+    },
+    "Thunder": {
+        "power": 110,
+        "type": "Electric"
+    },
+    "Giga Drain": {
+        "power": 75,
+        "type": "Grass"
+    },
+    "Sludge Bomb": {
+        "power": 90,
+        "type": "Poison"
+    },
+    "Crunch": {
+        "power": 80,
+        "type": "Dark"
+    },
+    "Focus Blast": {
+        "power": 120,
+        "type": "Fighting"
+    },
+    "Leech Seed": {
+        "power": 0,
+        "type": "Grass"
+    },
+    "Recover": {
+        "power": 0,
+        "type": "Normal"
+    },
+    "Tail Whip": {
+        "power": 0,
+        "type": "Normal"
+    },
+    "Growl": {
+        "power": 0,
+        "type": "Normal"
+    },
+    "Swords Dance": {
+        "power": 0,
+        "type": "Normal"
+    },
+    "Calm Mind": {
+        "power": 0,
+        "type": "Psychic"
+    },
+    "Toxic": {
+        "power": 0,
+        "type": "Poison"
+    },
+    "Substitute": {
+        "power": 0,
+        "type": "Normal"
+    },
+    "Reflect": {
+        "power": 0,
+        "type": "Psychic"
+    },
+    "Light Screen": {
+        "power": 0,
+        "type": "Psychic"
+    },
+    "Will-O-Wisp": {
+        "power": 0,
+        "type": "Fire"
+    },
+    "Double Team": {
+        "power": 0,
+        "type": "Normal"
+    },
+    "Roost": {
+        "power": 0,
+        "type": "Flying"
+    },
+    "Dragon Dance": {
+        "power": 0,
+        "type": "Dragon"
+    },
+    "Nasty Plot": {
+        "power": 0,
+        "type": "Dark"
+    }
+}
