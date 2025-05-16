@@ -3,9 +3,9 @@
     "name": "Scizor",
     "type": ["Bug", "Steel"],
     "sprites": {
-      "front": "scizor_front.png",
-      "back": "scizor_back.png",
-      "icon" : "scizor_icon.png"
+      "front": "scissor_front.png",
+      "back": "scissor_back.png",
+      "icon" : "scissor_icon.png"
     },
     "base_stats": {
       "hp": 70,
