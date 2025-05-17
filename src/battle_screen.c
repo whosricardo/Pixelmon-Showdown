@@ -36,6 +36,9 @@ static int player_max_hp = 0;
 static int rival_current_hp = 0;
 static int rival_max_hp = 0;
 static int selected_move = 0;
+static Sound critical_hit_sound;
+static int critical_hit_flash_timer = 0;
+static const int CRITICAL_HIT_FLASH_DURATION = 15;
 
 // Generate a random rival team
 TeamNode* GenerateRivalTeam()
@@ -177,6 +180,18 @@ float CalculateHPBarWidth(int current_hp, int max_hp, int bar_width)
     return (float)current_hp / (float)max_hp * bar_width;
 }
 
+// Determine HP bar color based on percentage
+Color GetHPBarColor(int current_hp, int max_hp)
+{
+    float hp_percentage = (float)current_hp / max_hp;
+    if (hp_percentage > 0.5f)
+        return GREEN; // High HP
+    else if (hp_percentage > 0.2f)
+        return YELLOW; // Medium HP
+    else
+        return RED; // Low HP
+}
+
 // Calculate the damage for a move
 int CalculateDamage(PokemonInfo *attacker, PokemonInfo *defender, const char *move_name)
 {
@@ -201,6 +216,8 @@ int CalculateDamage(PokemonInfo *attacker, PokemonInfo *defender, const char *mo
     if (critical == 2)
     {
         printf("It's a critical hit!\n");
+        PlaySound(critical_hit_sound);
+        critical_hit_flash_timer = CRITICAL_HIT_FLASH_DURATION;
     }
 
     if (type_multiplier > 1.0f)
@@ -338,6 +355,10 @@ float GetTypeEffectiveness(const char *move_type, PokemonInfo *defender)
 
 void InitBattleScreen(TeamNode *team)
 {
+    // Load the critical hit sound
+    InitAudioDevice();
+    critical_hit_sound = LoadSound("assets/sounds/critical_hit.mp3");
+
     srand(time(NULL));
 
     player_team = team;
@@ -430,38 +451,49 @@ void InitBattleScreen(TeamNode *team)
             }
         }
 
-        BeginDrawing();
-        ClearBackground(RAYWHITE);
+    BeginDrawing();
+    ClearBackground(RAYWHITE);
 
-        // Draw the background
-        DrawTexture(battle_bg, 0, 0, WHITE);
+    // Critical hit flash effect
+    if (critical_hit_flash_timer > 0)
+    {
+        ClearBackground(YELLOW);
+        critical_hit_flash_timer--;
+    }
 
-        // Draw the player Pokémon (bottom left)
-        DrawTexture(player_texture, 200, 400, WHITE);
+    // Draw the background
+    DrawTexture(battle_bg, 0, 0, WHITE);
 
-        // Draw the rival Pokémon (top right)
-        DrawTexture(rival_texture, 800, 100, WHITE);
+    // Draw the player Pokémon (bottom left)
+    DrawTexture(player_texture, 200, 400, WHITE);
 
-        // Draw HP bars
-        int player_bar_width = (int)CalculateHPBarWidth(player_current_hp, player_max_hp, HP_BAR_WIDTH);
-        int rival_bar_width = (int)CalculateHPBarWidth(rival_current_hp, rival_max_hp, HP_BAR_WIDTH);
-        DrawRectangle(150, 550, HP_BAR_WIDTH, 20, DARKGREEN); // Background
-        DrawRectangle(150, 550, player_bar_width, 20, GREEN); // Current HP
-        DrawRectangle(850, 50, HP_BAR_WIDTH, 20, DARKGREEN); // Background
-        DrawRectangle(850, 50, rival_bar_width, 20, GREEN); // Current HP
+    // Draw the rival Pokémon (top right)
+    DrawTexture(rival_texture, 800, 100, WHITE);
 
-        // Draw player and rival names
-        DrawText(player_pokemon->name, 150, 520, 20, WHITE);
-        DrawText(rival_pokemon->name, 850, 20, 20, WHITE);
+    // Draw HP bars
+    int player_bar_width = (int)CalculateHPBarWidth(player_current_hp, player_max_hp, HP_BAR_WIDTH);
+    int rival_bar_width = (int)CalculateHPBarWidth(rival_current_hp, rival_max_hp, HP_BAR_WIDTH);
+    DrawRectangle(150, 550, HP_BAR_WIDTH, 20, DARKGRAY); // Background
+    DrawRectangle(150, 550, player_bar_width, 20, GetHPBarColor(player_current_hp, player_max_hp)); // Current HP
+    DrawRectangle(850, 50, HP_BAR_WIDTH, 20, DARKGRAY); // Background
+    DrawRectangle(850, 50, rival_bar_width, 20, GetHPBarColor(rival_current_hp, rival_max_hp)); // Current HP
 
-        // Draw the battle menu
-        DrawBattleMenu(player_pokemon);
+    // Draw player and rival names
+    DrawText(player_pokemon->name, 150, 520, 20, WHITE);
+    DrawText(rival_pokemon->name, 850, 20, 20, WHITE);
 
-        EndDrawing();
+    // Draw the battle menu
+    DrawBattleMenu(player_pokemon);
+
+    EndDrawing();
+
     }
 
     // Cleanup
     UnloadTexture(battle_bg);
     UnloadTexture(player_texture);
     UnloadTexture(rival_texture);
+    UnloadSound(critical_hit_sound);
+    CloseAudioDevice();
+
 }

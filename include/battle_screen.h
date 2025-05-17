@@ -2,6 +2,7 @@
 #define BATTLE_SCREEN_H
 
 #include "team.h"
+#include "raylib.h"
 
 void InitBattleScreen(TeamNode *team);
 TeamNode* GenerateRivalTeam();
@@ -11,8 +12,10 @@ const char* GetSelectedMove(PokemonInfo *pokemon, int selected_index);
 void DrawBattleMenu(PokemonInfo *pokemon);
 void LoadMoveData();
 void FreeMoveData();
-void LoadTypeChart();  
-void FreeTypeChart();  
-float GetTypeEffectiveness(const char *move_type, PokemonInfo *defender); 
+void LoadTypeChart();
+void FreeTypeChart();
+float GetTypeEffectiveness(const char *move_type, PokemonInfo *defender);
+Color GetHPBarColor(int current_hp, int max_hp);
+void PlayCriticalHitEffect();
 
 #endif
