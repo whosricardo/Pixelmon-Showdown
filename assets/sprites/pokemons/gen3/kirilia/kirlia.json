@@ -1,11 +1,11 @@
 {
   "id": 281,
-  "name": "Kirlia",
+  "name": "Kirilia",
   "type": ["Fairy", "Psychic"],
   "sprites": {
-    "front": "kirlia_front.png",
-    "back": "kirlia_back.png",
-    "icon": "kirlia_icon.png"
+    "front": "kirilia_front.png",
+    "back": "kirilia_back.png",
+    "icon": "kirilia_icon.png"
   },
   "base_stats": {
     "hp": 38,
