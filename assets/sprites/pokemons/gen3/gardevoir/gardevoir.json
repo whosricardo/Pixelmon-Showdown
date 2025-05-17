@@ -3,7 +3,7 @@
   "name": "Gardevoir",
   "type": ["Fairy", "Psychic"],
   "sprites": {
-    "front": "gardevoir.png",
+    "front": "gardevoir_front.png",
     "back": "gardevoir_back.png",
     "icon": "gardevoir_icon.png"
   },

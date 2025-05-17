@@ -29,7 +29,8 @@
     },
     "Thunder Wave": {
         "power": 0,
-        "type": "Electric"
+        "type": "Electric",
+        "effect": "paralyze"
     },
     "Flamethrower": {
         "power": 90,
@@ -49,7 +50,8 @@
     },
     "Ice Beam": {
         "power": 90,
-        "type": "Ice"
+        "type": "Ice",
+        "effect": "freeze"
     },
     "Hydro Pump": {
         "power": 110,
@@ -61,7 +63,8 @@
     },
     "Body Slam": {
         "power": 85,
-        "type": "Normal"
+        "type": "Normal",
+        "effect": "paralyze"
     },
     "Shadow Ball": {
         "power": 80,
@@ -85,11 +88,13 @@
     },
     "Giga Drain": {
         "power": 75,
-        "type": "Grass"
+        "type": "Grass",
+        "effect": "leech"
     },
     "Sludge Bomb": {
         "power": 90,
-        "type": "Poison"
+        "type": "Poison",
+        "effect": "poison"
     },
     "Crunch": {
         "power": 80,
@@ -101,62 +106,77 @@
     },
     "Leech Seed": {
         "power": 0,
-        "type": "Grass"
+        "type": "Grass",
+        "effect": "leech"
     },
     "Recover": {
         "power": 0,
-        "type": "Normal"
+        "type": "Normal",
+        "effect": "heal"
     },
     "Tail Whip": {
         "power": 0,
-        "type": "Normal"
+        "type": "Normal",
+        "effect": "lower_defense"
     },
     "Growl": {
         "power": 0,
-        "type": "Normal"
+        "type": "Normal",
+        "effect": "lower_attack"
     },
     "Swords Dance": {
         "power": 0,
-        "type": "Normal"
+        "type": "Normal",
+        "effect": "raise_attack"
     },
     "Calm Mind": {
         "power": 0,
-        "type": "Psychic"
+        "type": "Psychic",
+        "effect": "raise_sp_attack"
     },
     "Toxic": {
         "power": 0,
-        "type": "Poison"
+        "type": "Poison",
+        "effect": "poison"
     },
     "Substitute": {
         "power": 0,
-        "type": "Normal"
+        "type": "Normal",
+        "effect": "substitute"
     },
     "Reflect": {
         "power": 0,
-        "type": "Psychic"
+        "type": "Psychic",
+        "effect": "raise_defense"
     },
     "Light Screen": {
         "power": 0,
-        "type": "Psychic"
+        "type": "Psychic",
+        "effect": "raise_sp_defense"
     },
     "Will-O-Wisp": {
         "power": 0,
-        "type": "Fire"
+        "type": "Fire",
+        "effect": "burn"
     },
     "Double Team": {
         "power": 0,
-        "type": "Normal"
+        "type": "Normal",
+        "effect": "raise_evasion"
     },
     "Roost": {
         "power": 0,
-        "type": "Flying"
+        "type": "Flying",
+        "effect": "heal"
     },
     "Dragon Dance": {
         "power": 0,
-        "type": "Dragon"
+        "type": "Dragon",
+        "effect": "raise_attack"
     },
     "Nasty Plot": {
         "power": 0,
-        "type": "Dark"
+        "type": "Dark",
+        "effect": "raise_sp_attack"
     }
 }

@@ -3,6 +3,8 @@
         "file_loader.h": "c",
         "string.h": "c",
         "stdlib.h": "c",
-        "map.h": "c"
+        "map.h": "c",
+        "battle_screen.h": "c",
+        "pokemon_loader.h": "c"
     }
 }

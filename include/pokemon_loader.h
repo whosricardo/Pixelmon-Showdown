@@ -41,6 +41,7 @@ typedef struct
 
     LearnMove *learnset;
     int learnset_size;
+    char *status;
 } PokemonInfo;
 
 PokemonInfo* load_pokemon_info(const char *path);

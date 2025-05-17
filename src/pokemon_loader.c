@@ -173,6 +173,9 @@ void free_pokemon(PokemonInfo *pointer)
             free(pointer->learnset[i].move);
         free(pointer->learnset);
     }
+    
+    if (pointer->status)
+    free(pointer->status);
 
     free(pointer);
 }

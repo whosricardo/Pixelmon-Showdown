@@ -174,6 +174,63 @@ const char* GetMoveType(const char *move_name)
     return "Normal"; // Default type if not found
 }
 
+// Apply status effects
+void ApplyStatusEffect(PokemonInfo *target, const char *effect)
+{
+    // Check if the Pokémon already has a status condition
+    if (target->status != NULL)
+    {
+        printf("%s is already affected by %s!\n", target->name, target->status);
+        return;
+    }
+
+    if (strcmp(effect, "lower_attack") == 0)
+    {
+        target->base_stats.attack = (int)(target->base_stats.attack * 0.75);
+        printf("%s's Attack fell!\n", target->name);
+    }
+    else if (strcmp(effect, "lower_defense") == 0)
+    {
+        target->base_stats.defense = (int)(target->base_stats.defense * 0.75);
+        printf("%s's Defense fell!\n", target->name);
+    }
+    else if (strcmp(effect, "paralyze") == 0)
+    {
+        target->status = strdup("paralyzed");
+        printf("%s is paralyzed! It may be unable to move!\n", target->name);
+    }
+    else if (strcmp(effect, "burn") == 0)
+    {
+        target->status = strdup("burned");
+        printf("%s was burned!\n", target->name);
+    }
+    else if (strcmp(effect, "poison") == 0)
+    {
+        target->status = strdup("poisoned");
+        printf("%s was poisoned!\n", target->name);
+    }
+    else if (strcmp(effect, "freeze") == 0)
+    {
+        target->status = strdup("frozen");
+        printf("%s was frozen solid!\n", target->name);
+    }
+    else if (strcmp(effect, "raise_attack") == 0)
+    {
+        target->base_stats.attack = (int)(target->base_stats.attack * 1.5);
+        printf("%s's Attack sharply rose!\n", target->name);
+    }
+    else if (strcmp(effect, "raise_sp_attack") == 0)
+    {
+        target->base_stats.sp_attack = (int)(target->base_stats.sp_attack * 1.5);
+        printf("%s's Special Attack sharply rose!\n", target->name);
+    }
+    else if (strcmp(effect, "heal") == 0)
+    {
+        printf("%s healed some HP!\n", target->name);
+        // This will be handled in the TeamNode structure instead
+    }
+}
+
 // Helper function to calculate HP bar width
 float CalculateHPBarWidth(int current_hp, int max_hp, int bar_width)
 {
@@ -200,6 +257,25 @@ int CalculateDamage(PokemonInfo *attacker, PokemonInfo *defender, const char *mo
 
     if (base_power == 0)
     {
+        // Check for status effects
+        cJSON *move_item = cJSON_GetObjectItem(move_data, move_name);
+        cJSON *effect_item = cJSON_GetObjectItem(move_item, "effect");
+
+        if (cJSON_IsString(effect_item))
+        {
+            // Self-buffs and debuffs
+            if (strcmp(effect_item->valuestring, "raise_attack") == 0 || 
+                strcmp(effect_item->valuestring, "raise_sp_attack") == 0 ||
+                strcmp(effect_item->valuestring, "heal") == 0)
+            {
+                ApplyStatusEffect(attacker, effect_item->valuestring);
+            }
+            else
+            {
+                ApplyStatusEffect(defender, effect_item->valuestring);
+            }
+        }
+
         printf("%s used %s. It's a status move!\n", attacker->name, move_name);
         return 0;
     }
