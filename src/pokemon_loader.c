@@ -104,6 +104,25 @@ PokemonInfo *load_pokemon_info(const char *path)
         }
     }
 
+        // Load the base stats
+    cJSON *base_stats = cJSON_GetObjectItem(root, "base_stats");
+    if (cJSON_IsObject(base_stats))
+    {
+        cJSON *hp_item = cJSON_GetObjectItem(base_stats, "hp");
+        cJSON *attack_item = cJSON_GetObjectItem(base_stats, "attack");
+        cJSON *defense_item = cJSON_GetObjectItem(base_stats, "defense");
+        cJSON *sp_attack_item = cJSON_GetObjectItem(base_stats, "sp_attack");
+        cJSON *sp_defense_item = cJSON_GetObjectItem(base_stats, "sp_defense");
+        cJSON *speed_item = cJSON_GetObjectItem(base_stats, "speed");
+
+        if (cJSON_IsNumber(hp_item)) pointer->base_stats.hp = hp_item->valueint;
+        if (cJSON_IsNumber(attack_item)) pointer->base_stats.attack = attack_item->valueint;
+        if (cJSON_IsNumber(defense_item)) pointer->base_stats.defense = defense_item->valueint;
+        if (cJSON_IsNumber(sp_attack_item)) pointer->base_stats.sp_attack = sp_attack_item->valueint;
+        if (cJSON_IsNumber(sp_defense_item)) pointer->base_stats.sp_defense = sp_defense_item->valueint;
+        if (cJSON_IsNumber(speed_item)) pointer->base_stats.speed = speed_item->valueint;
+    }
+
     // Learnset
     cJSON *learnset = cJSON_GetObjectItem(root, "learnset");
     if (cJSON_IsArray(learnset))

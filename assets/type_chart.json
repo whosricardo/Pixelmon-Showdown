@@ -1,0 +1,20 @@
+{
+    "Normal": { "weak_to": ["Rock", "Steel"], "resists": [] },
+    "Fire": { "weak_to": ["Water", "Rock", "Fire"], "resists": ["Fire", "Grass", "Ice", "Bug", "Steel"] },
+    "Water": { "weak_to": ["Water", "Grass", "Electric"], "resists": ["Fire", "Water", "Ice", "Steel"] },
+    "Electric": { "weak_to": ["Electric", "Grass", "Ground"], "resists": ["Electric", "Flying", "Steel"] },
+    "Grass": { "weak_to": ["Fire", "Flying", "Bug", "Poison"], "resists": ["Water", "Grass", "Electric", "Ground"] },
+    "Ice": { "weak_to": ["Fire", "Rock", "Steel"], "resists": ["Ice"] },
+    "Fighting": { "weak_to": ["Flying", "Psychic", "Fairy"], "resists": ["Bug", "Rock", "Dark"] },
+    "Poison": { "weak_to": ["Ground", "Psychic"], "resists": ["Grass", "Poison", "Bug", "Fairy"] },
+    "Ground": { "weak_to": ["Water", "Grass", "Ice"], "resists": ["Poison", "Rock"] },
+    "Flying": { "weak_to": ["Electric", "Ice", "Rock"], "resists": ["Grass", "Fighting", "Bug"] },
+    "Psychic": { "weak_to": ["Bug", "Ghost", "Dark"], "resists": ["Fighting", "Psychic"] },
+    "Bug": { "weak_to": ["Fire", "Flying", "Rock"], "resists": ["Grass", "Fighting", "Ground"] },
+    "Rock": { "weak_to": ["Water", "Grass", "Ground", "Steel"], "resists": ["Fire", "Normal", "Flying", "Poison"] },
+    "Ghost": { "weak_to": ["Ghost", "Dark"], "resists": ["Poison", "Bug"] },
+    "Dragon": { "weak_to": ["Ice", "Dragon", "Fairy"], "resists": ["Fire", "Water", "Electric", "Grass"] },
+    "Dark": { "weak_to": ["Fighting", "Bug", "Fairy"], "resists": ["Ghost", "Dark"] },
+    "Steel": { "weak_to": ["Fire", "Fighting", "Ground"], "resists": ["Normal", "Grass", "Ice", "Flying", "Psychic", "Bug", "Rock", "Dragon", "Steel", "Fairy"] },
+    "Fairy": { "weak_to": ["Poison", "Steel"], "resists": ["Fighting", "Bug", "Dark"] }
+}
