@@ -1,38 +1,26 @@
 {
-    "id": 248,
-    "name": "Tyranitar",
-    "type": ["Rock", "Dark"],
-    "sprites": {
-      "front": "tyranitar_front.png",
-      "back": "tyranitar_front.png",
-      "icon": "tyranitar_icon.png"
-    },
-    "base_stats": {
-      "hp": 100,
-      "attack": 134,
-      "defense": 110,
-      "sp_attack": 95,
-      "sp_defense": 100,
-      "speed": 61
-    },
-    "abilities": ["Sand Stream"],
-    "evolves_to": null,
-    "pre_evolution": {
-      "name": "Pupitar",
-      "json_path": "gen1/pupitar/pupitar.json"
-    },
-    "is_legendary": false,
-    "learnset": [
-        { "level": 1, "move": "Bite" },
-        { "level": 1, "move": "Leer" },
-        { "level": 8, "move": "Sand Strorm" },
-        { "level": 15, "move": "Screech" },
-        { "level": 22, "move": "Peck" },
-        { "level": 29, "move": "Thrash" },
-        { "level": 38, "move": "Scary Face" },
-        { "level": 47, "move": "Crunch" },
-        { "level": 61, "move": "Earthquake" },
-        { "level": 75, "move": "Hyper Beam" }
-    ]
-  }
-  
+  "id": 248,
+  "name": "Tyranitar",
+  "type": ["Rock", "Dark"],
+  "sprites": {
+    "front": "tyranitar_front.png",
+    "back": "tyranitar_back.png",
+    "icon": "tyranitar_icon.png"
+  },
+  "base_stats": {
+    "hp": 100,
+    "attack": 134,
+    "defense": 110,
+    "sp_attack": 95,
+    "sp_defense": 100,
+    "speed": 61
+  },
+  "abilities": ["Sand Stream"],
+  "is_legendary": false,
+  "learnset": [
+    "Earthquake",
+    "Crunch",
+    "Stone Edge",
+    "Protect"
+  ]
+}

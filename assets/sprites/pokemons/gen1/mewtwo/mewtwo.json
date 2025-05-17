@@ -1,35 +1,26 @@
 {
-    "id": 150,
-    "name": "Mewtwo",
-    "type": ["Psychic"],
-    "sprites": {
-      "front": "mewtwo_front.png",
-      "back": "mewtwo_back.png",
-      "icon": "mewtwo_icon.png"
-    },
-    "base_stats": {
-      "hp": 106,
-      "attack": 110,
-      "defense": 90,
-      "sp_attack": 154,
-      "sp_defense": 90,
-      "speed": 130
-    },
-    "abilities": ["Pressure", "Unnerve"],
-    "evolves_to": null,
-    "is_legendary": true,
-    "pre_evolution": null,
-    "learnset": [
-        { "level": 1, "move": "Confusion" },
-        { "level": 1, "move": "Disable" },
-        { "level": 11, "move": "Barrier" },
-        { "level": 22, "move": "Swift" },
-        { "level": 33, "move": "Psych Up" },
-        { "level": 44, "move": "Future Sight" },
-        { "level": 66, "move": "Psychic" },
-        { "level": 77, "move": "Amnesia" },
-        { "level": 88, "move": "Recover" },
-        { "level": 99, "move": "Safeguard" }
-    ]
-  }
-  
+  "id": 150,
+  "name": "Mewtwo",
+  "type": ["Psychic"],
+  "sprites": {
+    "front": "mewtwo_front.png",
+    "back": "mewtwo_back.png",
+    "icon": "mewtwo_icon.png"
+  },
+  "base_stats": {
+    "hp": 106,
+    "attack": 110,
+    "defense": 90,
+    "sp_attack": 154,
+    "sp_defense": 90,
+    "speed": 130
+  },
+  "abilities": ["Pressure", "Unnerve"],
+  "is_legendary": true,
+  "learnset": [
+    "Psychic",
+    "Recover",
+    "Amnesia",
+    "Protect"
+  ]
+}

@@ -1,33 +1,26 @@
 {
-    "id": 59,
-    "name": "Arcanine",
-    "type": ["Fire"],
-    "sprites": {
-      "front": "arcanine_front.png",
-      "back": "arcanine_back.png",
-      "icon": "arcanine_icon.png"
-    },
-    "base_stats": {
-      "hp": 90,
-      "attack": 110,
-      "defense": 80,
-      "sp_attack": 100,
-      "sp_defense": 80,
-      "speed": 95
-    },
-    "abilities": ["Intimidate", "Flash Fire", "Justified"],
-    "evolves_to": null,
-    "pre_evolution": {
-      "name": "Growlithe",
-      "json_path": "gen1/growlithe/growlithe.json"
-    },
-    "is_legendary": false,
-    "learnset": [
-      { "level": 1, "move": "Bite" },
-      { "level": 1, "move": "Ember" },
-      { "level": 1, "move": "Odor Sleuth" },
-      { "level": 1, "move": "Roar" },
-      { "level": 49, "move": "ExtremeSpeed" }
-    ]
-  }
-  
+  "id": 59,
+  "name": "Arcanine",
+  "type": ["Fire"],
+  "sprites": {
+    "front": "arcanine_front.png",
+    "back": "arcanine_back.png",
+    "icon": "arcanine_icon.png"
+  },
+  "base_stats": {
+    "hp": 90,
+    "attack": 110,
+    "defense": 80,
+    "sp_attack": 100,
+    "sp_defense": 80,
+    "speed": 95
+  },
+  "abilities": ["Intimidate", "Flash Fire"],
+  "is_legendary": false,
+  "learnset": [
+    "Flamethrower",
+    "ExtremeSpeed",
+    "Crunch",
+    "Protect"
+  ]
+}

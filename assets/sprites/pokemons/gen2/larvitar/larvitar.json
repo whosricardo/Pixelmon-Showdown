@@ -1,34 +1,26 @@
 {
-    "id": 246,
-    "name": "Larvitar",
-    "type": ["Rock", "Ground"],
-    "sprites": {
-      "front": "larvitar_front.png",
-      "back": "larvitar_back.png",
-      "icon": "larvitar_icon.png"
-    },
-    "base_stats": {
-      "hp": 50,
-      "attack": 64,
-      "defense": 50,
-      "sp_attack": 45,
-      "sp_defense": 50,
-      "speed": 41
-    },
-    "abilities": ["Guts", "Sand Veil"],
-    "evolves_to": {
-      "name": "Pupitar",
-      "json_path": "gen3/pupitar/pupitar.json"
-    },
-    "pre_evolution": null,
-    "is_legendary": false,
-    "learnset": [
-      { "level": 1, "move": "Bite" },
-      { "level": 1, "move": "Leer" },
-      { "level": 8, "move": "Sand Strorm" },
-      { "level": 15, "move": "Screech" },
-      { "level": 22, "move": "Peck" },
-      { "level": 29, "move": "Thrash" }
-    ]
-  }
-  
+  "id": 246,
+  "name": "Larvitar",
+  "type": ["Rock", "Ground"],
+  "sprites": {
+    "front": "larvitar_front.png",
+    "back": "larvitar_back.png",
+    "icon": "larvitar_icon.png"
+  },
+  "base_stats": {
+    "hp": 50,
+    "attack": 64,
+    "defense": 50,
+    "sp_attack": 45,
+    "sp_defense": 50,
+    "speed": 41
+  },
+  "abilities": ["Guts", "Sand Veil"],
+  "is_legendary": false,
+  "learnset": [
+    "Earthquake",
+    "Crunch",
+    "Rock Slide",
+    "Protect"
+  ]
+}

@@ -1,37 +1,26 @@
 {
-    "id": 94,
-    "name": "Gengar",
-    "type": ["Ghost", "Poison"],
-    "sprites": {
-      "front": "gengar_front.png",
-      "back": "gengar_back.png",
-      "icon": "gengar_icon.png"
-    },
-    "base_stats": {
-      "hp": 60,
-      "attack": 65,
-      "defense": 60,
-      "sp_attack": 130,
-      "sp_defense": 75,
-      "speed": 110
-    },
-    "abilities": ["Cursed Body"],
-    "evolves_to": null,
-    "pre_evolution": {
-      "name": "Haunter",
-      "json_path": "gen1/haunter/haunter.json"
-    },
-    "is_legendary": false,
-    "learnset": [
-        { "level": 1, "move": "Hypnosis" },
-        { "level": 1, "move": "Lick" },
-        { "level": 8, "move": "Spite" },
-        { "level": 13, "move": "Mean Look" },
-        { "level": 16, "move": "Curse" },
-        { "level": 21, "move": "Night Shade" },
-        { "level": 25, "move": "Shadow Punch" },
-        { "level": 39, "move": "Dream Eater" },
-        { "level": 48, "move": "Destiny Bond" }
-    ]
-  }
-  
+  "id": 94,
+  "name": "Gengar",
+  "type": ["Ghost", "Poison"],
+  "sprites": {
+    "front": "gengar_front.png",
+    "back": "gengar_back.png",
+    "icon": "gengar_icon.png"
+  },
+  "base_stats": {
+    "hp": 60,
+    "attack": 65,
+    "defense": 60,
+    "sp_attack": 130,
+    "sp_defense": 75,
+    "speed": 110
+  },
+  "abilities": ["Cursed Body"],
+  "is_legendary": false,
+  "learnset": [
+    "Shadow Ball",
+    "Hypnosis",
+    "Sludge Bomb",
+    "Protect"
+  ]
+}

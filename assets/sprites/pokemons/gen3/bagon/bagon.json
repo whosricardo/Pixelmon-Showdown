@@ -12,21 +12,15 @@
     "attack": 75,
     "defense": 60,
     "sp_attack": 40,
-    "sp_defense": 300,
+    "sp_defense": 30,
     "speed": 50
   },
   "abilities": ["Rock Head", "Sheer Force"],
-  "evolves_to": {
-    "name": "Shelgon",
-    "json_path": "gen3/shelgon/shelgon.json"
-  },
-  "pre_evolution": null,
   "is_legendary": false,
   "learnset": [
-    { "level": 1, "move": "Rage" },
-    { "level": 5, "move": "Bite" },
-    { "level": 9, "move": "Leer" },
-    { "level": 17, "move": "Headbutt" },
-    { "level": 21, "move": "Focus Energy" }   
+    "Dragon Claw",
+    "Headbutt",
+    "Focus Energy",
+    "Crunch"
   ]
 }

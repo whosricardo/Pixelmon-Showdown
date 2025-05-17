@@ -15,21 +15,12 @@
     "sp_defense": 55,
     "speed": 50
   },
-  "abilities": ["Synchronize", "Trace", "Telephaty"],
-  "evolves_to": {
-    "name": "Gadevoir",
-    "json_path": "gen3/gadevoir/gadevoir.json"
-  },
-  "pre_evolution": {
-    "name": "Ralts",
-    "json_path": "gen3/ralts/ralts.json"
-  },
+  "abilities": ["Synchronize", "Trace"],
   "is_legendary": false,
   "learnset": [
-    { "level": 1, "move": "Confusion" },
-    { "level": 1, "move": "Double Team" },
-    { "level": 16, "move": "Teleport" },
-    { "level": 21, "move": "Calm Mind" },
-    { "level": 26, "move": "Psychic" }
+    "Psychic",
+    "Calm Mind",
+    "Protect",
+    "Double Team"
   ]
 }

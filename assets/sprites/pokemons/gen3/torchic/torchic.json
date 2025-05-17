@@ -1,33 +1,26 @@
 {
-    "id": 255,
-    "name": "Torchic",
-    "type": ["Fire"],
-    "sprites": {
-      "front": "torchic_front.png",
-      "back": "torchic_back.png",
-      "icon": "torchic_icon.png"
-    },
-    "base_stats": {
-      "hp": 45,
-      "attack": 60,
-      "defense": 40,
-      "sp_attack": 70,
-      "sp_defense": 50,
-      "speed": 45
-    },
-    "abilities": ["Blaze", "Speed Boost"],
-    "evolves_to": {
-      "name": "Combusken",
-      "json_path": "gen3/combusken/combusken.json"
-    },
-    "pre_evolution": null,
-    "is_legendary": false,
-    "learnset": [
-      { "level": 1, "move": "Scratch" },
-      { "level": 1, "move": "Growl" },
-      { "level": 7, "move": "Focus Energy" },
-      { "level": 10, "move": "Ember" },
-      { "level": 16, "move": "Peck" }
-    ]
-  }
-  
+  "id": 255,
+  "name": "Torchic",
+  "type": ["Fire"],
+  "sprites": {
+    "front": "torchic_front.png",
+    "back": "torchic_back.png",
+    "icon": "torchic_icon.png"
+  },
+  "base_stats": {
+    "hp": 45,
+    "attack": 60,
+    "defense": 40,
+    "sp_attack": 70,
+    "sp_defense": 50,
+    "speed": 45
+  },
+  "abilities": ["Blaze", "Speed Boost"],
+  "is_legendary": false,
+  "learnset": [
+    "Ember",
+    "Peck",
+    "Focus Blast",
+    "Protect"
+  ]
+}

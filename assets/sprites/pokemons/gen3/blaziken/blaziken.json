@@ -16,20 +16,11 @@
     "speed": 80
   },
   "abilities": ["Blaze", "Speed Boost"],
-  "evolves_to": null,
-  "pre_evolution": {
-    "name": "combusken",
-    "json_path": "gen1/combusken/combusken.json"
-  },
   "is_legendary": false,
   "learnset": [
-    { "level": 1, "move": "Scratch" },
-    { "level": 1, "move": "Growl" },
-    { "level": 7, "move": "Focus Energy" },
-    { "level": 16, "move": "Peck" },
-    { "level": 25, "move": "Flamethrower" },
-    { "level": 36, "move": "Blaze Kick" },
-    { "level": 44, "move": "Sky Uppercut" }
+    "Blaze Kick",
+    "Focus Blast",
+    "Flamethrower",
+    "Protect"
   ]
 }
-  

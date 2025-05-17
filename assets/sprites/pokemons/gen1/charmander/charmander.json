@@ -1,32 +1,26 @@
 {
-    "id": 4,
-    "name": "Charmander",
-    "type": ["Fire"],
-    "sprites": {
-      "front": "charmander_front.png",
-      "back": "charmander_back.png",
-      "icon": "charmander_icon.png"
-    },
-    "base_stats": {
-      "hp": 39,
-      "attack": 52,
-      "defense": 43,
-      "sp_attack": 60,
-      "sp_defense": 50,
-      "speed": 65
-    },
-    "abilities": ["Blaze", "Solar Power"],
-    "evolves_to": {
-      "name": "Charmeleon",
-      "json_path": "gen1/charmeleon/charmeleon.json"
-    },
-    "pre_evolution": null,
-    "is_legendary": false,
-    "learnset": [
-      { "level": 1, "move": "Growl" },
-      { "level": 1, "move": "Scratch" },
-      { "level": 7, "move": "Ember" },
-      { "level": 13, "move": "Smoke Screen" }
-    ]
-  }
-  
+  "id": 4,
+  "name": "Charmander",
+  "type": ["Fire"],
+  "sprites": {
+    "front": "charmander_front.png",
+    "back": "charmander_back.png",
+    "icon": "charmander_icon.png"
+  },
+  "base_stats": {
+    "hp": 39,
+    "attack": 52,
+    "defense": 43,
+    "sp_attack": 60,
+    "sp_defense": 50,
+    "speed": 65
+  },
+  "abilities": ["Blaze", "Solar Power"],
+  "is_legendary": false,
+  "learnset": [
+    "Ember",
+    "Scratch",
+    "Flamethrower",
+    "Protect"
+  ]
+}

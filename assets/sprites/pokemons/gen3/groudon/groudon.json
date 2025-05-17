@@ -1,34 +1,26 @@
 {
-    "id": 383,
-    "name": "Groudon",
-    "type": ["Ground"],
-    "sprites": {
-      "front": "groudon_front.png",
-      "back": "groudon_back.png",
-      "icon": "groudon_icon.png"
-    },
-    "base_stats": {
-      "hp": 100,
-      "attack": 150,
-      "defense": 140,
-      "sp_attack": 100,
-      "sp_defense": 90,
-      "speed": 90
-    },
-    "abilities": ["Drought"],
-    "evolves_to": null,
-    "pre_evolution": null,
-    "is_legendary": true,
-    "learnset": [
-        { "level": 1, "move": "Mud Shot" },
-        { "level": 5, "move": "Scary Face" },
-        { "level": 20, "move": "Slash" },
-        { "level": 30, "move": "Bulk Up" },
-        { "level": 35, "move": "Earthquake" },
-        { "level": 45, "move": "Fire Blast" },
-        { "level": 60, "move": "Fissure"},
-        { "level": 65, "move": "Solar Beam" },
-        { "level": 75, "move": "Eruption" }
-    ] 
-  }
-  
+  "id": 383,
+  "name": "Groudon",
+  "type": ["Ground"],
+  "sprites": {
+    "front": "groudon_front.png",
+    "back": "groudon_back.png",
+    "icon": "groudon_icon.png"
+  },
+  "base_stats": {
+    "hp": 100,
+    "attack": 150,
+    "defense": 140,
+    "sp_attack": 100,
+    "sp_defense": 90,
+    "speed": 90
+  },
+  "abilities": ["Drought"],
+  "is_legendary": true,
+  "learnset": [
+    "Earthquake",
+    "Fire Blast",
+    "Solar Beam",
+    "Protect"
+  ]
+}

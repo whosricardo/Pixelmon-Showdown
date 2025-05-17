@@ -1,37 +1,26 @@
 {
-    "id": 65,
-    "name": "Alakazam",
-    "type": ["Psychic"],
-    "sprites": {
-      "front": "alakazam_front.png",
-      "back": "alakazam_back.png",
-      "icon": "alakazam_icon.png"
-    },
-    "base_stats": {
-      "hp": 55,
-      "attack": 50,
-      "defense": 45,
-      "sp_attack": 135,
-      "sp_defense": 95,
-      "speed": 120
-    },
-    "abilities": ["Synchronize", "Inner Focus", "Magic Guard"],
-    "evolves_to": null,
-    "pre_evolution": {
-      "name": "Kadabra",
-      "json_path": "gen1/kadabra/kadabra.json"
-    },
-    "is_legendary": false,
-    "learnset": [
-      { "level": 1, "move": "Confusion" },
-      { "level": 1, "move": "Kinesis" },
-      { "level": 1, "move": "Teleport" },
-      { "level": 16, "move": "Confusion" },
-      { "level": 21, "move": "Psybeam" },
-      { "level": 23, "move": "Reflect"},
-      { "level": 30, "move": "Future Sight"},
-      {"level": 36, "move": "Psychic"},
-      {"level": 40, "move": "Trick"}
-    ]
-  }
-  
+  "id": 65,
+  "name": "Alakazam",
+  "type": ["Psychic"],
+  "sprites": {
+    "front": "alakazam_front.png",
+    "back": "alakazam_back.png",
+    "icon": "alakazam_icon.png"
+  },
+  "base_stats": {
+    "hp": 55,
+    "attack": 50,
+    "defense": 45,
+    "sp_attack": 135,
+    "sp_defense": 95,
+    "speed": 120
+  },
+  "abilities": ["Synchronize", "Inner Focus"],
+  "is_legendary": false,
+  "learnset": [
+    "Psychic",
+    "Calm Mind",
+    "Reflect",
+    "Protect"
+  ]
+}

@@ -1,34 +1,26 @@
 {
-    "id": 147,
-    "name": "Dratini",
-    "type": ["Dragon"],
-    "sprites": {
-      "front": "dratini_front.png",
-      "back": "dratini_back.png",
-      "icon": "dratini_icon.png"
-    },
-    "base_stats": {
-      "hp": 41,
-      "attack": 64,
-      "defense": 45,
-      "sp_attack": 50,
-      "sp_defense": 50,
-      "speed": 50
-    },
-    "abilities": ["Shed Skin", "Marvel Scale"],
-    "evolves_to": {
-      "name": "Dragonair",
-      "json_path": "gen1/dragonair/dragonair.json"
-    },
-    "pre_evolution": null,
-    "is_legendary": false,
-    "learnset": [
-        { "level": 1, "move": "Leer" },
-        { "level": 1, "move": "Wrap" },
-        { "level": 8, "move": "Thunder Wave" },
-        { "level": 15, "move": "Twister" },
-        { "level": 22, "move": "Dragon Rage" },
-        { "level": 29, "move": "Slam" }
-    ]
-  }
-  
+  "id": 147,
+  "name": "Dratini",
+  "type": ["Dragon"],
+  "sprites": {
+    "front": "dratini_front.png",
+    "back": "dratini_back.png",
+    "icon": "dratini_icon.png"
+  },
+  "base_stats": {
+    "hp": 41,
+    "attack": 64,
+    "defense": 45,
+    "sp_attack": 50,
+    "sp_defense": 50,
+    "speed": 50
+  },
+  "abilities": ["Shed Skin", "Marvel Scale"],
+  "is_legendary": false,
+  "learnset": [
+    "Dragon Claw",
+    "Twister",
+    "Thunder Wave",
+    "Protect"
+  ]
+}

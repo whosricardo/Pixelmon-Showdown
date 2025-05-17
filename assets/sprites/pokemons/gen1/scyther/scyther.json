@@ -1,38 +1,26 @@
 {
-    "id": 123,
-    "name": "Scyther",
-    "type": ["Bug", "Flying"],
-    "sprites": {
-      "front": "scyther_front.png",
-      "back": "scyther_back.png",
-      "icon": "scyther_icon.png"
-    },
-    "base_stats": {
-      "hp": 70,
-      "attack": 110,
-      "defense": 80,
-      "sp_attack": 55,
-      "sp_defense": 80,
-      "speed": 105
-    },
-    "abilities": ["Swarm", "Technician", "Steadfast"],
-    "evolves_to": {
-      "name": "Scizor",
-      "json_path": "gen2/scizor/scizor.json"
-    },
-    "pre_evolution": null,
-    "is_legendary": false,
-    "learnset": [
-        { "level": 1, "move": "Leer" },
-        { "level": 1, "move": "Quick Attack" },
-        { "level": 6, "move": "Focus Energy" },
-        { "level": 11, "move": "Pursuit" },
-        { "level": 16, "move": "False Swipe" },
-        { "level": 21, "move": "Agility" },
-        { "level": 31, "move": "Slash" },
-        { "level": 36, "move": "Swords Dance" },
-        { "level": 41, "move": "Double Team" },
-        { "level": 46, "move": "Fury Cutter" }
-    ]
-  }
-  
+  "id": 123,
+  "name": "Scyther",
+  "type": ["Bug", "Flying"],
+  "sprites": {
+    "front": "scyther_front.png",
+    "back": "scyther_back.png",
+    "icon": "scyther_icon.png"
+  },
+  "base_stats": {
+    "hp": 70,
+    "attack": 110,
+    "defense": 80,
+    "sp_attack": 55,
+    "sp_defense": 80,
+    "speed": 105
+  },
+  "abilities": ["Swarm", "Technician"],
+  "is_legendary": false,
+  "learnset": [
+    "X-Scissor",
+    "Aerial Ace",
+    "Swords Dance",
+    "Protect"
+  ]
+}

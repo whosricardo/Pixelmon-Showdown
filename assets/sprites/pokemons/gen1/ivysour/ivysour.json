@@ -1,41 +1,26 @@
 {
-    "id": 2,
-    "name": "Ivysour",
-    "type": ["Grass", "Poison"],
-    "sprites": {
-      "front": "ivysour_front.png",
-      "back": "ivysour_back.png",
-      "icon": "ivysour_icon.png"
-    },
-    "base_stats": {
-      "hp": 60,
-      "attack": 62,
-      "defense": 63,
-      "sp_attack": 80,
-      "sp_defense": 80,
-      "speed": 60
-    },
-    "abilities": ["Overgrow", "Chlorophyll"],
-    "evolves_to": {
-      "name": "Venosour",
-      "json_path": "gen1/venosour/venosour.json"
-    },
-    "pre_evolution": {
-      "name": "Bulbasour",
-      "json_path": "gen1/bulbasour/bulbasour.json"
-    },
-    "is_legendary": false,
-    "learnset": [
-        { "level": 1, "move": "Growl" },
-        { "level": 1, "move": "Leech Seed" },
-        { "level": 1, "move": "Tackle" },
-        { "level": 4, "move": "Growl" },
-        { "level": 7, "move": "Leech Seed" },
-        { "level": 10, "move": "Vine Whip" },
-        { "level": 15, "move": "PoisonPowder" },
-        { "level": 15, "move": "SleepPowder" },
-        { "level": 22, "move": "Razor Leaf" },
-        { "level": 29, "move": "Sweet Scent" }
-    ]
-  }
-  
+  "id": 2,
+  "name": "Ivysaur",
+  "type": ["Grass", "Poison"],
+  "sprites": {
+    "front": "ivysaur_front.png",
+    "back": "ivysaur_back.png",
+    "icon": "ivysaur_icon.png"
+  },
+  "base_stats": {
+    "hp": 60,
+    "attack": 62,
+    "defense": 63,
+    "sp_attack": 80,
+    "sp_defense": 80,
+    "speed": 60
+  },
+  "abilities": ["Overgrow", "Chlorophyll"],
+  "is_legendary": false,
+  "learnset": [
+    "Vine Whip",
+    "Razor Leaf",
+    "PoisonPowder",
+    "Protect"
+  ]
+}

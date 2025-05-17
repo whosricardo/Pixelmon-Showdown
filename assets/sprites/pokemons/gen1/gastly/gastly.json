@@ -1,34 +1,26 @@
 {
-    "id": 92,
-    "name": "Gastly",
-    "type": ["Ghost", "Poison"],
-    "sprites": {
-      "front": "gastly_front.png",
-      "back": "gastly_back.png",
-      "icon": "gastly_icon.png"
-    },
-    "base_stats": {
-      "hp": 30,
-      "attack": 35,
-      "defense": 30,
-      "sp_attack": 100,
-      "sp_defense": 30,
-      "speed": 80
-    },
-    "abilities": ["Levitate"],
-    "evolves_to": {
-      "name": "Haunter",
-      "json_path": "gen1/haunter/haunter.json"
-    },
-    "pre_evolution": null,
-    "is_legendary": false,
-    "learnset": [
-        { "level": 1, "move": "Hypnosis" },
-        { "level": 1, "move": "Lick" },
-        { "level": 8, "move": "Spite" },
-        { "level": 13, "move": "Mean Look" },
-        { "level": 16, "move": "Curse" },
-        { "level": 21, "move": "Night Shade" }
-    ]
-  }
-  
+  "id": 92,
+  "name": "Gastly",
+  "type": ["Ghost", "Poison"],
+  "sprites": {
+    "front": "gastly_front.png",
+    "back": "gastly_back.png",
+    "icon": "gastly_icon.png"
+  },
+  "base_stats": {
+    "hp": 30,
+    "attack": 35,
+    "defense": 30,
+    "sp_attack": 100,
+    "sp_defense": 30,
+    "speed": 80
+  },
+  "abilities": ["Levitate"],
+  "is_legendary": false,
+  "learnset": [
+    "Shadow Ball",
+    "Hypnosis",
+    "Night Shade",
+    "Protect"
+  ]
+}

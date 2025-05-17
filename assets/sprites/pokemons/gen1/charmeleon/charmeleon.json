@@ -1,39 +1,26 @@
 {
-    "id": 5,
-    "name": "Charmeleon",
-    "type": ["Fire"],
-    "sprites": {
-      "front": "charmeleon_front.png",
-      "back": "charmeleon_back.png",
-      "icon": "charmeleon_icon.png"
-    },
-    "base_stats": {
-      "hp": 58,
-      "attack": 64,
-      "defense": 58,
-      "sp_attack": 80,
-      "sp_defense": 65,
-      "speed": 80
-    },
-    "abilities": ["Blaze", "Solar Power"],
-    "evolves_to": {
-      "name": "Charizard",
-      "json_path": "gen1/charizard/charizard.json"
-    },
-    "pre_evolution": {
-      "name": "Charmander",
-      "json_path": "gen1/charmander/charmander.json"
-    },
-    "is_legendary": false,
-    "learnset": [
-      { "level": 1, "move": "Ember" },
-      { "level": 1, "move": "Growl" },
-      { "level": 1, "move": "Scratch" },
-      { "level": 7, "move": "Ember" },
-      { "level": 13, "move": "SmokeScreen" },
-      { "level": 20, "move": "Rage" },
-      { "level": 27, "move": "Scary Face" },
-      { "level": 34, "move": "Flamethrower" }
-    ]
-  }
-  
+  "id": 5,
+  "name": "Charmeleon",
+  "type": ["Fire"],
+  "sprites": {
+    "front": "charmeleon_front.png",
+    "back": "charmeleon_back.png",
+    "icon": "charmeleon_icon.png"
+  },
+  "base_stats": {
+    "hp": 58,
+    "attack": 64,
+    "defense": 58,
+    "sp_attack": 80,
+    "sp_defense": 65,
+    "speed": 80
+  },
+  "abilities": ["Blaze", "Solar Power"],
+  "is_legendary": false,
+  "learnset": [
+    "Flamethrower",
+    "Dragon Claw",
+    "Scratch",
+    "Protect"
+  ]
+}

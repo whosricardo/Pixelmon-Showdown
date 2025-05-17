@@ -16,20 +16,11 @@
     "speed": 50
   },
   "abilities": ["Rock Head", "Overcoat"],
-  "evolves_to": {
-    "name": "Salamence",
-    "json_path": "gen3/salamence/salamence.json"
-  },
-  "pre_evolution": {
-    "name": "Bagon",
-    "json_path": "gen3/bagon/bagon.json"
-  },
   "is_legendary": false,
   "learnset": [
-    { "level": 1, "move": "Bite" },
-    { "level": 5, "move": "Headbutt" },
-    { "level": 9, "move": "Leer" },
-    { "level": 21, "move": "Focus Energy" },
-    { "level": 25, "move": "Ember" }   
+    "Dragon Claw",
+    "Headbutt",
+    "Protect",
+    "Crunch"
   ]
 }

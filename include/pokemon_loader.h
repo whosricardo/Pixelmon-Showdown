@@ -11,7 +11,6 @@ typedef struct
 
 typedef struct 
 {
-    int level;
     char *move;
 } LearnMove;
 

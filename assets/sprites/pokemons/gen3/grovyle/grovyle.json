@@ -1,36 +1,26 @@
 {
-    "id": 253,
-    "name": "Grovyle",
-    "type": ["Grass"],
-    "sprites": {
-      "front": "grovyle_front.png",
-      "back": "grovyle_back.png",
-      "icon": "grovyle_icon.png"
-    },
-    "base_stats": {
-      "hp": 50,
-      "attack": 65,
-      "defense": 45,
-      "sp_attack": 85,
-      "sp_defense": 65,
-      "speed": 95
-    },
-    "abilities": ["Overgrow", "Unburden"],
-    "evolves_to": {
-      "name": "Sceptile",
-      "json_path": "gen3/sceptile/sceptile.json"
-    },
-    "pre_evolution": {
-      "name": "Treecko",
-      "json_path": "gen1/treecko/treecko.json"
-    },
-    "is_legendary": false,
-    "learnset": [
-      { "level": 1, "move": "Pound" },
-      { "level": 1, "move": "Leer" },
-      { "level": 5, "move": "Absorb" },
-      { "level": 13, "move": "Quick Attack" },
-      { "level": 18, "move": "Leaf Blade" }
-    ]
-  }
-  
+  "id": 253,
+  "name": "Grovyle",
+  "type": ["Grass"],
+  "sprites": {
+    "front": "grovyle_front.png",
+    "back": "grovyle_back.png",
+    "icon": "grovyle_icon.png"
+  },
+  "base_stats": {
+    "hp": 50,
+    "attack": 65,
+    "defense": 45,
+    "sp_attack": 85,
+    "sp_defense": 65,
+    "speed": 95
+  },
+  "abilities": ["Overgrow", "Unburden"],
+  "is_legendary": false,
+  "learnset": [
+    "Leaf Blade",
+    "Quick Attack",
+    "Protect",
+    "Giga Drain"
+  ]
+}

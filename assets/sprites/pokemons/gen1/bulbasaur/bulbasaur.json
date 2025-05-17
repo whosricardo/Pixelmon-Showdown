@@ -1,0 +1,26 @@
+{
+  "id": 1,
+  "name": "Bulbasaur",
+  "type": ["Grass", "Poison"],
+  "sprites": {
+    "front": "bulbasaur_front.png",
+    "back": "bulbasaur_back.png",
+    "icon": "bulbasaur_icon.png"
+  },
+  "base_stats": {
+    "hp": 45,
+    "attack": 49,
+    "defense": 49,
+    "sp_attack": 65,
+    "sp_defense": 65,
+    "speed": 45
+  },
+  "abilities": ["Overgrow", "Chlorophyll"],
+  "is_legendary": false,
+  "learnset": [
+    "Vine Whip",
+    "Leech Seed",
+    "PoisonPowder",
+    "Protect"
+  ]
+}

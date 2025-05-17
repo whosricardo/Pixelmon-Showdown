@@ -1,34 +1,26 @@
 {
-    "id": 381,
-    "name": "Latios",
-    "type": ["Dragon", "Psychic"],
-    "sprites": {
-      "front": "latios_front.png",
-      "back": "latios_back.png",
-      "icon": "latios_icon.png"
-    },
-    "base_stats": {
-      "hp": 80,
-      "attack": 90,
-      "defense": 80,
-      "sp_attack": 130,
-      "sp_defense": 110,
-      "speed": 110
-    },
-    "abilities": ["Levitate"],
-    "evolves_to": null,
-    "pre_evolution": null,
-    "is_legendary": true,
-    "learnset": [
-        { "level": 1, "move": "Psywave" },
-        { "level": 5, "move": "Memento" },
-        { "level": 15, "move": "Safeguard" },
-        { "level": 20, "move": "DragonBreath" },
-        { "level": 25, "move": "Protect" },
-        { "level": 35, "move": "Luster Purge" },
-        { "level": 40, "move": "Psychic"},
-        { "level": 45, "move": "Recover" },
-        { "level": 50, "move": "Dragon Dance" }
-    ] 
-  }
-  
+  "id": 381,
+  "name": "Latios",
+  "type": ["Dragon", "Psychic"],
+  "sprites": {
+    "front": "latios_front.png",
+    "back": "latios_back.png",
+    "icon": "latios_icon.png"
+  },
+  "base_stats": {
+    "hp": 80,
+    "attack": 90,
+    "defense": 80,
+    "sp_attack": 130,
+    "sp_defense": 110,
+    "speed": 110
+  },
+  "abilities": ["Levitate"],
+  "is_legendary": true,
+  "learnset": [
+    "Psychic",
+    "Dragon Claw",
+    "Calm Mind",
+    "Protect"
+  ]
+}

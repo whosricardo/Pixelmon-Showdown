@@ -1,7 +1,7 @@
 {
   "id": 375,
   "name": "Metang",
-  "type": ["Steel" , "Psychic"],
+  "type": ["Steel", "Psychic"],
   "sprites": {
     "front": "metang_front.png",
     "back": "metang_back.png",
@@ -16,20 +16,11 @@
     "speed": 50
   },
   "abilities": ["Clear Body", "Light Metal"],
-  "evolves_to": {
-    "name": "Metagross",
-    "json_path": "gen3/metagross/metagross.json"
-  },
-  "pre_evolution": {
-    "name": "Beldum",
-    "json_path": "gen3/beldum/beldum.json"
-  },
   "is_legendary": false,
   "learnset": [
-    { "level": 1, "move": "Takedown" },
-    { "level": 20, "move": "Confusion" },
-    { "level": 20, "move": "Metal Claw" },
-    { "level": 26, "move": "Scary Face" },
-    { "level": 32, "move": "Pursuit" }   
+    "Meteor Mash",
+    "Zen Headbutt",
+    "Bullet Punch",
+    "Protect"
   ]
 }

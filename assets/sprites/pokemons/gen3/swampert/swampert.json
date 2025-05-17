@@ -1,35 +1,26 @@
 {
-    "id": 260,
-    "name": "Swampert",
-    "type": ["Water", "Ground"],
-    "sprites": {
-      "front": "swampert_front.png",
-      "back": "swampert_back.png",
-      "icon": "swampert_icon.png"
-    },
-    "base_stats": {
-      "hp": 100,
-      "attack": 110,
-      "defense": 90,
-      "sp_attack": 85,
-      "sp_defense": 90,
-      "speed": 60
-    },
-    "abilities": ["Torrent", "Damp"],
-    "evolves_to": null,
-    "pre_evolution": {
-      "name": "Marshtomp",
-      "json_path": "gen1/marshtomp/marshtomp.json"
-    },
-    "is_legendary": false,
-    "learnset": [
-      { "level": 1, "move": "Tackle" },
-      { "level": 1, "move": "Growl" },
-      { "level": 4, "move": "Water Gun" },
-      { "level": 9, "move": "Mud-Slap" },
-      { "level": 16, "move": "Mud Shot" },
-      { "level": 36, "move": "Earthquake" },
-      { "level": 42, "move": "Hammer Arm" }
-    ]
-  }
-  
+  "id": 260,
+  "name": "Swampert",
+  "type": ["Water", "Ground"],
+  "sprites": {
+    "front": "swampert_front.png",
+    "back": "swampert_back.png",
+    "icon": "swampert_icon.png"
+  },
+  "base_stats": {
+    "hp": 100,
+    "attack": 110,
+    "defense": 90,
+    "sp_attack": 85,
+    "sp_defense": 90,
+    "speed": 60
+  },
+  "abilities": ["Torrent", "Damp"],
+  "is_legendary": false,
+  "learnset": [
+    "Earthquake",
+    "Hammer Arm",
+    "Water Gun",
+    "Protect"
+  ]
+}

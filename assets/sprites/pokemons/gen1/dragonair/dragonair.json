@@ -1,41 +1,26 @@
 {
-    "id": 148,
-    "name": "Dragonair",
-    "type": ["Dragon"],
-    "sprites": {
-      "front": "dragonair_front.png",
-      "back": "dragonair_back.png",
-      "icon": "dragonair_icon.png"
-    },
-    "base_stats": {
-      "hp": 61,
-      "attack": 84,
-      "defense": 65,
-      "sp_attack": 70,
-      "sp_defense": 70,
-      "speed": 70
-    },
-    "abilities": ["Shed Skin", "Marvel Scale"],
-    "evolves_to": {
-      "name": "Dragonite",
-      "json_path": "gen1/dragonite/dragonite.json"
-    },
-    "pre_evolution": {
-      "name": "Dratini",
-      "json_path": "gen1/dratini/dratini.json"
-    },
-    "is_legendary": false,
-    "learnset": [
-      { "level": 1, "move": "Leer" },
-      { "level": 1, "move": "Thunder Wave" },
-      { "level": 1, "move": "Twister" },
-      { "level": 1, "move": "Wrap" },
-      { "level": 8, "move": "Thunder Wave" },
-      { "level": 15, "move": "Twister" },
-      { "level": 22, "move": "Dragon Rage" },
-      { "level": 29, "move": "Slam" },
-      { "level": 38, "move": "Agility" },
-      { "level": 47, "move": "Safeguard" }
-    ]
-  }
-  
+  "id": 148,
+  "name": "Dragonair",
+  "type": ["Dragon"],
+  "sprites": {
+    "front": "dragonair_front.png",
+    "back": "dragonair_back.png",
+    "icon": "dragonair_icon.png"
+  },
+  "base_stats": {
+    "hp": 61,
+    "attack": 84,
+    "defense": 65,
+    "sp_attack": 70,
+    "sp_defense": 70,
+    "speed": 70
+  },
+  "abilities": ["Shed Skin", "Marvel Scale"],
+  "is_legendary": false,
+  "learnset": [
+    "Dragon Claw",
+    "Twister",
+    "Thunder Wave",
+    "Protect"
+  ]
+}

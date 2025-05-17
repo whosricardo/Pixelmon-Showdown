@@ -1,37 +1,26 @@
 {
-    "id": 214,
-    "name": "Heracross",
-    "type": ["Bug", "Fighting"],
-    "sprites": {
-      "front": "heracross_front.png",
-      "back": "heracross_back.png",
-      "icon": "heracross_icon.png"
-    },
-    "base_stats": {
-      "hp": 80,
-      "attack": 125,
-      "defense": 75,
-      "sp_attack": 40,
-      "sp_defense": 95,
-      "speed": 80
-    },
-    "abilities": ["Swarm","Guts","Moxie"],
-    "evolves_to": null,
-    "pre_evolution": null,
-    "is_legendary": false,
-    "learnset": [
-        { "level": 1, "move": "Leer" },
-        { "level": 1, "move": "Tackle" },
-        { "level": 6, "move": "Horn Attack" },
-        { "level": 11, "move": "Endure" },
-        { "level": 17, "move": "Fury Attack" },
-        { "level": 23, "move": "Brick Break" },
-        { "level": 30, "move": "Counter" },
-        { "level": 37, "move": "Take Down" },
-        { "level": 45, "move": "Reversal" },
-        { "level": 53, "move": "Mega Horn" }
-        
-        
-    ]
-  }
-  
+  "id": 214,
+  "name": "Heracross",
+  "type": ["Bug", "Fighting"],
+  "sprites": {
+    "front": "heracross_front.png",
+    "back": "heracross_back.png",
+    "icon": "heracross_icon.png"
+  },
+  "base_stats": {
+    "hp": 80,
+    "attack": 125,
+    "defense": 75,
+    "sp_attack": 40,
+    "sp_defense": 95,
+    "speed": 80
+  },
+  "abilities": ["Swarm", "Guts"],
+  "is_legendary": false,
+  "learnset": [
+    "Megahorn",
+    "Brick Break",
+    "Reversal",
+    "Protect"
+  ]
+}

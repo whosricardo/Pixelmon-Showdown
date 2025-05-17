@@ -1,34 +1,26 @@
 {
-    "id": 384,
-    "name": "Rayquaza",
-    "type": ["Dragon", "Flying"],
-    "sprites": {
-      "front": "rayquaza_front.png",
-      "back": "rayquaza_back.png",
-      "icon": "rayquaza_icon.png"
-    },
-    "base_stats": {
-      "hp": 105,
-      "attack": 150,
-      "defense": 90,
-      "sp_attack": 150,
-      "sp_defense": 90,
-      "speed": 95
-    },
-    "abilities": ["Air Lock"],
-    "evolves_to": null,
-    "pre_evolution": null,
-    "is_legendary": true,
-    "learnset": [
-        { "level": 1, "move": "Twister" },
-        { "level": 5, "move": "Scary Face" },
-        { "level": 20, "move": "Dragon Claw" },
-        { "level": 30, "move": "Dragon Dance" },
-        { "level": 35, "move": "Crunch" },
-        { "level": 45, "move": "Fly" },
-        { "level": 50, "move": "Rest" },
-        { "level": 60, "move": "ExtremeSpeed"},
-        { "level": 75, "move": "Hyper Beam" }
-    ] 
-  }
-  
+  "id": 384,
+  "name": "Rayquaza",
+  "type": ["Dragon", "Flying"],
+  "sprites": {
+    "front": "rayquaza_front.png",
+    "back": "rayquaza_back.png",
+    "icon": "rayquaza_icon.png"
+  },
+  "base_stats": {
+    "hp": 105,
+    "attack": 150,
+    "defense": 90,
+    "sp_attack": 150,
+    "sp_defense": 90,
+    "speed": 95
+  },
+  "abilities": ["Air Lock"],
+  "is_legendary": true,
+  "learnset": [
+    "Dragon Claw",
+    "ExtremeSpeed",
+    "Crunch",
+    "Protect"
+  ]
+}

@@ -1,39 +1,26 @@
 {
-    "id": 247,
-    "name": "Pupitar",
-    "type": ["Rock", "Ground"],
-    "sprites": {
-      "front": "pupitar_front.png",
-      "back": "pupitar_back.png",
-      "icon": "pupitar_icon.png"
-    },
-    "base_stats": {
-      "hp": 70,
-      "attack": 84,
-      "defense": 70,
-      "sp_attack": 65,
-      "sp_defense": 70,
-      "speed": 51
-    },
-    "abilities": ["Shed Skin"],
-    "evolves_to": {
-      "name": "tyranitar",
-      "json_path": "gen3/tyranitar/tyranitar.json"
-    },
-    "pre_evolution": {
-      "name": "Larvitar",
-      "json_path": "gen1/larvitar/larvitar.json"
-    },
-    "is_legendary": false,
-    "learnset": [
-      { "level": 1, "move": "Bite" },
-      { "level": 1, "move": "Leer" },
-      { "level": 8, "move": "Sand Strorm" },
-      { "level": 15, "move": "Screech" },
-      { "level": 22, "move": "Peck" },
-      { "level": 29, "move": "Thrash" },
-      { "level": 38, "move": "Scary Face" },
-      { "level": 47, "move": "Crunch" }
-    ]
-  }
-  
+  "id": 247,
+  "name": "Pupitar",
+  "type": ["Rock", "Ground"],
+  "sprites": {
+    "front": "pupitar_front.png",
+    "back": "pupitar_back.png",
+    "icon": "pupitar_icon.png"
+  },
+  "base_stats": {
+    "hp": 70,
+    "attack": 84,
+    "defense": 70,
+    "sp_attack": 65,
+    "sp_defense": 70,
+    "speed": 51
+  },
+  "abilities": ["Shed Skin"],
+  "is_legendary": false,
+  "learnset": [
+    "Earthquake",
+    "Crunch",
+    "Rock Slide",
+    "Protect"
+  ]
+}

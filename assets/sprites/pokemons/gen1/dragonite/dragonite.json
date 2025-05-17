@@ -1,38 +1,26 @@
 {
-    "id": 149,
-    "name": "Dragonite",
-    "type": ["Dragon", "Flying"],
-    "sprites": {
-      "front": "dragonite_front.png",
-      "back": "dragonite_back.png",
-      "icon": "dragonite_icon.png"
-    },
-    "base_stats": {
-      "hp": 91,
-      "attack": 134,
-      "defense": 95,
-      "sp_attack": 100,
-      "sp_defense": 100,
-      "speed": 80
-    },
-    "abilities": ["Inner Focus", "Multiscale"],
-    "evolves_to": null,
-    "is_legendary": false,
-    "pre_evolution": {
-      "name": "Dragonair",
-      "json_path": "gen1/dragonair/dragonair.json"
-    },
-    "learnset": [
-      { "level": 1, "move": "Leer" },
-      { "level": 1, "move": "Thunder Wave" },
-      { "level": 1, "move": "Twister" },
-      { "level": 1, "move": "Wrap" },
-      { "level": 8, "move": "Thunder Wave" },
-      { "level": 15, "move": "Twister" },
-      { "level": 29, "move": "Slam" },
-      { "level": 55, "move": "Wing Attack" },
-      { "level": 61, "move": "Outrage" },
-      { "level": 75, "move": "Hyper Beam" }
-    ]
-  }
-  
+  "id": 149,
+  "name": "Dragonite",
+  "type": ["Dragon", "Flying"],
+  "sprites": {
+    "front": "dragonite_front.png",
+    "back": "dragonite_back.png",
+    "icon": "dragonite_icon.png"
+  },
+  "base_stats": {
+    "hp": 91,
+    "attack": 134,
+    "defense": 95,
+    "sp_attack": 100,
+    "sp_defense": 100,
+    "speed": 80
+  },
+  "abilities": ["Inner Focus", "Multiscale"],
+  "is_legendary": false,
+  "learnset": [
+    "Outrage",
+    "Dragon Claw",
+    "Wing Attack",
+    "Protect"
+  ]
+}

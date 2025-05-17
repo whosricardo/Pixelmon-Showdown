@@ -16,19 +16,11 @@
     "speed": 70
   },
   "abilities": ["Clear Body", "Light Metal"],
-  "evolves_to": null,
-  "pre_evolution": {
-    "name": "Metang",
-    "json_path": "gen3/metang/metang.json"
-  },
   "is_legendary": false,
   "learnset": [
-    { "level": 1, "move": "Confusion" },
-    { "level": 1, "move": "Metal Claw" },
-    { "level": 1, "move": "Scary Face" },
-    { "level": 1, "move": "Takedown" },
-    { "level": 32, "move": "Persuit" },
-    { "level": 44, "move": "Iron Defense" },
-    { "level": 55, "move": "Meteor Smash" }
+    "Meteor Mash",
+    "Bullet Punch",
+    "Zen Headbutt",
+    "Protect"
   ]
 }

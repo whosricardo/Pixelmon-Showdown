@@ -1,32 +1,26 @@
 {
-    "id": 252,
-    "name": "Treecko",
-    "type": ["Grass"],
-    "sprites": {
-      "front": "treecko_front.png",
-      "back": "treecko_back.png",
-      "icon": "treecko_icon.png"
-    },
-    "base_stats": {
-      "hp": 40,
-      "attack": 45,
-      "defense": 35,
-      "sp_attack": 65,
-      "sp_defense": 55,
-      "speed": 70
-    },
-    "abilities": ["Overgrow", "Unburden"],
-    "evolves_to": {
-      "name": "Grovyle",
-      "json_path": "gen3/grovyle/grovyle.json"
-    },
-    "pre_evolution": null,
-    "is_legendary": false,
-    "learnset": [
-      { "level": 1, "move": "Pound" },
-      { "level": 1, "move": "Leer" },
-      { "level": 5, "move": "Absorb" },
-      { "level": 9, "move": "Quick Attack" }
-    ]
-  }
-  
+  "id": 252,
+  "name": "Treecko",
+  "type": ["Grass"],
+  "sprites": {
+    "front": "treecko_front.png",
+    "back": "treecko_back.png",
+    "icon": "treecko_icon.png"
+  },
+  "base_stats": {
+    "hp": 40,
+    "attack": 45,
+    "defense": 35,
+    "sp_attack": 65,
+    "sp_defense": 55,
+    "speed": 70
+  },
+  "abilities": ["Overgrow", "Unburden"],
+  "is_legendary": false,
+  "learnset": [
+    "Absorb",
+    "Quick Attack",
+    "Leaf Blade",
+    "Protect"
+  ]
+}

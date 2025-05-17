@@ -15,20 +15,12 @@
     "sp_defense": 115,
     "speed": 80
   },
-  "abilities": ["Synchronize", "Trace", "Telephaty"],
-  "evolves_to": null,
-  "pre_evolution": {
-    "name": "Kirlia",
-    "json_path": "gen3/kirlia/kirilia.json"
-  },
+  "abilities": ["Synchronize", "Trace"],
   "is_legendary": false,
   "learnset": [
-    { "level": 1, "move": "Confusion" },
-    { "level": 1, "move": "Double Team" },
-    { "level": 1, "move": "Gowl" },
-    { "level": 21, "move": "Teleport" },
-    { "level": 26, "move": "Calm Mind" },
-    { "level": 33, "move": "Impression" },
-    { "level": 42, "move": "Future Sight" }
+    "Psychic",
+    "Calm Mind",
+    "Thunderbolt",
+    "Protect"
   ]
 }
