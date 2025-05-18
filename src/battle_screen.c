@@ -31,6 +31,12 @@ static PokemonInfo *player_pokemon = NULL;
 static PokemonInfo *rival_pokemon = NULL;
 static cJSON *type_chart = NULL;
 static cJSON *move_data = NULL;
+static Texture2D burn_icon;
+static Texture2D paralyzed_icon;
+static Texture2D frozen_icon;
+static Texture2D poisoned_icon;
+static Texture2D sleep_icon;
+static Texture2D confused_icon;
 static int player_current_hp = 0;
 static int player_max_hp = 0;
 static int rival_current_hp = 0;
@@ -332,6 +338,32 @@ void DrawBattleMenu(PokemonInfo *pokemon)
     }
 }
 
+// Draw status icon next to the Pokémon
+void DrawStatusIcon(PokemonInfo *pokemon, int x, int y)
+{
+    if (pokemon->status == NULL) return;
+
+    Texture2D *icon = NULL;
+
+    if (strcmp(pokemon->status, "burned") == 0)
+        icon = &burn_icon;
+    else if (strcmp(pokemon->status, "paralyzed") == 0)
+        icon = &paralyzed_icon;
+    else if (strcmp(pokemon->status, "frozen") == 0)
+        icon = &frozen_icon;
+    else if (strcmp(pokemon->status, "poisoned") == 0)
+        icon = &poisoned_icon;
+    else if (strcmp(pokemon->status, "sleep") == 0)
+        icon = &sleep_icon;
+    else if (strcmp(pokemon->status, "confused") == 0)
+        icon = &confused_icon;
+
+    if (icon)
+    {
+        DrawTexture(*icon, x, y, WHITE);
+    }
+}
+
 // Helper function to get the selected move name
 const char* GetSelectedMove(PokemonInfo *pokemon, int selected_index)
 {
@@ -446,6 +478,14 @@ void InitBattleScreen(TeamNode *team)
     battle_bg = LoadTextureFromImage(bgImage);
     UnloadImage(bgImage);
 
+    // Load status icons
+    burn_icon = LoadTexture("assets/status/burn.png");
+    paralyzed_icon = LoadTexture("assets/status/paralyzed.png");
+    frozen_icon = LoadTexture("assets/status/frozen.png");
+    poisoned_icon = LoadTexture("assets/status/poisoned.png");
+    sleep_icon = LoadTexture("assets/status/sleep.png");
+    confused_icon = LoadTexture("assets/status/confused.png");
+
     // Get the first Pokémon from the player's team
     player_pokemon = player_team->pokemon;
     player_texture = LoadTexture(player_pokemon->sprites.back);
@@ -542,9 +582,11 @@ void InitBattleScreen(TeamNode *team)
 
     // Draw the player Pokémon (bottom left)
     DrawTexture(player_texture, 200, 400, WHITE);
+    DrawStatusIcon(player_pokemon, 200, 350);
 
     // Draw the rival Pokémon (top right)
     DrawTexture(rival_texture, 800, 100, WHITE);
+    DrawStatusIcon(rival_pokemon, 800, 50);
 
     // Draw HP bars
     int player_bar_width = (int)CalculateHPBarWidth(player_current_hp, player_max_hp, HP_BAR_WIDTH);
@@ -570,6 +612,12 @@ void InitBattleScreen(TeamNode *team)
     UnloadTexture(player_texture);
     UnloadTexture(rival_texture);
     UnloadSound(critical_hit_sound);
+    UnloadTexture(burn_icon);
+    UnloadTexture(paralyzed_icon);
+    UnloadTexture(frozen_icon);
+    UnloadTexture(poisoned_icon);
+    UnloadTexture(sleep_icon);
+    UnloadTexture(confused_icon);
     CloseAudioDevice();
 
 }

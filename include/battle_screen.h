@@ -18,5 +18,6 @@ float GetTypeEffectiveness(const char *move_type, PokemonInfo *defender);
 Color GetHPBarColor(int current_hp, int max_hp);
 void PlayCriticalHitEffect();
 void ApplyStatusEffect(PokemonInfo *target, const char *effect);
+void DrawStatusIcon(PokemonInfo *pokemon, int x, int y);
 
 #endif
