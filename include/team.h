@@ -8,6 +8,7 @@ typedef struct TeamNode
 {
     int pokemon_index;
     PokemonInfo *pokemon;
+    int hp;
     struct TeamNode *next;
 } TeamNode;
 

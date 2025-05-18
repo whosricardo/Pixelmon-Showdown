@@ -45,6 +45,7 @@ static int selected_move = 0;
 static Sound critical_hit_sound;
 static int critical_hit_flash_timer = 0;
 static const int CRITICAL_HIT_FLASH_DURATION = 15;
+static int player_turn = 1;
 
 // Generate a random rival team
 TeamNode* GenerateRivalTeam()
@@ -508,62 +509,105 @@ void InitBattleScreen(TeamNode *team)
         // Handle move execution
         if (IsKeyPressed(KEY_ENTER))
         {
-            // Player attacks
-            int player_damage = CalculateDamage(player_pokemon, rival_pokemon, GetSelectedMove(player_pokemon, selected_move));
-            rival_current_hp -= player_damage;
-            if (rival_current_hp < 0) rival_current_hp = 0;
-            printf("%s used %s! It dealt %d damage.\n", player_pokemon->name, GetSelectedMove(player_pokemon, selected_move), player_damage);
-
-            // Check if the rival Pokémon fainted
-            if (rival_current_hp == 0)
+            if (player_turn == 1)
             {
-                printf("%s fainted!\n", rival_pokemon->name);
+                // Player attacks
+                const char *selected_move_name = GetSelectedMove(player_pokemon, selected_move);
+                int player_damage = CalculateDamage(player_pokemon, rival_pokemon, selected_move_name);
                 
-                // Move to the next Pokémon in the rival's team
-                if (rival_team->next != NULL)
+                // Apply damage to the rival
+                rival_team->hp -= player_damage;
+                if (rival_team->hp < 0) rival_team->hp = 0;
+                rival_current_hp = rival_team->hp;
+                printf("%s used %s! It dealt %d damage.\n", player_pokemon->name, selected_move_name, player_damage);
+
+                // Apply DoT if the rival has a status
+                if (rival_pokemon->status != NULL)
                 {
-                    rival_team = rival_team->next;
-                    rival_pokemon = rival_team->pokemon;
-                    rival_texture = LoadTexture(rival_pokemon->sprites.front);
-                    rival_max_hp = rival_pokemon->base_stats.hp * 2;
-                    rival_current_hp = rival_max_hp;
-                    printf("Rival sent out %s!\n", rival_pokemon->name);
+                    if (strcmp(rival_pokemon->status, "burned") == 0 || strcmp(rival_pokemon->status, "poisoned") == 0)
+                    {
+                        int dot_damage = (int)(rival_pokemon->base_stats.hp * 0.0625); // 1/16th of max HP
+                        rival_team->hp -= dot_damage;
+                        if (rival_team->hp < 0) rival_team->hp = 0;
+                        rival_current_hp = rival_team->hp;
+                        printf("%s is hurt by %s! It took %d damage.\n", rival_pokemon->name, rival_pokemon->status, dot_damage);
+                    }
                 }
-                else
+
+                // Check if the rival Pokémon fainted
+                if (rival_team->hp == 0)
                 {
-                    // Rival is out of Pokémon, player wins
-                    printf("You win!\n");
-                    break;
+                    printf("%s fainted!\n", rival_pokemon->name);
+                    
+                    // Move to the next Pokémon in the rival's team
+                    if (rival_team->next != NULL)
+                    {
+                        rival_team = rival_team->next;
+                        rival_pokemon = rival_team->pokemon;
+                        rival_texture = LoadTexture(rival_pokemon->sprites.front);
+                        rival_max_hp = rival_pokemon->base_stats.hp * 2;
+                        rival_current_hp = rival_max_hp;
+                        printf("Rival sent out %s!\n", rival_pokemon->name);
+                    }
+                    else
+                    {
+                        printf("You win!\n");
+                        break;
+                    }
                 }
+
+                // Switch to rival's turn
+                player_turn = 0;
             }
-
-            // Rival attacks
-            int rival_damage = CalculateDamage(rival_pokemon, player_pokemon, GetRandomMove(rival_pokemon));
-            player_current_hp -= rival_damage;
-            if (player_current_hp < 0) player_current_hp = 0;
-            printf("%s used %s! It dealt %d damage.\n", rival_pokemon->name, GetRandomMove(rival_pokemon), rival_damage);
-
-            // Check if the player Pokémon fainted
-            if (player_current_hp == 0)
+            else
             {
-                printf("%s fainted!\n", player_pokemon->name);
+                // Rival attacks
+                const char *random_move_name = GetRandomMove(rival_pokemon);
+                int rival_damage = CalculateDamage(rival_pokemon, player_pokemon, random_move_name);
                 
-                // Move to the next Pokémon in the player's team
-                if (player_team->next != NULL)
+                // Apply damage to the player
+                player_team->hp -= rival_damage;
+                if (player_team->hp < 0) player_team->hp = 0;
+                player_current_hp = player_team->hp;
+                printf("%s used %s! It dealt %d damage.\n", rival_pokemon->name, random_move_name, rival_damage);
+
+                // Apply DoT if the player has a status
+                if (player_pokemon->status != NULL)
                 {
-                    player_team = player_team->next;
-                    player_pokemon = player_team->pokemon;
-                    player_texture = LoadTexture(player_pokemon->sprites.back);
-                    player_max_hp = player_pokemon->base_stats.hp * 2;
-                    player_current_hp = player_max_hp;
-                    printf("You sent out %s!\n", player_pokemon->name);
+                    if (strcmp(player_pokemon->status, "burned") == 0 || strcmp(player_pokemon->status, "poisoned") == 0)
+                    {
+                        int dot_damage = (int)(player_pokemon->base_stats.hp * 0.0625); // 1/16th of max HP
+                        player_team->hp -= dot_damage;
+                        if (player_team->hp < 0) player_team->hp = 0;
+                        player_current_hp = player_team->hp;
+                        printf("%s is hurt by %s! It took %d damage.\n", player_pokemon->name, player_pokemon->status, dot_damage);
+                    }
                 }
-                else
+
+                // Check if the player Pokémon fainted
+                if (player_team->hp == 0)
                 {
-                    // Player is out of Pokémon, rival wins
-                    printf("You lose!\n");
-                    break;
+                    printf("%s fainted!\n", player_pokemon->name);
+                    
+                    // Move to the next Pokémon in the player's team
+                    if (player_team->next != NULL)
+                    {
+                        player_team = player_team->next;
+                        player_pokemon = player_team->pokemon;
+                        player_texture = LoadTexture(player_pokemon->sprites.back);
+                        player_max_hp = player_pokemon->base_stats.hp * 2;
+                        player_current_hp = player_max_hp;
+                        printf("You sent out %s!\n", player_pokemon->name);
+                    }
+                    else
+                    {
+                        printf("You lose!\n");
+                        break;
+                    }
                 }
+
+                // Switch to player's turn
+                player_turn = 1;
             }
         }
 

@@ -14,9 +14,11 @@ TeamNode* create_team_node(int index, PokemonInfo *pokemon)
 
     node->pokemon_index = index;
     node->pokemon = pokemon;
+    node->hp = pokemon->base_stats.hp * 2;  // Initialize with full HP
     node->next = NULL;
     return node;
 }
+
 
 // Add a node to the end of the list
 void add_to_team(TeamNode **head, int index, PokemonInfo *pokemon)
