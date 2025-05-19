@@ -233,8 +233,27 @@ void ApplyStatusEffect(PokemonInfo *target, const char *effect)
     }
     else if (strcmp(effect, "heal") == 0)
     {
-        printf("%s healed some HP!\n", target->name);
-        // This will be handled in the TeamNode structure instead
+        int max_hp;
+        int heal_amount;
+
+        if (target == player_pokemon)
+        {
+            max_hp = player_pokemon->base_stats.hp * 2;
+            heal_amount = (int)(max_hp * 0.5);  // Heal 50% of max HP
+            player_team->hp += heal_amount;
+            if (player_team->hp > max_hp) player_team->hp = max_hp;
+            player_current_hp = player_team->hp;
+            printf("%s recovered %d HP!\n", player_pokemon->name, heal_amount);
+        }
+        else
+        {
+            max_hp = rival_pokemon->base_stats.hp * 2;
+            heal_amount = (int)(max_hp * 0.5);  // Heal 50% of max HP
+            rival_team->hp += heal_amount;
+            if (rival_team->hp > max_hp) rival_team->hp = max_hp;
+            rival_current_hp = rival_team->hp;
+            printf("%s recovered %d HP!\n", rival_pokemon->name, heal_amount);
+        }
     }
     else if (strcmp(effect, "protect") == 0)
     {
@@ -385,6 +404,7 @@ void DrawStatusIcon(PokemonInfo *pokemon, int x, int y)
     if (pokemon->status == NULL) return;
 
     Texture2D *icon = NULL;
+    float status_scale = 1.5f;  // Adjust this for the desired size
 
     if (strcmp(pokemon->status, "burned") == 0)
         icon = &burn_icon;
@@ -401,7 +421,13 @@ void DrawStatusIcon(PokemonInfo *pokemon, int x, int y)
 
     if (icon)
     {
-        DrawTexture(*icon, x, y, WHITE);
+        // Calculate the scaled position to keep the icon centered
+        int icon_width = icon->width * status_scale;
+        int icon_height = icon->height * status_scale;
+        int icon_x = x - (icon_width / 2);
+        int icon_y = y - (icon_height / 2);
+
+        DrawTextureEx(*icon, (Vector2){icon_x, icon_y}, 0.0f, status_scale, WHITE);
     }
 }
 
@@ -539,10 +565,41 @@ void InitBattleScreen(TeamNode *team)
     rival_max_hp = rival_pokemon->base_stats.hp * 2;
     rival_current_hp = rival_max_hp;
 
+    // Variables for shake effect
+    static int player_shake_offset = 0;
+    static int rival_shake_offset = 0;
+    static int player_shake_timer = 0;
+    static int rival_shake_timer = 0;
+    static const int SHAKE_DURATION = 15;
+    static const int SHAKE_INTENSITY = 10;
+    static const int SHAKE_SPEED = 2;
+
     // Main battle loop
     while (!WindowShouldClose())
     {
-        // Handle move selection
+        // Update shake timers
+        if (player_shake_timer > 0)
+        {
+            player_shake_timer--;
+            if (player_shake_timer % SHAKE_SPEED == 0)
+                player_shake_offset = (player_shake_timer / SHAKE_SPEED % 2 == 0) ? -SHAKE_INTENSITY : SHAKE_INTENSITY;
+        }
+        else
+        {
+            player_shake_offset = 0;
+        }
+
+        if (rival_shake_timer > 0)
+        {
+            rival_shake_timer--;
+            if (rival_shake_timer % SHAKE_SPEED == 0)
+                rival_shake_offset = (rival_shake_timer / SHAKE_SPEED % 2 == 0) ? -SHAKE_INTENSITY : SHAKE_INTENSITY;
+        }
+        else
+        {
+            rival_shake_offset = 0;
+        }
+
         if (IsKeyPressed(KEY_DOWN)) selected_move = (selected_move + 1) % player_pokemon->learnset_size;
         if (IsKeyPressed(KEY_UP)) selected_move = (selected_move - 1 + player_pokemon->learnset_size) % player_pokemon->learnset_size;
 
@@ -559,6 +616,7 @@ void InitBattleScreen(TeamNode *team)
                 rival_team->hp -= player_damage;
                 if (rival_team->hp < 0) rival_team->hp = 0;
                 rival_current_hp = rival_team->hp;
+                rival_shake_timer = SHAKE_DURATION;
                 printf("%s used %s! It dealt %d damage.\n", player_pokemon->name, selected_move_name, player_damage);
 
                 // Apply DoT if the rival has a status
@@ -609,6 +667,7 @@ void InitBattleScreen(TeamNode *team)
                 player_team->hp -= rival_damage;
                 if (player_team->hp < 0) player_team->hp = 0;
                 player_current_hp = player_team->hp;
+                player_shake_timer = SHAKE_DURATION;
                 printf("%s used %s! It dealt %d damage.\n", rival_pokemon->name, random_move_name, rival_damage);
 
                 // Apply DoT if the player has a status
@@ -664,13 +723,24 @@ void InitBattleScreen(TeamNode *team)
     // Draw the background
     DrawTexture(battle_bg, 0, 0, WHITE);
 
+    // Set the desired scale
+    float pokemon_scale = 2.5f; // Adjust this value for the desired size
+
     // Draw the player Pokémon (bottom left)
-    DrawTexture(player_texture, 200, 400, WHITE);
-    DrawStatusIcon(player_pokemon, 200, 350);
+    int player_sprite_width = player_texture.width * pokemon_scale;
+    int player_sprite_height = player_texture.height * pokemon_scale;
+    int player_x = 220 + player_shake_offset - (player_sprite_width / 2);
+    int player_y = 400 - (player_sprite_height / 2);
+    DrawTextureEx(player_texture, (Vector2){player_x, player_y}, 0.0f, pokemon_scale, WHITE);
+    DrawStatusIcon(player_pokemon, player_x, player_y - 50);
 
     // Draw the rival Pokémon (top right)
-    DrawTexture(rival_texture, 800, 100, WHITE);
-    DrawStatusIcon(rival_pokemon, 800, 50);
+    int rival_sprite_width = rival_texture.width * pokemon_scale;
+    int rival_sprite_height = rival_texture.height * pokemon_scale;
+    int rival_x = 900 + rival_shake_offset - (rival_sprite_width / 2);
+    int rival_y = 200 - (rival_sprite_height / 2);
+    DrawTextureEx(rival_texture, (Vector2){rival_x, rival_y}, 0.0f, pokemon_scale, WHITE);
+    DrawStatusIcon(rival_pokemon, 830, 60);
 
     // Draw HP bars
     int player_bar_width = (int)CalculateHPBarWidth(player_current_hp, player_max_hp, HP_BAR_WIDTH);
