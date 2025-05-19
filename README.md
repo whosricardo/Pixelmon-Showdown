@@ -1,109 +1,110 @@
-# Pixelmon Quest
 
-Projeto desenvolvido para a disciplina de **Programação Imperativa Funcional (PIF)**. Trata-se de um jogo inspirado em *Pokémon Ruby*, com mecânicas simplificadas e foco no uso de estruturas de dados em C.
+# 🎮 Pixelmon Showdown - College Project
 
-## 👾 Sobre o Projeto
+Pixelmon Showdown is a **turn-based** battle game inspired by Pokémon, developed as a **college project** at **Cesar School**. The game is built using **C** and **Raylib**, focusing on fundamental **data structures**, **file handling**, **dynamic memory management**, and **linked lists**.
 
-O jogo permite ao jogador explorar um mundo com batalhas contra treinadores, ginásios e uma versão reduzida da Elite 4. Conta com 25 Pokémon das 3 primeiras gerações, incluindo evolução por nível, troca e uso de itens.
+---
 
-### Principais Funcionalidades
+## 📋 Project Overview
 
-- Sistema de batalhas com turnos
-- Dois ginásios com líderes distintos
-- Batalha contra a Elite 4
-- Pokédex com os 25 Pokémon suportados
-- Evoluções condicionais (nível)
-- Sistema de salvamento e carregamento de progresso
-- Gráficos 2D utilizando a biblioteca Raylib
+This project was designed to meet the following **academic requirements**:
 
-## 🧠 Conteúdos Aplicados
+- **Linked List and Matrix Usage**
+- **Structs**
+- **Dynamic Memory Allocation**
+- **File Manipulation (JSON)**
 
-- Structs em C
-- Matrizes e listas encadeadas
-- Alocação dinâmica de memória
-- Manipulação de arquivos (`save.dat`, `pokedex.dat`)
-- Organização modular de código
-- Animações e controle de sprites com Raylib
+---
 
-## 🖼️ Inspiração Visual
-
-Imagens e GIFs retirados de *Pokémon Ruby & Sapphire*, que serviram como base visual para nosso projeto:
-
-### Exploração do mapa
-![Exploração](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3czaWZ0d255OWdibGszZzRrbDZyd3NrcnowZWhlc3ZzczVhczA1ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QptWwfIt1yAl1NK5bu/giphy.gif)
-
-### Batalha Pokémon
-![Batalha](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDQ5djhxNTR4aXoxZXd2NmRhYnE1Nm5ydXk3cTZoNjF0NmxoMmZqbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yYpFkCQGxS75CMdugc/giphy.gif)
-
-### Centro Pokémon
-![Centro Pokémon](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXZsYWV1a2drbmplZXpqYW1tdHo3a3hsYTI2djBvMGJ2aGFydGVqMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1fjD2xCMVTtQ63MFv8/giphy.gif)
-
-## 🗂️ Estrutura de Arquivos
+## 📂 Project Structure
 
 ```
-pixelmon-quest/
-│
-├── assets/                 # Imagens, sprites, sons, fontes, etc.
-│   └── sprites/
-│       ├── data/
-│       │   └── player.json
-│       ├── player_sheet/
-│       │   ├── player_walk_down1.png
-│       │   ├── ...
-│       └── pokemons/
-│           ├── treecko/
-│           │   ├── treecko.json
-│           │   ├── treecko_front.png
-│           │   └── treecko_back.png
-│           ├── torchic/
-│           │   └── ...
-│           └── ...
-│   ├── tiles/
-│   ├── audio/
-│   └── fonts/
-│
-├── include/                # Arquivos de cabeçalho (.h)
-│   ├── game.h              # Funções e structs gerais do jogo
-│   ├── pokemon.h           # Struct e funções dos Pokémons
-│   ├── player.h            # Struct do jogador, party, box
-│   ├── battle.h            # Lógica de batalhas
-│   ├── pokedex.h           # Funções para pokédex
-│   ├── save.h              # Leitura e escrita de arquivos
-│   ├── menu.h              # Menus e UI
-│   └── map.h               # Mapas e movimentação
-│
-├── src/                    # Código-fonte (.c)
-│   ├── main.c              # Ponto de entrada
-│   ├── game.c              # Controle do loop e cenas
-│   ├── pokemon.c           # Manipulação de Pokémon
-│   ├── player.c            # Player e party
-│   ├── battle.c            # Sistema de batalha
-│   ├── pokedex.c           # Cadastro e visualização de pokémons
-│   ├── save.c              # Load/save do jogo
-│   ├── menu.c              # Menus e interfaces
-│   └── map.c               # Mapa, movimentação, transições
-│
-├── data/                   # Arquivos persistentes
-│   ├── save.dat            # Save do jogo
-│   └── pokedex.dat         # Pokédex preenchida
-│
-├── Makefile                # Automação de build
-└── README.md               # Explicação do projeto
+Pixelmon Showdown/
+├── assets/
+│   ├── background/
+│   ├── misc/
+│   ├── sounds/
+│   ├── sprites/
+│   └── status/
+├── data/
+│   ├── move_data.json
+│   └── type_chart.json
+├── include/
+│   ├── battle_screen.h
+│   ├── cJSON.h
+│   ├── file_loader.h
+│   ├── menu.h
+│   ├── player_loader.h
+│   ├── pokemon_loader.h
+│   ├── rival_loader.h
+│   ├── team.h
+│   └── team_select.h
+├── lib/
+│   └── cJSON.c
+├── src/
+│   ├── battle_screen.c
+│   ├── file_loader.c
+│   ├── main.c
+│   ├── menu.c
+│   ├── player_loader.c
+│   ├── pokemon_loader.c
+│   ├── rival_loader.c
+│   ├── team.c
+│   └── team_select.c
+├── makefile
+└── README.md
 ```
 
-## 🛠️ Como Compilar
+---
 
-Certifique-se de ter a [Raylib](https://www.raylib.com/) instalada.
+## ⚙️ Key Features
 
+### 1. Core Battle System
+- **Turn-Based Logic** - Alternates between player and rival.
+- **Critical Hits** - Includes critical hit logic and sound effects.
+- **Type Effectiveness** - Takes advantage of Pokémon type strengths and weaknesses.
+- **Damage Over Time (DoT)** - Status effects like Burn and Poison cause continuous damage.
+
+### 2. Pokémon Management
+- **Team Selection** - Allows players to select a team of 6 Pokémon.
+- **Dynamic Team Loading** - Loads Pokémon from structured JSON files.
+- **Flexible Move Sets** - Pokémon can have up to 4 moves, each with unique effects.
+
+### 3. Status Effects
+- **Paralysis, Burn, Poison, Freeze, Sleep, Confusion** - Fully implemented status conditions.
+- **Self-Stat Buffs** - Moves like **Calm Mind** and **Swords Dance** are supported.
+- **Protect Logic** - Prevents incoming damage for one turn.
+
+### 4. Sound and Visual Effects
+- **Background Music** - Continuous battle theme.
+- **Critical Hit Sound Effects** - Audio feedback for critical hits.
+- **Status Icons** - Visual representation of status effects.
+
+---
+
+## 🛠️ Building and Running the Project
+
+### Install Dependencies (Raylib)
+```bash
+# MacOS
+brew install raylib
+
+# Ubuntu
+sudo apt install libraylib-dev
+```
+
+### Build and Run
 ```bash
 make
-./pixelmon-quest
+./pixelmon_showdown
 ```
 
-## 👨‍🎓 Equipe 
-- Ricardo Freitas
-- Gabriel Aniceto
-- Thiago Medeiros
+---
 
-## 📜 Licença
-Projeto acadêmico sem fins lucrativos. Alguns sprites utilizados pertencem à franquia Pokémon (Nintendo/Game Freak). Todos os créditos de imagem são devidos aos criadores originais. Uso apenas educacional.
+## 📑 License
+This project is licensed under the **MIT License**. Feel free to modify and distribute.
+
+---
+
+## 👨‍💻 Author
+Developed by **Ricardo Freitas / Thiago Fernandes / Gabriel Aniceto** as part of a college project at **Cesar School**.
