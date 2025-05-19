@@ -46,6 +46,7 @@ static Sound critical_hit_sound;
 static int critical_hit_flash_timer = 0;
 static const int CRITICAL_HIT_FLASH_DURATION = 15;
 static int player_turn = 1;
+static Music battle_music;
 
 // Generate a random rival team
 TeamNode* GenerateRivalTeam()
@@ -534,6 +535,11 @@ void InitBattleScreen(TeamNode *team)
     InitAudioDevice();
     critical_hit_sound = LoadSound("assets/sounds/critical_hit.mp3");
 
+    // Load the background music
+    battle_music = LoadMusicStream("assets/sounds/battle_music.mp3");
+    PlayMusicStream(battle_music);
+    SetMusicVolume(battle_music, 0.5f); // Adjust volume (0.0 to 1.0)
+
     srand(time(NULL));
 
     player_team = team;
@@ -577,6 +583,9 @@ void InitBattleScreen(TeamNode *team)
     // Main battle loop
     while (!WindowShouldClose())
     {
+        // Update the battle music
+        UpdateMusicStream(battle_music);
+        
         // Update shake timers
         if (player_shake_timer > 0)
         {
