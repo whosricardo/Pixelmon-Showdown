@@ -46,7 +46,8 @@
     },
     "Protect": {
         "power": 0,
-        "type": "Normal"
+        "type": "Normal",
+        "effect": "protect"
     },
     "Ice Beam": {
         "power": 90,

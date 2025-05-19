@@ -236,6 +236,36 @@ void ApplyStatusEffect(PokemonInfo *target, const char *effect)
         printf("%s healed some HP!\n", target->name);
         // This will be handled in the TeamNode structure instead
     }
+    else if (strcmp(effect, "protect") == 0)
+    {
+        // Apply Protect only to the current attacker
+        if (player_turn == 1)
+        {
+            // Player used Protect
+            if (player_pokemon->status != NULL && strcmp(player_pokemon->status, "protected") == 0)
+            {
+                printf("%s is already protected!\n", player_pokemon->name);
+                return;
+            }
+
+            free(player_pokemon->status);
+            player_pokemon->status = strdup("protected");
+            printf("%s is protecting itself!\n", player_pokemon->name);
+        }
+        else
+        {
+            // Rival used Protect
+            if (rival_pokemon->status != NULL && strcmp(rival_pokemon->status, "protected") == 0)
+            {
+                printf("%s is already protected!\n", rival_pokemon->name);
+                return;
+            }
+
+            free(rival_pokemon->status);
+            rival_pokemon->status = strdup("protected");
+            printf("%s is protecting itself!\n", rival_pokemon->name);
+        }
+    }
 }
 
 // Helper function to calculate HP bar width
@@ -259,6 +289,16 @@ Color GetHPBarColor(int current_hp, int max_hp)
 // Calculate the damage for a move
 int CalculateDamage(PokemonInfo *attacker, PokemonInfo *defender, const char *move_name)
 {
+    // Prevent damage if the target is protected
+    if (defender->status != NULL && strcmp(defender->status, "protected") == 0)
+    {
+        printf("%s protected itself! No damage taken.\n", defender->name);
+        // Clear the protect status after the attack
+        free(defender->status);
+        defender->status = NULL;
+        return 0;
+    }
+
     int base_power = GetMovePower(move_name);
     const char *move_type = GetMoveType(move_name);
 
