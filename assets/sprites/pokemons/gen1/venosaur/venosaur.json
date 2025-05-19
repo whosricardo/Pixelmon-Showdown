@@ -1,11 +1,11 @@
 {
   "id": 3,
-  "name": "Venusaur",
+  "name": "Venosaur",
   "type": ["Grass", "Poison"],
   "sprites": {
-    "front": "venusaur_front.png",
-    "back": "venusaur_back.png",
-    "icon": "venusaur_icon.png"
+    "front": "venosaur_front.png",
+    "back": "venosaur_back.png",
+    "icon": "venosaur_icon.png"
   },
   "base_stats": {
     "hp": 80,
