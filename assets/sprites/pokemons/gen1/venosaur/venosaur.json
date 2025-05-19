@@ -1,0 +1,26 @@
+{
+  "id": 3,
+  "name": "Venosaur",
+  "type": ["Grass", "Poison"],
+  "sprites": {
+    "front": "venosaur_front.png",
+    "back": "venosaur_back.png",
+    "icon": "venosaur_icon.png"
+  },
+  "base_stats": {
+    "hp": 80,
+    "attack": 82,
+    "defense": 83,
+    "sp_attack": 100,
+    "sp_defense": 100,
+    "speed": 80
+  },
+  "abilities": ["Overgrow", "Chlorophyll"],
+  "is_legendary": false,
+  "learnset": [
+    "Solar Beam",
+    "Razor Leaf",
+    "Sludge Bomb",
+    "Protect"
+  ]
+}
