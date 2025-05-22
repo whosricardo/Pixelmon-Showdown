@@ -70,7 +70,6 @@ static void LoadPokemonIcons()
 
             free_pokemon(pokemon);
 
-            // Stop if we reach the max limit
             if (total_pokemon >= MAX_POKEMON) break;
         }
 

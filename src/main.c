@@ -4,7 +4,6 @@
 
 int main(void)
 {
-    // Initialize the window
     InitWindow(1280, 720, "Pixelmon Showdown");
     SetTargetFPS(60);
 
@@ -19,7 +18,6 @@ int main(void)
     FreeMoveData();
     FreeTypeChart();
 
-    // Close the window when the game exits
     CloseWindow();
     return 0;
 }
