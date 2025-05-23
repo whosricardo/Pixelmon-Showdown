@@ -82,6 +82,23 @@ Pixelmon Showdown/
 
 ---
 
+## 🎮 How to Play (Controls)
+
+### Menu
+- **Arrows** - Up & Down.
+- **Enter** - Select Option.
+
+### Pokemon Selection
+- **Arrows** - Up, Down, Left, Right.
+- **Space** - Select Pokémon.
+- **Use Mouse Click to Confirm Selection**
+
+### Battle
+- **Arrows** - Up, Down.
+- **Enter** - Select Option.
+
+---
+
 ## 🛠️ Building and Running the Project
 
 ### Install Dependencies (Raylib)
