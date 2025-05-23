@@ -1,0 +1,26 @@
+{
+  "id": 212,
+  "name": "Scizor",
+  "type": ["Bug", "Steel"],
+  "sprites": {
+    "front": "scizor_front.png",
+    "back": "scizor_back.png",
+    "icon": "scizor_icon.png"
+  },
+  "base_stats": {
+    "hp": 70,
+    "attack": 130,
+    "defense": 100,
+    "sp_attack": 55,
+    "sp_defense": 80,
+    "speed": 65
+  },
+  "abilities": ["Swarm", "Technician"],
+  "is_legendary": false,
+  "learnset": [
+    "Bullet Punch",
+    "Iron Tail",
+    "Swords Dance",
+    "Protect"
+  ]
+}
