@@ -1,0 +1,26 @@
+{
+  "id": 202,
+  "name": "Wobbuffet",
+  "type": ["Psychic"],
+  "sprites": {
+    "front": "wobbuffet_front.png",
+    "back": "wobbuffet_back.png",
+    "icon": "wobbuffet_icon.png"
+  },
+  "base_stats": {
+    "hp": 190,
+    "attack": 33,
+    "defense": 58,
+    "sp_attack": 33,
+    "sp_defense": 58,
+    "speed": 33
+  },
+  "abilities": ["Shadow Tag"],
+  "is_legendary": false,
+  "learnset": [
+    "Counter",
+    "Mirror Coat",
+    "Destiny Bond",
+    "Safeguard"
+  ]
+}
