@@ -117,6 +117,18 @@ make
 ```
 
 ---
+### 🔗 Links: ###
+
+<details>
+<summary><strong>GamePlay:</strong></summary>
+  
+- GamePlay: [Click Here](https://www.youtube.com/watch?v=pKWDHZy1qH8)
+
+ 
+  
+</details>
+
+---
 
 ## 📑 License
 This project is licensed under the **MIT License**. Feel free to modify and distribute.
