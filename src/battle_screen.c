@@ -47,6 +47,9 @@ static int critical_hit_flash_timer = 0;
 static const int CRITICAL_HIT_FLASH_DURATION = 15;
 static int player_turn = 1;
 static Music battle_music;
+static char battle_message[128] = "";
+static int battle_message_timer = 0;
+static const int BATTLE_MESSAGE_DURATION = 120;
 
 // Generate a random rival team
 TeamNode* GenerateRivalTeam()
@@ -529,6 +532,15 @@ float GetTypeEffectiveness(const char *move_type, PokemonInfo *defender)
     return multiplier;
 }
 
+void DrawBattleMessage()
+{
+    if (battle_message_timer > 0)
+    {
+        DrawRectangle(300, 500, 680, 50, Fade(BLACK, 0.7f)); // fundo semitransparente
+        DrawText(battle_message, 320, 515, 20, WHITE);
+    }
+}
+
 void InitBattleScreen(TeamNode *team)
 {
     // Load the critical hit sound
@@ -585,6 +597,9 @@ void InitBattleScreen(TeamNode *team)
     {
         // Update the battle music
         UpdateMusicStream(battle_music);
+
+        if (battle_message_timer > 0)
+        battle_message_timer--;
         
         // Update shake timers
         if (player_shake_timer > 0)
@@ -627,6 +642,8 @@ void InitBattleScreen(TeamNode *team)
                 rival_current_hp = rival_team->hp;
                 rival_shake_timer = SHAKE_DURATION;
                 printf("%s used %s! It dealt %d damage.\n", player_pokemon->name, selected_move_name, player_damage);
+                snprintf(battle_message, sizeof(battle_message), "%s used %s! It dealt %d damage.", player_pokemon->name, selected_move_name, player_damage);
+                battle_message_timer = BATTLE_MESSAGE_DURATION;
 
                 // Apply DoT if the rival has a status
                 if (rival_pokemon->status != NULL)
@@ -638,6 +655,8 @@ void InitBattleScreen(TeamNode *team)
                         if (rival_team->hp < 0) rival_team->hp = 0;
                         rival_current_hp = rival_team->hp;
                         printf("%s is hurt by %s! It took %d damage.\n", rival_pokemon->name, rival_pokemon->status, dot_damage);
+                        snprintf(battle_message, sizeof(battle_message), "%s used %s! It dealt %d damage.", rival_pokemon->name, rival_pokemon->status, dot_damage);
+                        battle_message_timer = BATTLE_MESSAGE_DURATION;
                     }
                 }
 
@@ -678,6 +697,9 @@ void InitBattleScreen(TeamNode *team)
                 player_current_hp = player_team->hp;
                 player_shake_timer = SHAKE_DURATION;
                 printf("%s used %s! It dealt %d damage.\n", rival_pokemon->name, random_move_name, rival_damage);
+                snprintf(battle_message, sizeof(battle_message), "%s used %s! It dealt %d damage.", rival_pokemon->name, random_move_name, rival_damage);
+                battle_message_timer = BATTLE_MESSAGE_DURATION;
+
 
                 // Apply DoT if the player has a status
                 if (player_pokemon->status != NULL)
@@ -688,7 +710,9 @@ void InitBattleScreen(TeamNode *team)
                         player_team->hp -= dot_damage;
                         if (player_team->hp < 0) player_team->hp = 0;
                         player_current_hp = player_team->hp;
-                        printf("%s is hurt by %s! It took %d damage.\n", player_pokemon->name, player_pokemon->status, dot_damage);
+                        printf("%s used %s! It dealt %d damage.\n", player_pokemon->name, player_pokemon->status, dot_damage);
+                        snprintf(battle_message, sizeof(battle_message), "%s used %s! It dealt %d damage.", player_pokemon->name, player_pokemon->status, dot_damage);
+                        battle_message_timer = BATTLE_MESSAGE_DURATION;
                     }
                 }
 
@@ -765,6 +789,7 @@ void InitBattleScreen(TeamNode *team)
 
     // Draw the battle menu
     DrawBattleMenu(player_pokemon);
+    DrawBattleMessage();
 
     EndDrawing();
 
