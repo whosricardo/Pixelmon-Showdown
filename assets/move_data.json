@@ -179,5 +179,13 @@
         "power": 0,
         "type": "Dark",
         "effect": "raise_sp_attack"
+    },
+    "Stone Edge": {
+        "power": 100,
+        "type": "Rock"
+    },
+    "Mega Horn": {
+        "power": 120,
+        "type": "Bug"
     }
 }

@@ -5,6 +5,8 @@
         "stdlib.h": "c",
         "map.h": "c",
         "battle_screen.h": "c",
-        "pokemon_loader.h": "c"
+        "pokemon_loader.h": "c",
+        "menu.h": "c",
+        "raylib.h": "c"
     }
 }
