@@ -536,8 +536,8 @@ void DrawBattleMessage()
 {
     if (battle_message_timer > 0)
     {
-        DrawRectangle(300, 500, 680, 50, Fade(BLACK, 0.7f)); // fundo semitransparente
-        DrawText(battle_message, 320, 515, 20, WHITE);
+        DrawRectangle(500, 530, 680, 50, Fade(BLACK, 0.7f)); // fundo semitransparente
+        DrawText(battle_message, 520, 545, 20, WHITE);
     }
 }
 
