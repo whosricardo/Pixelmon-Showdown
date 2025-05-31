@@ -18,8 +18,8 @@
   "abilities": ["Torrent", "Damp"],
   "is_legendary": false,
   "learnset": [
-    "Water Gun",
-    "Mud-Slap",
+    "Hydro Pump",
+    "Quick Attack",
     "Rock Slide",
     "Protect"
   ]

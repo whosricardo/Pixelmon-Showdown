@@ -18,8 +18,8 @@
   "abilities": ["Blaze", "Solar Power"],
   "is_legendary": false,
   "learnset": [
-    "Ember",
-    "Scratch",
+    "Will-O-Wisp",
+    "Quick Attack",
     "Flamethrower",
     "Protect"
   ]

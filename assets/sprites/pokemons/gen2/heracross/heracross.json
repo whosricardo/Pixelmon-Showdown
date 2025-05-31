@@ -18,9 +18,9 @@
   "abilities": ["Swarm", "Guts"],
   "is_legendary": false,
   "learnset": [
-    "Megahorn",
-    "Brick Break",
-    "Reversal",
+    "Giga Drain",
+    "Focus Blast",
+    "Recover",
     "Protect"
   ]
 }

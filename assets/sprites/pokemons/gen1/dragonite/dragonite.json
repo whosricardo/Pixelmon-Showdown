@@ -18,9 +18,9 @@
   "abilities": ["Inner Focus", "Multiscale"],
   "is_legendary": false,
   "learnset": [
-    "Outrage",
+    "Dragon Dance",
     "Dragon Claw",
-    "Wing Attack",
+    "Flamethrower",
     "Protect"
   ]
 }

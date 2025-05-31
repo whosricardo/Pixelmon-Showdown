@@ -18,9 +18,9 @@
   "abilities": ["Torrent", "Rain Dish"],
   "is_legendary": false,
   "learnset": [
-    "Water Gun",
-    "Bite",
-    "Rapid Spin",
+    "Hydro Pump",
+    "Quick Attack",
+    "Ice Beam",
     "Protect"
   ]
 }

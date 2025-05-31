@@ -18,9 +18,9 @@
   "abilities": ["Overgrow", "Chlorophyll"],
   "is_legendary": false,
   "learnset": [
-    "Vine Whip",
+    "Tail Whip",
     "Razor Leaf",
-    "PoisonPowder",
+    "Toxic",
     "Protect"
   ]
 }

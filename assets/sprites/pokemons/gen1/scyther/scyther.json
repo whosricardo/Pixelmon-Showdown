@@ -18,8 +18,8 @@
   "abilities": ["Swarm", "Technician"],
   "is_legendary": false,
   "learnset": [
-    "X-Scissor",
-    "Aerial Ace",
+    "Meteor Smash",
+    "Bullet Punch",
     "Swords Dance",
     "Protect"
   ]

@@ -18,8 +18,8 @@
   "abilities": ["Synchronize", "Trace"],
   "is_legendary": false,
   "learnset": [
-    "Confusion",
-    "Calm Mind",
+    "Quick attack",
+    "Psychic",
     "Double Team",
     "Protect"
   ]

@@ -18,9 +18,9 @@
   "abilities": ["Shadow Tag"],
   "is_legendary": false,
   "learnset": [
-    "Counter",
-    "Mirror Coat",
-    "Destiny Bond",
-    "Safeguard"
+    "Quick Attack",
+    "Zen Headbutt",
+    "Psychic",
+    "Protect"
   ]
 }

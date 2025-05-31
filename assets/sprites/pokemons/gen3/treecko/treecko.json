@@ -18,9 +18,9 @@
   "abilities": ["Overgrow", "Unburden"],
   "is_legendary": false,
   "learnset": [
-    "Absorb",
+    "Swords Dance",
     "Quick Attack",
-    "Leaf Blade",
+    "Razor Leaf",
     "Protect"
   ]
 }

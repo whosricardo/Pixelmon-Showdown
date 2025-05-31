@@ -18,8 +18,8 @@
   "abilities": ["Blaze", "Speed Boost"],
   "is_legendary": false,
   "learnset": [
-    "Ember",
-    "Peck",
+    "Flamethrower",
+    "Air Slash",
     "Focus Blast",
     "Protect"
   ]
