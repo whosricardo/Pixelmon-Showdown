@@ -762,16 +762,16 @@ void InitBattleScreen(TeamNode *team)
     // Draw the player Pokémon (bottom left)
     int player_sprite_width = player_texture.width * pokemon_scale;
     int player_sprite_height = player_texture.height * pokemon_scale;
-    int player_x = 220 + player_shake_offset - (player_sprite_width / 2);
-    int player_y = 400 - (player_sprite_height / 2);
+    int player_x = 350 + player_shake_offset - (player_sprite_width / 2);
+    int player_y = 430 - (player_sprite_height / 2);
     DrawTextureEx(player_texture, (Vector2){player_x, player_y}, 0.0f, pokemon_scale, WHITE);
     DrawStatusIcon(player_pokemon, player_x, player_y - 50);
 
     // Draw the rival Pokémon (top right)
     int rival_sprite_width = rival_texture.width * pokemon_scale;
     int rival_sprite_height = rival_texture.height * pokemon_scale;
-    int rival_x = 900 + rival_shake_offset - (rival_sprite_width / 2);
-    int rival_y = 200 - (rival_sprite_height / 2);
+    int rival_x = 800 + rival_shake_offset - (rival_sprite_width / 2);
+    int rival_y = 300 - (rival_sprite_height / 2);
     DrawTextureEx(rival_texture, (Vector2){rival_x, rival_y}, 0.0f, pokemon_scale, WHITE);
     DrawStatusIcon(rival_pokemon, 830, 60);
 
